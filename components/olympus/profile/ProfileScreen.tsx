@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { errorMessage } from "@/lib/client/api";
-import { isInsideMax, openExternal } from "@/lib/client/max-bridge";
+import { isInsideMax, launchDiagnostics, openExternal } from "@/lib/client/max-bridge";
 import { registeredEvents } from "@/lib/ui/calendar";
 import { eventDateLabel } from "@/lib/ui/calendar-labels";
 import { formatDateTime, todayIso } from "@/lib/ui/dates";
@@ -48,6 +48,7 @@ import { useToast } from "../state/toast";
 function GuestCard() {
   const { state } = useData();
   const inMax = isInsideMax();
+  const max = launchDiagnostics();
   return (
     <section className="ol-card ol-guest" aria-labelledby="guest-title">
       <h2 id="guest-title">Ты занимаешься как гость</h2>
@@ -56,11 +57,18 @@ function GuestCard() {
         данные браузера, доступ к нему можно потерять.
       </p>
       {inMax ? (
-        <p>
-          {state.signInError
-            ? "Не получилось войти через MAX. Закрой Олимпус и открой его снова из чата с ботом."
-            : "Вход через MAX выполняется сам, когда Олимпус открыт из чата с ботом."}
-        </p>
+        <>
+          <p>
+            {state.signInError
+              ? "Не получилось войти через MAX. Закрой Олимпус и открой его снова из чата с ботом."
+              : "Вход через MAX выполняется сам, когда Олимпус открыт из чата с ботом."}
+          </p>
+          <p>
+            Состояние входа: мост MAX — {max.bridge ? "есть" : "нет"}; данные запуска —
+            {max.bridgeData ? " в мосте" : max.urlData ? " в ссылке" : " не получены"}
+            {max.platform ? `; платформа — ${max.platform}` : ""}.
+          </p>
+        </>
       ) : state.features.max ? (
         <>
           <p>
