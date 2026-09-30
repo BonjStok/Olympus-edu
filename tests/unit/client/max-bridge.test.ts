@@ -114,7 +114,14 @@ describe("max bridge", () => {
     );
   });
 
-  it("prefers fresh URL launch data to a bridge value left from an earlier Android opening", () => {\n    fakeWebApp("android");\n    window.history.replaceState({}, "", "/#WebAppData=query_id%3Dfresh%26hash%3Dabc");\n\n    expect(bridge.initData()).toBe("query_id=fresh&hash=abc");\n  });\n\n  it("gives a plain browser a guest fallback after the bounded wait", async () => {
+  it("prefers fresh URL launch data to a bridge value left from an earlier Android opening", () => {
+    fakeWebApp("android");
+    window.history.replaceState({}, "", "/#WebAppData=query_id%3Dfresh%26hash%3Dabc");
+
+    expect(bridge.initData()).toBe("query_id=fresh&hash=abc");
+  });
+
+  it("gives a plain browser a guest fallback after the bounded wait", async () => {
     await expect(bridge.waitForInitData({ timeoutMs: 0 })).resolves.toBeUndefined();
   });
 

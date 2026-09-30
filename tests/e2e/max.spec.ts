@@ -79,10 +79,12 @@ test("a deep link opens the olympiad; Back, openLink and haptics go through MAX"
   await screenTitle(page, "Олимпиады");
   await expect.poll(() => calls(page)).toContain("back:hide");
 
-  // The MAX sign-in failed (no bot token on a local stack): the profile says what to do.
+  // The fake launch payload cannot authenticate on a local stack, but the active MAX bridge
+  // must be visible in the guest diagnostics.
   await openTab(page, "Я");
   await screenTitle(page, "Я");
-  await expect(page.getByText("Не получилось войти через MAX. Закрой Олимпус")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Ты занимаешься как гость" })).toBeVisible();
+  await expect(page.getByText(/Состояние входа: мост MAX - есть/)).toBeVisible();
 });
 
 test("a running mock asks MAX to confirm closing", async ({ context, page, request }) => {
