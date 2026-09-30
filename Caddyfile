@@ -1,0 +1,25 @@
+{$OLYMPUS_DOMAIN} {
+  encode zstd gzip
+
+  # MAX Web embeds the mini-app in an iframe: do not add X-Frame-Options or a CSP
+  # frame-ancestors that would block https://web.max.ru.
+  header {
+    X-Content-Type-Options "nosniff"
+    Referrer-Policy "strict-origin-when-cross-origin"
+    Permissions-Policy "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    -Server
+  }
+
+  # MAX chat-bot webhook (docs/BOT.md); matched before the catch-all proxy below.
+  reverse_proxy /max/webhook* bot:8090
+
+  reverse_proxy web:3000 {
+    # The app rate-limits logins by X-Real-IP only. Caddy overwrites it with the TCP peer
+    # address and drops client-supplied address headers, so they cannot be spoofed.
+    header_up X-Real-IP {remote_host}
+    header_up -Cf-Connecting-Ip
+    header_up -X-Forwarded-For
+    header_up -True-Client-Ip
+  }
+}

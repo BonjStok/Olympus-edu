@@ -1,0 +1,171 @@
+name: olympus
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-olympus}
+      POSTGRES_USER: ${POSTGRES_USER:-olympus}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-olympus_local_dev}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-olympus} -d ${POSTGRES_DB:-olympus}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 10s
+
+  web:
+    build: .
+    image: ${OLYMPUS_IMAGE_PREFIX:-olympus}-web:${OLYMPUS_IMAGE_TAG:-local}
+    ports:
+      - "${OLYMPUS_PORT:-3000}:3000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${POSTGRES_USER:-olympus}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-olympus_local_dev}
+      DB_NAME: ${POSTGRES_DB:-olympus}
+      DB_SSL: "false"
+      RUNNER_URL: ${RUNNER_URL:-http://runner:8080}
+    volumes:
+      - olympus_media:/app/.wrangler/state
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 20s
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/v1/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 8s
+      retries: 3
+      start_period: 30s
+
+  runner:
+    build: ./runner
+    image: ${OLYMPUS_IMAGE_PREFIX:-olympus}-runner:${OLYMPUS_IMAGE_TAG:-local}
+    env_file:
+      - path: .env
+        required: false
+    restart: unless-stopped
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,noexec,nosuid,nodev
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    pids_limit: 64
+    mem_limit: 256m
+    cpus: 1.0
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8080/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 8s
+      retries: 3
+      start_period: 15s
+
+  # MAX chat-bot (docs/BOT.md). Same image as web. Without BOT_TOKEN it stays up in
+  # "disabled" mode and only serves /health; locally it receives updates by long polling.
+  bot:
+    # Runs from the web image (bot/ is part of it), so the image is built only once.
+    image: ${OLYMPUS_IMAGE_PREFIX:-olympus}-web:${OLYMPUS_IMAGE_TAG:-local}
+    pull_policy: never
+    command: ["node", "bot/server.mjs"]
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${POSTGRES_USER:-olympus}
+      DB_PASSWORD: ${POSTGRES_PASSWORD:-olympus_local_dev}
+      DB_NAME: ${POSTGRES_DB:-olympus}
+      DB_SSL: "false"
+      BOT_MODE: ${BOT_MODE:-polling}
+      NODE_EXTRA_CA_CERTS: /app/bot/certs/russian_trusted_root_ca.crt
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    init: true
+    user: node
+    read_only: true
+    tmpfs:
+      - /tmp:size=8m,noexec,nosuid,nodev
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 256m
+    stop_grace_period: 20s
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:8090/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 8s
+      retries: 3
+      start_period: 20s
+      start_interval: 2s
+
+  backup:
+    profiles: ["tools"]
+    image: postgres:17-alpine
+    environment:
+      PGHOST: postgres
+      PGPORT: 5432
+      PGDATABASE: ${POSTGRES_DB:-olympus}
+      PGUSER: ${POSTGRES_USER:-olympus}
+      PGPASSWORD: ${POSTGRES_PASSWORD:-olympus_local_dev}
+    volumes:
+      - ./backups:/backups
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: >-
+      sh -c 'set -eu; mkdir -p /backups;
+      pg_dump --format=custom --no-owner --no-privileges
+      --file=/backups/olympus-db-$$(date +%Y%m%d-%H%M%S).dump;
+      echo "PostgreSQL backup created"'
+
+  restore:
+    profiles: ["tools"]
+    image: postgres:17-alpine
+    environment:
+      PGHOST: postgres
+      PGPORT: 5432
+      PGDATABASE: ${POSTGRES_DB:-olympus}
+      PGUSER: ${POSTGRES_USER:-olympus}
+      PGPASSWORD: ${POSTGRES_PASSWORD:-olympus_local_dev}
+      BACKUP_FILE: ${BACKUP_FILE:-}
+    volumes:
+      - ./backups:/backups:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: >-
+      sh -c 'set -eu;
+      test -n "$$BACKUP_FILE" || { echo "Set BACKUP_FILE to a .dump file from ./backups"; exit 2; };
+      case "$$BACKUP_FILE" in */*|*..*) echo "BACKUP_FILE must be a filename only"; exit 2;; esac;
+      test -f "/backups/$$BACKUP_FILE" || { echo "Backup not found: $$BACKUP_FILE"; exit 2; };
+      pg_restore --clean --if-exists --no-owner --no-privileges --dbname="$$PGDATABASE" "/backups/$$BACKUP_FILE";
+      echo "PostgreSQL restore completed"'
+
+  media-backup:
+    profiles: ["tools"]
+    image: alpine:3.20
+    volumes:
+      - olympus_media:/data:ro
+      - ./backups:/backups
+    command: sh -c 'set -eu; mkdir -p /backups; tar -czf /backups/olympus-media-$$(date +%Y%m%d-%H%M%S).tar.gz -C /data .; echo "Media backup created"'
+
+volumes:
+  postgres_data:
+  olympus_media:

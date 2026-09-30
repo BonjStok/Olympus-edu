@@ -1,0 +1,24 @@
+minimumReleaseAge: 10080
+minimumReleaseAgeIgnoreMissingTime: false
+trustLockfile: false
+strictDepBuilds: true
+allowBuilds:
+  esbuild: true
+  fsevents: true
+  sharp: true
+  unrs-resolver: true
+  workerd: true
+storeDir: .pnpm-store
+cacheDir: .pnpm-store/policy-cache
+enableGlobalVirtualStore: false
+packageImportMethod: clone-or-copy
+verifyDepsBeforeRun: false
+optimisticRepeatInstall: false
+overrides:
+  miniflare>sharp: 0.35.4
+  # Security: wrangler/miniflare pin vulnerable undici 7.24.8 and ws 8.18.0
+  # (GHSA advisories fixed in undici 7.29, ws 8.21). Same major versions.
+  miniflare>undici: 7.29.1
+  wrangler>undici: 7.29.1
+  miniflare>ws: 8.21.3
+  wrangler>ws: 8.21.3

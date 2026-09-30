@@ -1,0 +1,1420 @@
+/* Раскладки отдельных слайдов */
+
+.ph {
+  padding: 1px 8px 2px;
+  border-radius: 6px;
+  background: var(--teal-soft);
+  color: var(--teal-text);
+  font-family: var(--sans);
+  font-weight: 600;
+}
+
+.wordmark {
+  font-family: var(--display);
+  font-size: 96px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+/* Декоративные «сферы» в духе «Сферума»: сплошные радиальные градиенты */
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 32% 28%,
+    #dfe9ff 0%,
+    #86a2ff 30%,
+    #3f4df2 62%,
+    #2a1fb8 100%
+  );
+}
+
+.orb.violet {
+  background: radial-gradient(
+    circle at 32% 28%,
+    #efe4ff 0%,
+    #b48cff 32%,
+    #6a2bf0 66%,
+    #4415b0 100%
+  );
+}
+
+/* 1. Для проверки */
+
+.s1 {
+  display: grid;
+  grid-template-columns: 560px 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 24px 64px;
+  padding-top: 8px;
+}
+
+.s1-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.s1-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+}
+
+.s1-left .wordmark {
+  margin-top: 22px;
+}
+
+.s1-claim {
+  margin-top: 18px;
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.012em;
+}
+
+.s1-bot {
+  display: flex;
+  gap: 24px;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.s1-url {
+  margin-top: 6px;
+  font-size: 19px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.s1-right {
+  padding: 26px 32px;
+  border: 1.5px solid var(--line);
+  border-radius: 24px;
+  background: #ffffff;
+}
+
+.s1-dl {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 16px 24px;
+  font-size: 20px;
+  line-height: 1.34;
+}
+
+.s1-dl dt {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.s1-dl dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.s1-acc {
+  border-collapse: collapse;
+  font-size: 18px;
+}
+
+.s1-acc td {
+  padding: 3px 18px 3px 0;
+  vertical-align: top;
+}
+
+.s1-acc td:first-child {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.s1-acc td:last-child {
+  font-family: var(--mono);
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+.s1-steps {
+  grid-column: 1 / 3;
+}
+
+.steps5 {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+  counter-reset: st;
+}
+
+.steps5 li {
+  position: relative;
+  padding: 18px 20px 20px 72px;
+  border-radius: 20px;
+  background: var(--grad);
+  color: #ffffff;
+  counter-increment: st;
+}
+
+.steps5 li::before {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--blue);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 40px;
+  text-align: center;
+  content: counter(st);
+}
+
+.steps5 b {
+  display: block;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.steps5 span {
+  display: block;
+  margin-top: 8px;
+  color: #e6ebff;
+  font-size: 17px;
+  line-height: 1.32;
+}
+
+/* 2. Продукт и команда */
+
+.s2-lead {
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.member {
+  padding: 16px 18px;
+  border: 1.5px solid var(--line);
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.member .avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 92px;
+  height: 92px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: var(--sky-2);
+  color: var(--blue-text);
+  font-size: 30px;
+  font-weight: 800;
+  object-fit: cover;
+}
+
+.member b,
+.member span,
+.member em {
+  display: block;
+}
+
+.member b {
+  font-size: 19px;
+}
+
+.member span {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.member em {
+  margin-top: 8px;
+  color: var(--blue-text);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.s2-ctx {
+  margin-top: 16px;
+  color: var(--ink-2);
+  font-size: 18px;
+  line-height: 1.38;
+}
+
+.s2-art {
+  position: relative;
+}
+
+.s2-art .orb-a {
+  top: 40px;
+  right: 10px;
+  width: 360px;
+  height: 360px;
+}
+
+.s2-art .orb-b {
+  bottom: 70px;
+  left: 30px;
+  width: 170px;
+  height: 170px;
+}
+
+.s2-p1 {
+  position: absolute;
+  top: 0;
+  left: 60px;
+}
+
+.s2-p2 {
+  position: absolute;
+  top: 56px;
+  right: 0;
+}
+
+/* 3. Executive Summary */
+
+.es {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.es h3 {
+  font-size: 27px;
+}
+
+.es .small {
+  font-size: 19px;
+}
+
+.es ul {
+  margin-top: auto;
+}
+
+/* 4. Целевая аудитория: окно входа в ВсОШ по классам */
+
+.window {
+  display: grid;
+  grid-template-columns: 196px repeat(8, minmax(0, 1fr));
+  gap: 6px;
+  align-items: center;
+}
+
+.window .c {
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.window > .c:nth-child(-n + 4) {
+  border-radius: 8px;
+  background: var(--teal-text);
+  color: #ffffff;
+}
+
+.window .r {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.window i,
+.window b {
+  display: block;
+  height: 30px;
+  border-radius: 8px;
+}
+
+.window i {
+  background: var(--blue);
+}
+
+.window i.half {
+  background: #8ea8ff;
+}
+
+.window b {
+  background: #e3e9f6;
+}
+
+.needs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.need {
+  padding: 20px 26px;
+  border-radius: 22px;
+}
+
+.need ul {
+  margin-top: 10px;
+}
+
+.need.yes {
+  background: var(--cyan-soft);
+}
+
+.need.yes .label {
+  color: var(--cyan-text);
+}
+
+.need.yes li::before {
+  background: var(--cyan);
+}
+
+.need.part {
+  background: var(--teal-soft);
+}
+
+.need.part .label {
+  color: var(--teal-text);
+}
+
+.need.part li::before {
+  background: var(--teal);
+}
+
+.need.no {
+  background: #eef1f6;
+}
+
+.need.no .label {
+  color: var(--muted);
+}
+
+.need.no li::before {
+  background: #9aa6ba;
+}
+
+/* 5. Проблема */
+
+.formula p {
+  font-size: 21px;
+  line-height: 1.5;
+}
+
+.formula span {
+  padding: 1px 4px;
+  border-radius: 6px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.f-u {
+  background: var(--sky-2);
+}
+
+.f-c {
+  background: #eef1f6;
+}
+
+.f-r {
+  background: var(--cyan-soft);
+}
+
+.f-b {
+  background: var(--teal-soft);
+}
+
+.f-e {
+  background: var(--violet-soft);
+}
+
+.check5 {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 10px 16px;
+  padding: 0 4px;
+  font-size: 18px;
+  line-height: 1.32;
+}
+
+.check5 dt {
+  color: var(--blue-text);
+  font-weight: 700;
+}
+
+/* 6. Конкуренты */
+
+.comp td {
+  font-size: 18px;
+}
+
+.comp tr.us td {
+  border-bottom: none;
+  font-size: 19px;
+}
+
+.comp tr.us td:first-child {
+  border-radius: 14px 0 0 14px;
+  color: var(--blue-text);
+}
+
+.comp tr.us td:last-child {
+  border-radius: 0 14px 14px 0;
+}
+
+.s6-note {
+  padding: 16px 24px;
+  border-radius: 16px;
+  background: var(--ink);
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+/* 7. AS IS → TO BE */
+
+.lane {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.lane-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--display);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.lane-name small {
+  margin-top: 6px;
+  color: var(--faint);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.tobe .lane-name {
+  color: var(--blue-text);
+}
+
+.lane-steps {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.lane-steps li {
+  position: relative;
+  padding: 20px 20px 22px;
+  border-radius: 18px;
+  background: #eef1f6;
+}
+
+.lane-steps li + li::before {
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  width: 0;
+  height: 0;
+  margin-top: -9px;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 11px solid #a3afc6;
+  content: "";
+}
+
+.tobe .lane-steps li {
+  background: var(--sky-2);
+}
+
+.tobe .lane-steps li + li::before {
+  border-left-color: var(--blue);
+}
+
+.lane-steps li.bad {
+  background: var(--violet-soft);
+}
+
+.lane-steps li.good {
+  background: var(--cyan-soft);
+}
+
+.lane-steps b {
+  display: block;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.lane-steps span {
+  display: block;
+  margin-top: 8px;
+  font-size: 18.5px;
+  line-height: 1.32;
+}
+
+.lane-steps em.tag {
+  margin-bottom: 8px;
+  font-style: normal;
+}
+
+/* 8. Сценарий: телефоны в ряд */
+
+.flow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.flow .arrow {
+  margin-top: 240px;
+}
+
+.flow figcaption {
+  font-weight: 600;
+}
+
+.flow figcaption b {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+}
+
+/* 9. MVP и MoSCoW */
+
+.mvp-kpi {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 360px;
+  padding: 22px 26px;
+  border-radius: 22px;
+  background: var(--card);
+}
+
+.mvp-kpi .kpi > span {
+  margin-top: 6px;
+  font-size: 17px;
+}
+
+.moscow {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.ms {
+  padding: 20px 22px;
+  border-radius: 22px;
+  background: var(--card);
+}
+
+.ms-h {
+  margin-bottom: 14px;
+  font-family: var(--display);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.ms-h small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ms .dots li + li {
+  margin-top: 10px;
+}
+
+.ms.must {
+  background: var(--sky-2);
+}
+
+.ms.must .ms-h {
+  color: var(--blue-text);
+}
+
+.ms.could {
+  background: var(--teal-soft);
+}
+
+.ms.could li::before {
+  background: var(--teal);
+}
+
+.ms.wont {
+  background: #eef1f6;
+}
+
+.ms.wont li::before {
+  background: #9aa6ba;
+}
+
+.maxbar {
+  padding: 16px 24px 18px;
+  border-radius: 18px;
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.maxbar .label {
+  color: #a9bcff;
+}
+
+.maxbar sup.ref {
+  color: #ffffff;
+}
+
+.maxbar p + p {
+  margin-top: 6px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* 10. Эффект: дерево метрик */
+
+.tree {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ns {
+  padding: 18px 28px 20px;
+  border-radius: 22px;
+  background: var(--grad);
+  color: #ffffff;
+  text-align: center;
+}
+
+.ns .label {
+  color: #dfe6ff;
+}
+
+.ns-t {
+  margin-top: 4px;
+  font-family: var(--display);
+  font-size: 34px;
+  font-weight: 800;
+}
+
+.ns .small {
+  color: #eef2ff;
+}
+
+.branches {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.br {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 22px 24px;
+  border: 1.5px solid var(--line);
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.br-h {
+  color: var(--blue-text);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.br .m b {
+  display: block;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.br .m span {
+  display: block;
+  margin-top: 6px;
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+/* 11. Архитектура */
+
+.arch {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.arch .two,
+.arch .three {
+  display: grid;
+  gap: 10px;
+}
+
+.arch .two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.arch .three {
+  grid-template-columns: 0.7fr 1.2fr 1fr;
+}
+
+.box {
+  padding: 13px 16px;
+  border: 1.5px solid var(--line-2);
+  border-radius: 14px;
+  background: #ffffff;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.box small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 15.5px;
+  font-weight: 500;
+}
+
+.box.max {
+  border: none;
+  background: var(--grad);
+  color: #ffffff;
+  text-align: center;
+}
+
+.box.thin {
+  padding: 8px 16px;
+  background: #eef1f6;
+  font-size: 16px;
+  text-align: center;
+}
+
+.box.db {
+  border: none;
+  background: var(--ink);
+  color: #ffffff;
+  text-align: center;
+}
+
+.down {
+  align-self: center;
+  width: 0;
+  height: 0;
+  border-top: 10px solid var(--blue);
+  border-right: 9px solid transparent;
+  border-left: 9px solid transparent;
+}
+
+.data td {
+  font-size: 17px;
+}
+
+.data td.name {
+  white-space: normal;
+}
+
+.fx {
+  padding: 13px 16px;
+  border-radius: 14px;
+  background: var(--card);
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.fx b {
+  display: block;
+  color: var(--blue-text);
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sferum {
+  width: 440px;
+}
+
+.sferum img {
+  width: 104px;
+  height: 104px;
+  border-radius: 26px;
+}
+
+.sferum .row img {
+  padding: 6px;
+  background: #ffffff;
+}
+
+/* 12. Пилот */
+
+.pilot {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.pc {
+  padding: 22px 26px 24px;
+  border: 1.5px solid var(--line);
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.pc p + p {
+  margin-top: 10px;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.pc.blue {
+  border: none;
+  background: var(--grad);
+  color: #ffffff;
+}
+
+.pc.blue .label {
+  color: #dfe6ff;
+}
+
+.tl {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  border-top: 4px solid var(--sky-3);
+}
+
+.tl-i {
+  position: relative;
+  padding: 22px 18px 0 0;
+}
+
+.tl-i::before {
+  position: absolute;
+  top: -13px;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  background: var(--blue);
+  content: "";
+}
+
+.tl-i b {
+  display: block;
+  font-size: 20px;
+}
+
+.tl-i span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+/* 13. Масштабирование */
+
+.waves {
+  counter-reset: w;
+}
+
+.waves li {
+  position: relative;
+  padding: 0 0 16px 50px;
+  counter-increment: w;
+}
+
+.waves li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 34px;
+  text-align: center;
+  content: counter(w);
+}
+
+.waves b {
+  display: block;
+  font-size: 20px;
+  line-height: 1.25;
+}
+
+.waves span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.road td {
+  padding: 9px 12px;
+  font-size: 16.5px;
+}
+
+.road th {
+  padding: 10px 12px;
+}
+
+.road td.q {
+  width: 70px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.road td.q1 {
+  color: var(--blue-text);
+}
+
+.road td.q2 {
+  color: var(--violet-text);
+}
+
+.road td.q3 {
+  color: var(--muted);
+}
+
+/* 14. Риски */
+
+.risks td {
+  padding: 10px 14px;
+  font-size: 18px;
+}
+
+.risks td.rn {
+  color: var(--blue-text);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* 15. Источники */
+
+.srcs {
+  columns: 2;
+  column-gap: 32px;
+  font-size: 16.5px;
+  line-height: 1.32;
+}
+
+.srcs li {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  margin-bottom: 9px;
+  break-inside: avoid;
+}
+
+.srcs li b {
+  color: var(--blue-text);
+}
+
+.srcs.three {
+  columns: 3;
+  font-size: 15.5px;
+  line-height: 1.27;
+}
+
+.srcs.three li {
+  grid-template-columns: 34px 1fr;
+  margin-bottom: 7px;
+}
+
+.srcs .mono {
+  overflow-wrap: anywhere;
+}
+
+.pipe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.pipe span {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--cyan-soft);
+  color: var(--cyan-text);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* 3. Executive Summary: заголовок раздела и пять строк */
+
+.es-kicker {
+  color: var(--blue);
+  font-family: var(--display);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.esx {
+  display: grid;
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.esx-row {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr) 300px;
+  align-items: center;
+  border-radius: 20px;
+  background: var(--card);
+}
+
+.esx-h {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  padding: 0 26px;
+  border-radius: 20px 0 0 20px;
+  background: var(--grad);
+  color: #ffffff;
+  font-family: var(--display);
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.esx-t {
+  padding: 14px 30px;
+  font-size: 21px;
+  line-height: 1.36;
+}
+
+.esx-k {
+  padding: 10px 26px 10px 0;
+}
+
+.esx-k b {
+  display: block;
+  color: var(--blue);
+  font-family: var(--display);
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.esx-k span {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 1.28;
+}
+
+.esx-row.key {
+  background: var(--sky-2);
+}
+
+/* 4. Целевая аудитория: проблемы детей, синим – то, с чем помогает Олимпус */
+
+.probs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.prob {
+  padding: 12px 16px 13px;
+  border-radius: 14px;
+  background: #eef1f6;
+  color: var(--ink-2);
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.prob b {
+  display: block;
+  font-size: 18px;
+}
+
+.prob.on {
+  border-left: 6px solid var(--blue);
+  background: var(--sky-2);
+  color: var(--ink);
+}
+
+.prob span {
+  display: block;
+  margin-top: 4px;
+}
+
+.prob.on span {
+  color: var(--blue-text);
+  font-weight: 600;
+}
+
+.legend {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.legend i {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  border-radius: 4px;
+  vertical-align: -2px;
+}
+
+.legend i.on {
+  background: var(--blue);
+}
+
+.legend i.off {
+  background: #b7c1d4;
+}
+
+/* 5. Анализ: аудитория MAX и «Сферума» */
+
+.aud {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aud-row b {
+  display: block;
+  font-family: var(--display);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.aud-bar {
+  height: 18px;
+  margin-top: 8px;
+  border-radius: 9px;
+  background: var(--grad);
+}
+
+.aud-row span {
+  display: block;
+  margin-top: 6px;
+  font-size: 17px;
+  line-height: 1.3;
+}
+
+.inmax li {
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: var(--card);
+  font-size: 17.5px;
+  line-height: 1.32;
+}
+
+.inmax li + li {
+  margin-top: 10px;
+}
+
+.inmax li b {
+  display: block;
+  font-size: 18.5px;
+}
+
+.inmax li.gap {
+  background: var(--grad);
+  color: #ffffff;
+}
+
+.inmax li.gap sup.ref {
+  color: #ffffff;
+}
+
+.verdict {
+  padding: 18px 26px;
+  border-radius: 18px;
+  background: var(--ink);
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.verdict b {
+  color: #a9d8ff;
+}
+
+/* 12. Архитектура: роли компонентов */
+
+.roles td {
+  padding: 10px 14px;
+  font-size: 17.5px;
+}
+
+.roles td.name {
+  color: var(--blue-text);
+}
+
+/* 13. Данные: маскот «Сферума» в карточке предложения */
+
+.sferum {
+  overflow: hidden;
+}
+
+.sferum .chatty {
+  position: absolute;
+  right: 18px;
+  bottom: 0;
+  width: 170px;
+}
+
+/* 14. Олимпиада MAX */
+
+.olymp {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+  counter-reset: o;
+}
+
+.olymp li {
+  position: relative;
+  padding: 58px 20px 20px;
+  border-radius: 18px;
+  background: var(--sky-2);
+  counter-increment: o;
+}
+
+.olymp li::before {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 32px;
+  text-align: center;
+  content: counter(o);
+}
+
+.olymp b {
+  display: block;
+  font-size: 20px;
+  line-height: 1.22;
+}
+
+.olymp span {
+  display: block;
+  margin-top: 6px;
+  font-size: 17px;
+  line-height: 1.32;
+}
+
+.have li::before {
+  background: var(--teal);
+}
+
+/* Крупнее там, где на слайде есть место */
+
+.lane-name {
+  font-size: 40px;
+  letter-spacing: -0.01em;
+}
+
+.asis .lane-name {
+  color: var(--muted);
+}
+
+.lane-steps b {
+  font-size: 25px;
+}
+
+.lane-steps span {
+  margin-top: 10px;
+  font-size: 20.5px;
+}
+
+.ms .dots {
+  font-size: 19.5px;
+}
+
+.arch.big {
+  justify-content: space-between;
+}
+
+.arch.big .box {
+  padding: 18px 20px;
+  font-size: 21px;
+}
+
+.arch.big .box small {
+  font-size: 17px;
+}
+
+.inmax.grow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inmax.grow li {
+  font-size: 19px;
+}
+
+.inmax.grow li b {
+  font-size: 20px;
+}
+
+.inmax.grow li + li {
+  margin-top: 0;
+}
+
+.road td {
+  font-size: 18px;
+}
+
+.sferum .chatty {
+  width: 190px;
+}

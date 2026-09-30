@@ -1,0 +1,734 @@
+openapi: 3.1.0
+info:
+  title: Olympus API
+  version: 1.0.0
+  description: >-
+    Проверяемый HTTP API образовательного mini app Olympus. Пользовательский frontend
+    использует внутренний RPC /api/olympus; /api/v1 – стабильный контракт для технической
+    проверки основной функциональности. Все ответы – JSON (кроме /api/media) с заголовками
+    Cache-Control: no-store, X-Content-Type-Options: nosniff, Referrer-Policy: no-referrer.
+    Любой endpoint может ответить 500 (непредвиденная ошибка, общий текст без деталей) и
+    503 (недоступна база данных или внешний сервис).
+servers:
+  - url: https://olympus-edu.ru
+    description: Production API.
+  - url: http://localhost:3000
+    description: Local Docker environment.
+
+tags:
+  - name: System
+  - name: Content
+  - name: Progress
+  - name: Training
+  - name: Olympiads
+  - name: Mocks
+  - name: Testing
+
+paths:
+  /api/v1/health:
+    get:
+      tags: [System]
+      summary: Проверить доступность API и базы
+      description: Выполняет только SELECT 1; не изменяет данные.
+      operationId: health
+      security: []
+      responses:
+        '200':
+          description: API и база доступны
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+        '503':
+          description: База данных недоступна
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthDegradedResponse'
+        '500': {$ref: '#/components/responses/InternalError'}
+
+  /api/v1/auth/login:
+    post:
+      tags: [System]
+      summary: Войти под тестовой учетной записью
+      description: >-
+        Неудачные попытки ограничены: 10 ошибок за 15 минут с одного адреса (X-Real-IP,
+        выставляется reverse proxy) блокируют вход на 15 минут. Лимит общий со входом
+        администратора. Токен детерминирован и не истекает, пока не сменён пароль.
+      operationId: loginTestUser
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [username, password]
+              properties:
+                username: {type: string, maxLength: 128}
+                password: {type: string, format: password, maxLength: 512}
+      responses:
+        '200':
+          description: Учетные данные подтверждены
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [accessToken, tokenType, role, userId]
+                properties:
+                  accessToken: {type: string, pattern: '^[0-9a-f]{64}$'}
+                  tokenType: {type: string, const: Bearer}
+                  role: {type: string, const: test_user}
+                  userId: {type: string, const: 'test:evaluator'}
+        '400': {$ref: '#/components/responses/BadRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '413': {$ref: '#/components/responses/PayloadTooLarge'}
+        '415': {$ref: '#/components/responses/UnsupportedMediaType'}
+        '422': {$ref: '#/components/responses/ValidationError'}
+        '429': {$ref: '#/components/responses/TooManyRequests'}
+        '500': {$ref: '#/components/responses/InternalError'}
+        '503': {$ref: '#/components/responses/ServiceUnavailable'}
+
+  /api/v1/content:
+    get:
+      tags: [Content]
+      summary: Получить каталог опубликованного контента
+      description: Черновики и удалённые материалы не возвращаются.
+      operationId: listContent
+      security: [{bearerAuth: []}]
+      responses:
+        '200':
+          description: Краткие карточки опубликованных материалов
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [records, count]
+                properties:
+                  records:
+                    type: array
+                    items: {$ref: '#/components/schemas/ContentSummary'}
+                  count: {type: integer, minimum: 0}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '500': {$ref: '#/components/responses/InternalError'}
+        '503': {$ref: '#/components/responses/ServiceUnavailable'}
+
+  /api/v1/topics/{id}:
+    get:
+      tags: [Content]
+      summary: Получить тему, уроки и задания
+      operationId: getTopic
+      security: [{bearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/IdPath'
+      responses:
+        '200':
+          description: Опубликованные уроки и задания темы по полю order; ответы, разборы, подсказки и скрытые тесты не выдаются
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [topic, lessons, tasks]
+                properties:
+                  topic: {$ref: '#/components/schemas/Topic'}
+                  lessons:
+                    type: array
+                    items: {$ref: '#/components/schemas/Lesson'}
+                  tasks:
+                    type: array
+                    items: {$ref: '#/components/schemas/PublicTask'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {$ref: '#/components/responses/NotFound'}
+        '500': {$ref: '#/components/responses/InternalError'}
+        '503': {$ref: '#/components/responses/ServiceUnavailable'}
+
+  /api/v1/profile:
+    get:
+      tags: [Progress]
+      summary: Получить прогресс тестового пользователя
+      operationId: getProfile
+      security: [{bearerAuth: []}]
+      responses:
+        '200':
+          description: Сохраненный прогресс
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfileResponse'
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '500': {$ref: '#/components/responses/InternalError'}
+        '503': {$ref: '#/components/responses/ServiceUnavailable'}
+
+  /api/v1/lessons/{id}/view:
+    post:
+      tags: [Progress]
+      summary: Отметить урок просмотренным
+      operationId: viewLesson
+      security: [{bearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/IdPath'
+      responses:
+        '200':
+          description: Прогресс сохранен (повторный вызов безопасен)
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok, lessonId, completed]
+                properties:
+                  ok: {type: boolean, const: true}
+                  lessonId: {type: string}
+                  completed: {type: boolean, const: true}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {$ref: '#/components/responses/NotFound'}
+        '500': {$ref: '#/components/responses/InternalError'}
+        '503': {$ref: '#/components/responses/ServiceUnavailable'}
+
+  /api/v1/tasks/{id}/check:
+    post:
+      tags: [Training]
+      summary: Проверить решение задания и сохранить результат
+      description: >-
+        Числовой ответ: целое или десятичное число, разделитель «.» или «,», знак «+»/«-»
+        допускается. Код проверяется runner на скрытых тестах. Третья верная задача темы,
+        решённая без просмотра разбора, даёт звезду практики.
+      operationId: checkTask
+      security: [{bearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/IdPath'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - type: object
+                  required: [answer]
+                  properties:
+                    answer: {type: string, description: Числовой ответ, example: '1,5'}
+                - type: object
+                  required: [correct]
+                  properties:
+                    correct: {type: boolean, description: Результат самопроверки доказательства}
+                - type: object
+                  required: [code, language]
+                  properties:
+                    code: {type: string, maxLength: 50000}
+                    language: {$ref: '#/components/schemas/CodeLanguage'}
+      responses:
+        '200':
+          description: Результат проверки
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [taskId, correct, output, practiceStar]
+                properties:
+                  taskId: {type: string}
+                  correct: {type: boolean}
+                  output: {type: string, description: Вывод runner для задач с кодом, иначе пустая строка}
+                  practiceStar: {type: boolean}
+                  solvedAfterReveal:
+                    type: boolean
+                    const: true
+                    description: Присутствует, если задача засчитана только после просмотра разбора
+        '400': {$ref: '#/components/responses/BadRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {$ref: '#/components/responses/NotFound'}
+        '413': {$ref: '#/components/responses/PayloadTooLarge'}
+        '415': {$ref: '#/components/responses/UnsupportedMediaType'}
+        '422': {$ref: '#/components/responses/ValidationError'}
+        '429': {$ref: '#/components/responses/TooManyRequests'}
+        '500': {$ref: '#/components/responses/InternalError'}
+        '503': {$ref: '#/components/responses/ServiceUnavailable'}
+
+  /api/v1/olympiads/{id}/register:
+    post:
+      tags: [Olympiads]
+      summary: Сохранить или снять отметку о регистрации на олимпиаду
+      operationId: registerOlympiad
+      security: [{bearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/IdPath'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [registered]
+              properties:
+                registered: {type: boolean}
+      responses:
+        '200':
+          description: Отметка регистрации обновлена
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok, olympiadId, registered]
+                properties:
+                  ok: {type: boolean, const: true}
+                  olympiadId: {type: string}
+                  registered: {type: boolean}
+        '400': {$ref: '#/components/responses/BadRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {$ref: '#/components/responses/NotFound'}
+        '413': {$ref: '#/components/responses/PayloadTooLarge'}
+        '415': {$ref: '#/components/responses/UnsupportedMediaType'}
+        '422': {$ref: '#/components/responses/ValidationError'}
+        '500': {$ref: '#/components/responses/InternalError'}
+        '503': {$ref: '#/components/responses/ServiceUnavailable'}
+
+  /api/v1/mocks/{id}/start:
+    post:
+      tags: [Mocks]
+      summary: Начать пробник
+      description: Для пробников со случайным набором выбирается taskCount заданий.
+      operationId: startMock
+      security: [{bearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/IdPath'
+      responses:
+        '201':
+          description: Попытка создана
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [attempt]
+                properties:
+                  attempt: {$ref: '#/components/schemas/ActiveAttempt'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {$ref: '#/components/responses/NotFound'}
+        '500': {$ref: '#/components/responses/InternalError'}
+        '503': {$ref: '#/components/responses/ServiceUnavailable'}
+
+  /api/v1/mock-attempts/{id}:
+    patch:
+      tags: [Mocks]
+      summary: Сохранить ответы незавершенного пробника
+      description: >-
+        Ответы сливаются с уже сохранёнными: переданные ключи перезаписываются, значение
+        null или "" удаляет ответ. Ключи – id заданий этой попытки; ответы на задания, которых
+        в попытке нет, игнорируются, число принимается как текстовый ответ. Ответы
+        принимаются до окончания времени (плюс 5 секунд на задержку сети).
+      operationId: saveMock
+      security: [{bearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/IdPath'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [answers]
+              properties:
+                answers: {$ref: '#/components/schemas/AnswerPatch'}
+      responses:
+        '200':
+          description: Ответы сохранены
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok, attemptId, saved]
+                properties:
+                  ok: {type: boolean, const: true}
+                  attemptId: {type: string}
+                  saved: {type: boolean, const: true}
+        '400': {$ref: '#/components/responses/BadRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {$ref: '#/components/responses/NotFound'}
+        '409': {$ref: '#/components/responses/Conflict'}
+        '413': {$ref: '#/components/responses/PayloadTooLarge'}
+        '415': {$ref: '#/components/responses/UnsupportedMediaType'}
+        '422': {$ref: '#/components/responses/ValidationError'}
+        '500': {$ref: '#/components/responses/InternalError'}
+        '503': {$ref: '#/components/responses/ServiceUnavailable'}
+
+  /api/v1/mock-attempts/{id}/finish:
+    post:
+      tags: [Mocks]
+      summary: Завершить пробник и посчитать баллы
+      description: >-
+        Идемпотентно: повторный вызов возвращает уже посчитанный результат. Переданные
+        answers сначала сливаются с сохранёнными (как в PATCH), если время попытки не истекло.
+        Если runner недоступен, ответы с кодом получают status unchecked и не учитываются
+        в score до перепроверки.
+      operationId: finishMock
+      security: [{bearerAuth: []}]
+      parameters:
+        - $ref: '#/components/parameters/IdPath'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                answers: {$ref: '#/components/schemas/AnswerPatch'}
+      responses:
+        '200':
+          description: Завершенная попытка. Скрытые judge-тесты никогда не возвращаются.
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [attempt]
+                properties:
+                  attempt: {$ref: '#/components/schemas/FinishedAttempt'}
+        '400': {$ref: '#/components/responses/BadRequest'}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '404': {$ref: '#/components/responses/NotFound'}
+        '413': {$ref: '#/components/responses/PayloadTooLarge'}
+        '415': {$ref: '#/components/responses/UnsupportedMediaType'}
+        '422': {$ref: '#/components/responses/ValidationError'}
+        '500': {$ref: '#/components/responses/InternalError'}
+        '503': {$ref: '#/components/responses/ServiceUnavailable'}
+
+  /api/v1/test/reset:
+    post:
+      tags: [Testing]
+      summary: Очистить прогресс только технической test_user учетной записи
+      operationId: resetTestUser
+      description: Используется для воспроизводимой повторной проверки; обычных пользователей не затрагивает.
+      security: [{bearerAuth: []}]
+      responses:
+        '200':
+          description: Тестовый прогресс очищен
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok, userId, reset]
+                properties:
+                  ok: {type: boolean, const: true}
+                  userId: {type: string, const: 'test:evaluator'}
+                  reset: {type: boolean, const: true}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '500': {$ref: '#/components/responses/InternalError'}
+        '503': {$ref: '#/components/responses/ServiceUnavailable'}
+
+  /api/media/{id}:
+    get:
+      tags: [Content]
+      summary: Получить загруженный медиафайл
+      description: Поддерживается один диапазон Range (bytes=start-end, bytes=start-, bytes=-suffix).
+      operationId: getMedia
+      security: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: {type: string, pattern: '^[a-fA-F0-9-]{20,64}$'}
+        - name: Range
+          in: header
+          required: false
+          schema: {type: string, example: 'bytes=0-1023'}
+      responses:
+        '200':
+          description: Бинарный файл
+          content:
+            image/png: {}
+            image/jpeg: {}
+            image/webp: {}
+            application/pdf: {}
+            video/mp4: {}
+        '206':
+          description: Частичный ответ для Range-запроса
+        '404':
+          description: Файл не найден
+          content:
+            text/plain: {}
+        '416':
+          description: Некорректный или невыполнимый Range
+        '503':
+          description: Хранилище файлов недоступно
+          content:
+            text/plain: {}
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: accessToken
+      description: Bearer-token, полученный после POST /api/v1/auth/login.
+
+  parameters:
+    IdPath:
+      name: id
+      in: path
+      required: true
+      description: Латинские буквы, цифры, «_» и «-». Идентификатор другого формата даёт 404.
+      schema: {type: string, pattern: '^[a-zA-Z0-9_-]{1,100}$'}
+
+  headers:
+    RetryAfter:
+      description: Через сколько секунд можно повторить запрос
+      schema: {type: integer, minimum: 1}
+
+  responses:
+    BadRequest:
+      description: Некорректный JSON или тело запроса не является объектом (INVALID_JSON)
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ErrorResponse'}
+    Unauthorized:
+      description: Неверные или отсутствующие данные test_user (UNAUTHORIZED, INVALID_CREDENTIALS)
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ErrorResponse'}
+    NotFound:
+      description: >-
+        Объект не найден или не опубликован (TOPIC_NOT_FOUND, LESSON_NOT_FOUND, TASK_NOT_FOUND,
+        OLYMPIAD_NOT_FOUND, MOCK_NOT_FOUND, ATTEMPT_NOT_FOUND)
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ErrorResponse'}
+    ValidationError:
+      description: >-
+        Значение нельзя обработать (INVALID_ANSWER, INVALID_SELF_CHECK, INVALID_LANGUAGE,
+        INVALID_CODE, INVALID_ANSWERS, INVALID_REGISTERED, INVALID_CREDENTIALS_FORMAT)
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ErrorResponse'}
+    Conflict:
+      description: Попытка уже завершена (ATTEMPT_FINISHED) или её время истекло (ATTEMPT_TIME_EXPIRED)
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ErrorResponse'}
+    ServiceUnavailable:
+      description: >-
+        Недоступна база данных (DATABASE_UNAVAILABLE), не настроена тестовая учетная запись
+        (TEST_ACCOUNT_NOT_CONFIGURED) или недоступен runner (RUNNER_UNAVAILABLE)
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ErrorResponse'}
+    PayloadTooLarge:
+      description: >-
+        Тело запроса больше допустимого (PAYLOAD_TOO_LARGE): 256 КБ, для сохранения и завершения
+        попытки пробника – 2 МБ
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ErrorResponse'}
+    UnsupportedMediaType:
+      description: Для этого endpoint требуется application/json (UNSUPPORTED_MEDIA_TYPE)
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ErrorResponse'}
+    TooManyRequests:
+      description: Превышен лимит попыток входа (RATE_LIMITED) или runner занят (RUNNER_BUSY)
+      headers:
+        Retry-After: {$ref: '#/components/headers/RetryAfter'}
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ErrorResponse'}
+    InternalError:
+      description: Непредвиденная ошибка сервера (INTERNAL_ERROR); детали только в логах
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/ErrorResponse'}
+
+  schemas:
+    HealthResponse:
+      type: object
+      required: [status, database, version]
+      properties:
+        status: {type: string, const: ok}
+        database: {type: string, const: ok}
+        version: {type: string, description: Версия из package.json, example: '1.0.0'}
+
+    HealthDegradedResponse:
+      type: object
+      required: [status, database, version]
+      properties:
+        status: {type: string, const: degraded}
+        database: {type: string, const: unavailable}
+        version: {type: string}
+
+    ErrorResponse:
+      type: object
+      required: [error]
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code: {type: string, description: Стабильный машинный код, example: TASK_NOT_FOUND}
+            message: {type: string, description: Понятное сообщение на русском}
+
+    CodeLanguage:
+      type: string
+      enum: [python, cpp, java, javascript, kotlin, pascal]
+
+    MockAnswer:
+      oneOf:
+        - type: string
+          maxLength: 2000
+        - type: object
+          required: [code, language]
+          properties:
+            code: {type: string, maxLength: 50000}
+            language: {$ref: '#/components/schemas/CodeLanguage'}
+
+    AnswerPatch:
+      type: object
+      description: >-
+        Ключи – id заданий попытки (ключи других заданий игнорируются). null или "" удаляет
+        ответ; число принимается как текстовый ответ.
+      additionalProperties:
+        oneOf:
+          - $ref: '#/components/schemas/MockAnswer'
+          - type: number
+          - type: 'null'
+
+    ContentSummary:
+      type: object
+      required: [id, kind, title]
+      properties:
+        id: {type: string}
+        kind: {type: string, enum: [topics, lessons, tasks, olympiads, mock-tests]}
+        title: {type: string}
+        grade: {type: integer, enum: [4, 5, 6]}
+        subject: {type: string, enum: [math, info]}
+        topicId: {type: string}
+        order: {type: integer}
+        type: {type: string, enum: [number, proof, code]}
+        points: {type: number}
+      description: >-
+        Для уроков и заданий – только перечисленные поля. Олимпиады, темы и пробники
+        возвращаются целиком (например, у олимпиады grades, format, region, date, deadline, url).
+
+    Topic:
+      allOf:
+        - $ref: '#/components/schemas/ContentSummary'
+        - type: object
+          properties:
+            description: {type: string}
+
+    Lesson:
+      allOf:
+        - $ref: '#/components/schemas/ContentSummary'
+        - type: object
+          required: [blocks]
+          properties:
+            blocks:
+              type: array
+              items:
+                type: object
+                required: [type, value]
+                properties:
+                  type:
+                    type: string
+                    enum: [text, example, formula, image, video, link, list, table, code]
+                  value: {type: string}
+                  caption: {type: string}
+
+    PublicTask:
+      allOf:
+        - $ref: '#/components/schemas/ContentSummary'
+        - type: object
+          required: [prompt]
+          properties:
+            prompt: {type: string}
+            example:
+              type: object
+              properties:
+                input: {type: string}
+                output: {type: string}
+          description: answer, solution, hint and hidden tests are omitted before completion.
+
+    ReviewedTask:
+      allOf:
+        - $ref: '#/components/schemas/PublicTask'
+        - type: object
+          properties:
+            answer: {type: string}
+            solution: {type: string}
+            hint: {type: string}
+          description: Задание завершённой попытки с разбором; скрытые тесты не выдаются никогда.
+
+    ProgressMap:
+      type: object
+      additionalProperties: true
+      description: >-
+        Ключи: lesson:<id>, task:<id>, registration:<id>, code:<taskId>, theory-star:<topicId>,
+        practice-star:<topicId>, attempt:<attemptId>, settings.
+
+    ProfileResponse:
+      type: object
+      required: [user, progress, updatedAt]
+      properties:
+        user:
+          type: object
+          required: [id, role]
+          properties:
+            id: {type: string, example: 'test:evaluator'}
+            role: {type: string, const: test_user}
+        progress: {$ref: '#/components/schemas/ProgressMap'}
+        updatedAt:
+          oneOf:
+            - {type: integer}
+            - {type: 'null'}
+
+    ActiveAttempt:
+      type: object
+      required: [id, testId, title, subject, started, ends, tasks, answers, finished]
+      properties:
+        id: {type: string}
+        testId: {type: string}
+        title: {type: string}
+        subject: {type: string, enum: [math, info]}
+        started: {type: integer}
+        ends: {type: integer}
+        tasks:
+          type: array
+          items: {$ref: '#/components/schemas/PublicTask'}
+        answers:
+          type: object
+          additionalProperties: {$ref: '#/components/schemas/MockAnswer'}
+        finished: {type: boolean, const: false}
+
+    MockResult:
+      type: object
+      required: [id, correct, points, max, note, status]
+      properties:
+        id: {type: string}
+        correct: {type: boolean}
+        points: {type: number}
+        max: {type: number}
+        note: {type: string}
+        status:
+          type: string
+          enum: [correct, wrong, unchecked, self-check]
+          description: >-
+            unchecked – код не удалось проверить (runner недоступен), баллы не начислены;
+            self-check – доказательство ждёт самопроверки.
+
+    FinishedAttempt:
+      type: object
+      required: [id, testId, title, subject, started, ends, tasks, answers, finished, finishedAt, results, score, max, pending]
+      properties:
+        id: {type: string}
+        testId: {type: string}
+        title: {type: string}
+        subject: {type: string, enum: [math, info]}
+        started: {type: integer}
+        ends: {type: integer}
+        tasks:
+          type: array
+          items: {$ref: '#/components/schemas/ReviewedTask'}
+        answers:
+          type: object
+          additionalProperties: {$ref: '#/components/schemas/MockAnswer'}
+        finished: {type: boolean, const: true}
+        finishedAt: {type: integer}
+        results:
+          type: array
+          items: {$ref: '#/components/schemas/MockResult'}
+        score: {type: number, description: Сумма баллов заданий со status correct}
+        max: {type: number}
+        pending: {type: integer, minimum: 0, description: Количество заданий со status unchecked}

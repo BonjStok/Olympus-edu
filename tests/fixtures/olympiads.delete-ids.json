@@ -1,0 +1,114 @@
+[
+  {
+    "id": "belgorod-first-mathematical-2026",
+    "reason": "Дубликат записи stavropol-first-mathematical-2026: одна всероссийская олимпиада «Первая математическая» Школково, 26.09.2026, а не отдельные региональные олимпиады"
+  },
+  {
+    "id": "nto-junior-agrotech-2026",
+    "reason": "Дубликат записи nto-junior-robotech-2026: НТО Юниоры – одно соревнование с единой регистрацией на my.ntcontest.ru, сфера выбирается в личном кабинете; даты у всех сфер общие"
+  },
+  {
+    "id": "nto-junior-aitech-2026",
+    "reason": "Дубликат записи nto-junior-robotech-2026: НТО Юниоры – одно соревнование с единой регистрацией на my.ntcontest.ru, сфера выбирается в личном кабинете; даты у всех сфер общие"
+  },
+  {
+    "id": "nto-junior-cybertech-2026",
+    "reason": "Дубликат записи nto-junior-robotech-2026: НТО Юниоры – одно соревнование с единой регистрацией на my.ntcontest.ru, сфера выбирается в личном кабинете; даты у всех сфер общие"
+  },
+  {
+    "id": "nto-junior-gametech-2026",
+    "reason": "Дубликат записи nto-junior-robotech-2026: НТО Юниоры – одно соревнование с единой регистрацией на my.ntcontest.ru, сфера выбирается в личном кабинете; даты у всех сфер общие"
+  },
+  {
+    "id": "nto-junior-medtech-2026",
+    "reason": "Дубликат записи nto-junior-robotech-2026: НТО Юниоры – одно соревнование с единой регистрацией на my.ntcontest.ru, сфера выбирается в личном кабинете; даты у всех сфер общие"
+  },
+  {
+    "id": "nto-junior-spacetech-2026",
+    "reason": "Дубликат записи nto-junior-robotech-2026: НТО Юниоры – одно соревнование с единой регистрацией на my.ntcontest.ru, сфера выбирается в личном кабинете; даты у всех сфер общие"
+  },
+  {
+    "id": "vladimir-first-mathematical-2026",
+    "reason": "Дубликат записи stavropol-first-mathematical-2026: Владимир – одна из площадок всероссийской олимпиады «Первая математическая»"
+  },
+  {
+    "id": "vsosh-ingushetia-informatics-ai-2026-27",
+    "reason": "Графика ШЭ 2026/27 в Ингушетии нет, наличие отдельного тура по этому профилю не подтверждено; вместо 4 карточек «Ожидается» оставлена одна запись «информатика» (vsosh-ingushetia-informatics-programming-2026-27)."
+  },
+  {
+    "id": "vsosh-ingushetia-informatics-infosec-2026-27",
+    "reason": "Графика ШЭ 2026/27 в Ингушетии нет, наличие отдельного тура по этому профилю не подтверждено; вместо 4 карточек «Ожидается» оставлена одна запись «информатика» (vsosh-ingushetia-informatics-programming-2026-27)."
+  },
+  {
+    "id": "vsosh-ingushetia-informatics-robotics-2026-27",
+    "reason": "Графика ШЭ 2026/27 в Ингушетии нет, наличие отдельного тура по этому профилю не подтверждено; вместо 4 карточек «Ожидается» оставлена одна запись «информатика» (vsosh-ingushetia-informatics-programming-2026-27)."
+  },
+  {
+    "id": "vsosh-nao-informatics-ai-2026-27",
+    "reason": "В официальном графике НАО (распоряжение № 692-р в ред. № 718-р) одна дата «Информатика – 22 октября» без профилей; отдельных туров по профилю нет – оставлена одна запись vsosh-nao-informatics-programming-2026-27 («информатика»)."
+  },
+  {
+    "id": "vsosh-nao-informatics-infosec-2026-27",
+    "reason": "В официальном графике НАО (распоряжение № 692-р в ред. № 718-р) одна дата «Информатика – 22 октября» без профилей; отдельных туров по профилю нет – оставлена одна запись vsosh-nao-informatics-programming-2026-27 («информатика»)."
+  },
+  {
+    "id": "vsosh-nao-informatics-robotics-2026-27",
+    "reason": "В официальном графике НАО (распоряжение № 692-р в ред. № 718-р) одна дата «Информатика – 22 октября» без профилей; отдельных туров по профилю нет – оставлена одна запись vsosh-nao-informatics-programming-2026-27 («информатика»)."
+  },
+  {
+    "id": "45-parallel-informatics-2026-27",
+    "reason": "Не для 4–6 классов: по профилю «Информатика» участники – 9–11 классы и СПО, «учащиеся 5-8 классов принимают участие вне конкурса» (без призовых мест)"
+  },
+  {
+    "id": "45-parallel-math-2026-27",
+    "reason": "Не для 4–6 классов: по математике официально 9–11 классы и СПО; 5–8 классы – только «вне конкурса»"
+  },
+  {
+    "id": "perm-regional-programming-2026-27",
+    "reason": "Не для 4–6 классов: ПРОШП – командная олимпиада (3 человека) в формате ВКОШП/ICPC, региональный отбор на Всероссийскую командную олимпиаду по программированию; участники 2025 г. – 8–11 классы; сезон 2026/27 ещё не объявлен"
+  },
+  {
+    "id": "sverdlovsk-regional-junior-informatics-2026-27",
+    "reason": "Не для 4–6 классов: это «Свердловская областная олимпиада по информатике среди 7-8 классов»; 5–6-классники допускаются только по результатам МЭ ВсОШ за 7–9 класс (≥250 баллов); сезон 2026/27 не объявлен (последняя – 17.01.2026)"
+  },
+  {
+    "id": "internet-carousel-math-2026-27",
+    "reason": "Не проводится в 2026/27 (проект неактивен: последняя игра 04.04.2024)"
+  },
+  {
+    "id": "vsosh-zaporizhzhia-oblast-informatics-ai-2026-27",
+    "reason": "Информатики нет в школьном этапе ВсОШ 2026/27 Запорожской области: Минобрнауки ЗО объявило 11 предметов без информатики (https://mon.zo.gov.ru/novosti/startuet_shkolnyj_etap_vserossijskoj_olimpiady_shkolnikov_v_zaporozhskoj_oblasti)"
+  },
+  {
+    "id": "vsosh-zaporizhzhia-oblast-informatics-infosec-2026-27",
+    "reason": "Информатики нет в школьном этапе ВсОШ 2026/27 Запорожской области: Минобрнауки ЗО объявило 11 предметов без информатики (https://mon.zo.gov.ru/novosti/startuet_shkolnyj_etap_vserossijskoj_olimpiady_shkolnikov_v_zaporozhskoj_oblasti)"
+  },
+  {
+    "id": "vsosh-zaporizhzhia-oblast-informatics-programming-2026-27",
+    "reason": "Информатики нет в школьном этапе ВсОШ 2026/27 Запорожской области: Минобрнауки ЗО объявило 11 предметов без информатики (https://mon.zo.gov.ru/novosti/startuet_shkolnyj_etap_vserossijskoj_olimpiady_shkolnikov_v_zaporozhskoj_oblasti)"
+  },
+  {
+    "id": "vsosh-zaporizhzhia-oblast-informatics-robotics-2026-27",
+    "reason": "Информатики нет в школьном этапе ВсОШ 2026/27 Запорожской области: Минобрнауки ЗО объявило 11 предметов без информатики (https://mon.zo.gov.ru/novosti/startuet_shkolnyj_etap_vserossijskoj_olimpiady_shkolnikov_v_zaporozhskoj_oblasti)"
+  },
+  {
+    "id": "stavropol-first-mathematical-2026",
+    "reason": "Прошла: всероссийская олимпиада «Первая математическая» (Школково) состоялась 26.09.2026 (https://3.shkolkovo.online/matholymp/places). Записи belgorod-/vladimir- – её дубликаты."
+  },
+  {
+    "id": "uchi-informatics-2026-27",
+    "reason": "Прошла: I тур олимпиады Учи.ру по информатике шёл 25.08–28.09.2026; II тур 24.11 – только для набравших максимум в I туре (https://informatics.uchi.ru/rules). Вернуть, когда объявят следующий сезон."
+  },
+  {
+    "id": "vsosh-lnr-math-2026-27",
+    "reason": "Прошёл: школьный этап ВсОШ по математике в ЛНР – 26–28.09.2026 (https://edu.lpr-reg.ru/shkolnyy-etap-vserossiyskoy-olimpiady-shkolnikov.html)."
+  },
+  {
+    "id": "vsosh-moscow-oblast-math-2026-27",
+    "reason": "Прошёл: школьный этап ВсОШ по математике в Московской области – 26–28.09.2026 (https://www.olympmo.ru/vos-sch-2026-2027.html)."
+  },
+  {
+    "id": "vsosh-penza-oblast-math-2026-27",
+    "reason": "Прошёл: школьный этап ВсОШ по математике в Пензенской области – 16.09.2026 (https://licpnz.ru/index/shkolnyj_i_municipalnyj_ehtap_vsosh_2026_2027/0-899)."
+  }
+]

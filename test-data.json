@@ -1,0 +1,23 @@
+{
+  "role": "test_user",
+  "topicId": "math-4-01",
+  "lessonId": "math-4-01-lesson-1",
+  "numericTask": {
+    "id": "math-4-01-task-1",
+    "correctAnswer": "26"
+  },
+  "olympiadId": "moscow-math-festival-2027",
+  "mockId": "mock-4-math",
+  "mockAnswers": {
+    "math-4-01-task-2": "25",
+    "math-4-03-task-2": "1",
+    "math-4-05-task-2": "32",
+    "math-4-07-task-2": "19",
+    "math-4-09-task-2": "16",
+    "math-4-02-task-4": "20",
+    "math-4-06-task-4": "48",
+    "math-4-10-task-4": "4",
+    "math-4-04-task-5": "20",
+    "math-4-08-task-5": "20"
+  }
+}

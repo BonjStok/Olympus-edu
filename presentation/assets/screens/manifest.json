@@ -1,0 +1,120 @@
+{
+  "device": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 2
+  },
+  "baseUrl": "http://localhost:3000",
+  "screens": {
+    "region-picker": {
+      "file": "region-picker.jpg",
+      "shows": "выбор региона с поиском",
+      "capturedAt": "2026-09-29T17:46:09.481Z"
+    },
+    "onboarding": {
+      "file": "onboarding.jpg",
+      "shows": "первый запуск: класс, предмет, регион",
+      "capturedAt": "2026-09-29T17:46:10.060Z"
+    },
+    "calendar": {
+      "file": "calendar.jpg",
+      "shows": "«Олимпиады», список",
+      "capturedAt": "2026-09-29T17:46:10.777Z"
+    },
+    "calendar-month": {
+      "file": "calendar-month.jpg",
+      "shows": "«Олимпиады», календарь на месяц",
+      "capturedAt": "2026-09-29T17:46:11.377Z"
+    },
+    "event": {
+      "file": "event.jpg",
+      "shows": "карточка олимпиады: регистрация, «проверено · источник»",
+      "capturedAt": "2026-09-29T17:48:15.413Z"
+    },
+    "event-registered": {
+      "file": "event-registered.jpg",
+      "shows": "после «Я участвую»",
+      "capturedAt": "2026-09-29T17:48:16.012Z"
+    },
+    "learn": {
+      "file": "learn.jpg",
+      "shows": "«Учёба», карта тем",
+      "capturedAt": "2026-09-29T17:46:13.257Z"
+    },
+    "lesson": {
+      "file": "lesson.jpg",
+      "shows": "урок темы",
+      "capturedAt": "2026-09-29T17:46:13.846Z"
+    },
+    "practice-wrong": {
+      "file": "practice-wrong.jpg",
+      "shows": "неверный ответ с объяснением",
+      "capturedAt": "2026-09-29T17:46:15.057Z"
+    },
+    "practice-right": {
+      "file": "practice-right.jpg",
+      "shows": "верный ответ",
+      "capturedAt": "2026-09-29T17:46:15.726Z"
+    },
+    "code-task": {
+      "file": "code-task.jpg",
+      "shows": "задача по информатике с кодом",
+      "capturedAt": "2026-09-29T17:46:16.393Z"
+    },
+    "mocks": {
+      "file": "mocks.jpg",
+      "shows": "«Пробники»",
+      "capturedAt": "2026-09-29T17:46:17.061Z"
+    },
+    "mock-attempt": {
+      "file": "mock-attempt.jpg",
+      "shows": "пробный тур с таймером",
+      "capturedAt": "2026-09-29T17:48:18.327Z"
+    },
+    "mock-leave": {
+      "file": "mock-leave.jpg",
+      "shows": "подтверждение выхода из пробника",
+      "capturedAt": "2026-09-29T17:46:18.723Z"
+    },
+    "mock-result": {
+      "file": "mock-result.jpg",
+      "shows": "результат пробного тура",
+      "capturedAt": "2026-09-29T17:48:21.812Z"
+    },
+    "profile": {
+      "file": "profile.jpg",
+      "shows": "«Я»: звёзды, медали, мои олимпиады",
+      "capturedAt": "2026-09-29T17:48:23.084Z"
+    },
+    "privacy": {
+      "file": "privacy.jpg",
+      "shows": "политика конфиденциальности",
+      "capturedAt": "2026-09-29T17:46:20.977Z"
+    },
+    "admin-list": {
+      "file": "admin-list.jpg",
+      "shows": "кабинет учителя: материалы",
+      "capturedAt": "2026-09-29T17:46:23.197Z"
+    },
+    "admin-import": {
+      "file": "admin-import.jpg",
+      "shows": "кабинет учителя: загрузка таблицы",
+      "capturedAt": "2026-09-29T17:46:23.848Z"
+    },
+    "admin-editor": {
+      "file": "admin-editor.jpg",
+      "shows": "кабинет учителя: новая олимпиада",
+      "capturedAt": "2026-09-29T17:46:25.271Z"
+    },
+    "dark-learn": {
+      "file": "dark-learn.jpg",
+      "shows": "тёмная тема, «Учёба»",
+      "capturedAt": "2026-09-29T17:46:26.411Z"
+    },
+    "home": {
+      "file": "home.jpg",
+      "shows": "«Главная»: мои олимпиады и следующий шаг",
+      "capturedAt": "2026-09-29T17:48:22.445Z"
+    }
+  }
+}

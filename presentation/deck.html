@@ -1,0 +1,1946 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Олимпус – презентация</title>
+    <link rel="stylesheet" href="deck.css" />
+    <link rel="stylesheet" href="components.css" />
+    <link rel="stylesheet" href="blocks.css" />
+    <link rel="stylesheet" href="pages.css" />
+  </head>
+  <body>
+    <!-- 1. Техническая информация -->
+    <section class="slide glow" data-block="check">
+      <div class="body s1">
+        <div class="s1-left">
+          <img class="s1-icon" src="assets/brand/icon.png" alt="" />
+          <p class="wordmark">Олимпус</p>
+          <p class="s1-claim">
+            Подготовка к олимпиадам по математике и информатике для 4–6 классов
+          </p>
+          <div class="s1-bot">
+            <div class="qr" data-qr style="--qr: 220px"></div>
+            <div>
+              <p class="label">Чат-бот в MAX</p>
+              <p class="s1-url">max.ru/t605_hakaton_max_bot</p>
+              <p class="small muted mt-s">
+                Наведите камеру телефона: откроется чат с ботом, дальше кнопка «Открыть Олимпус»
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="s1-right">
+          <dl class="s1-dl">
+            <dt>Чат-бот</dt>
+            <dd>
+              <span data-sub="botUrl"></span> · ник <span class="mono" data-sub="botName"></span>
+            </dd>
+            <dt>Мини-приложение</dt>
+            <dd>
+              <span class="mono" data-sub="miniAppUrl"></span> · открывается из чата кнопкой
+              «Открыть Олимпус», работает в мобильном MAX и MAX Web
+            </dd>
+            <dt>Репозиторий</dt>
+            <dd>
+              <span data-sub="repoUrl"></span> · commit <span class="mono" data-sub="commit"></span>
+            </dd>
+            <dt>Собственный API</dt>
+            <dd>
+              <span class="mono" data-sub="apiBaseUrl"></span> · описание
+              <span class="mono">openapi.yaml</span> (OpenAPI 3.1) ·
+              <span class="mono">DATA-API.yaml</span>: 12 обязательных проверок и очистка · данные
+              <span class="mono">test-data.json</span>
+            </dd>
+            <dt>Учётные записи</dt>
+            <dd>
+              <table class="s1-acc">
+                <tbody data-sub-list="accounts"></tbody>
+              </table>
+            </dd>
+            <dt>Локальный запуск</dt>
+            <dd>
+              <span class="mono" data-sub="localRun"></span>; локальные пароли уже в
+              <span class="mono">.env.example</span>
+            </dd>
+          </dl>
+        </div>
+
+        <div class="s1-steps">
+          <p class="label">Основной сценарий – 5 шагов, около 5 минут</p>
+          <ol class="steps5" data-sub-list="steps"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Введение: продукт и команда -->
+    <section class="slide glow" data-block="intro">
+      <div class="body">
+        <h2 class="title" style="max-width: 1180px">
+          Олимпус помогает ребёнку 4–6 класса сделать первый шаг в&nbsp;олимпиады – прямо в MAX
+        </h2>
+        <div class="row grow mt">
+          <div class="col" style="width: 1080px; gap: 24px">
+            <p class="s2-lead">
+              <b>Олимпус</b> – чат-бот с мини-приложением в MAX для подготовки к олимпиадам по
+              математике и информатике в 4–6 классах. В одном приложении – календарь олимпиад,
+              понятная теория, задачи с проверкой, пробные олимпиады и разборы решений
+            </p>
+            <div class="grid g4" style="gap: 16px">
+              <div class="card kpi m"><b>501</b><span>олимпиада в календаре</span></div>
+              <div class="card kpi m"><b>72</b><span>темы и 360 коротких уроков</span></div>
+              <div class="card kpi m"><b>360</b><span>задач с мгновенной проверкой</span></div>
+              <div class="card kpi m"><b>12</b><span>пробных олимпиад на время</span></div>
+            </div>
+            <div class="push">
+              <p class="label">Команда IDA School</p>
+              <div class="team mt-s" data-team></div>
+              <p class="s2-ctx">
+                <b>Кто мы.</b> Команда IDA School – школы программирования и математики для детей в
+                Хамовниках (Москва). Учим детей с 2019 года; наблюдения о детях в презентации –
+                обобщённый опыт школы
+              </p>
+            </div>
+          </div>
+          <div class="s2-art grow">
+            <div class="orb orb-a"></div>
+            <div class="orb orb-b"></div>
+            <figure class="phone s2-p1" data-shot="home" style="--w: 300px"></figure>
+            <figure class="phone s2-p2" data-shot="event-registered" style="--w: 300px"></figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Executive Summary -->
+    <section class="slide glow" data-block="summary">
+      <div class="body">
+        <p class="es-kicker">EXECUTIVE SUMMARY</p>
+        <h2 class="title mt-s">
+          Раздел олимпиад в MAX и «Сферуме» откроет олимпиадный путь 5,6 млн учеников 4–6 классов:
+          MVP уже работает, пилот в Татарстане покажет эффект в сезоне 2026/27
+        </h2>
+        <div class="esx grow mt">
+          <div class="esx-row">
+            <p class="esx-h">Проблема</p>
+            <p class="esx-t">
+              Олимпиады, сроки записи и задачи для подготовки разбросаны по разным сайтам. Путь к
+              олимпиадам узкий: до финала ВсОШ доходят 0,1% участников школьного этапа, 47% дипломов
+              получает Москва<sup class="ref">2</sup><sup class="ref">3</sup>
+            </p>
+            <div class="esx-k">
+              <b>0,1%</b><span>участников школьного этапа ВсОШ доходят до финала</span>
+            </div>
+          </div>
+          <div class="esx-row">
+            <p class="esx-h">Решение</p>
+            <p class="esx-t">
+              Чат-бот и мини-приложение в MAX: календарь олимпиад по классу и региону, подсказка
+              «как участвовать», уроки и задачи с автопроверкой, пробные олимпиады на время<sup
+                class="ref"
+                >1</sup
+              >
+            </p>
+            <div class="esx-k">
+              <b>501</b><span>олимпиада в календаре, у каждой – источник и дата проверки</span>
+            </div>
+          </div>
+          <div class="esx-row">
+            <p class="esx-h">Инициативы</p>
+            <p class="esx-t">
+              Пилот в 10–15 школах Татарстана → раздел олимпиад в «Сферуме» → олимпиада MAX для 4–6
+              классов → все классы и новые предметы
+            </p>
+            <div class="esx-k"><b>1 500</b><span>детей в пилоте сезона 2026/27, план</span></div>
+          </div>
+          <div class="esx-row">
+            <p class="esx-h">Эффекты</p>
+            <p class="esx-t">
+              <span class="tag hyp">Гипотеза</span> Семья находит свою олимпиаду за 3 минуты, треть
+              новых пользователей отмечает «Я участвую», четверть возвращается через неделю
+            </p>
+            <div class="esx-k">
+              <b>≥ 35%</b><span>новых пользователей отмечают «Я участвую»</span>
+            </div>
+          </div>
+          <div class="esx-row key">
+            <p class="esx-h">Ключевые выводы</p>
+            <p class="esx-t">
+              Аудитория уже в MAX, и раздел олимпиад там свободен<sup class="ref">20</sup>. Для
+              запуска нужны канал «Сферума» и согласие MAX на сервисные сообщения
+            </p>
+            <div class="esx-k">
+              <b>23,9 млн</b
+              ><span>учеников и родителей в «Сферуме» в MAX<sup class="ref">19</sup></span>
+            </div>
+          </div>
+        </div>
+        <p class="source">
+          Источники: [1] репозиторий «Олимпуса»; [2] портал ВсОШ, итоги 2025/26; [3] Olimpiada.ru,
+          рейтинг регионов 2026; [19] VK, 02.06.2026; [20] «Сферум», 29.09.2026; эффекты и размер
+          пилота – гипотезы и план команды
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. Целевая аудитория -->
+    <section class="slide" data-block="analysis">
+      <div class="body">
+        <h2 class="title">
+          Наша аудитория – <em>5,6&nbsp;млн</em> учеников 4–6 классов: база для олимпиад у них уже
+          есть, а школьный этап ВсОШ открыт им с 4 класса
+        </h2>
+        <div class="row mt" style="gap: 20px; height: 356px">
+          <div class="card" style="width: 700px">
+            <p class="label">Приоритетный сегмент</p>
+            <div class="kpi mt-s">
+              <b>5,6<small>млн</small></b
+              ><span
+                >учеников 4–6 классов на начало 2025/26 учебного года<sup class="ref">7</sup></span
+              >
+            </div>
+            <ul class="dots small mt-s">
+              <li><b>Ученик 10–12 лет</b> хочет развиваться и пользуется MAX</li>
+              <li>
+                <b>Родитель</b> выбирает занятия вместе с ребёнком в 58,5% семей, в 35,4% ребёнок
+                решает сам<sup class="ref">8</sup>
+              </li>
+              <li><b>Учитель</b> записывает класс на школьный этап ВсОШ<sup class="ref">2</sup></li>
+            </ul>
+          </div>
+          <div class="card grow">
+            <p class="label">Почему именно 4–6 классы</p>
+            <div class="window mt-s">
+              <span></span><span class="c">4</span><span class="c">5</span><span class="c">6</span
+              ><span class="c">7</span><span class="c">8</span><span class="c">9</span
+              ><span class="c">10</span><span class="c">11</span>
+              <span class="r">Школьный этап ВсОШ</span><i class="half"></i><i></i><i></i><i></i
+              ><i></i><i></i><i></i><i></i> <span class="r">Муниципальный</span><b></b><b></b><b></b
+              ><i></i><i></i><i></i><i></i><i></i> <span class="r">Региональный и финал</span><b></b
+              ><b></b><b></b><b></b><b></b><i></i><i></i><i></i>
+            </div>
+            <ul class="dots small mt-s">
+              <li>В 4 классе – математика, с 5 класса – и информатика<sup class="ref">9</sup></li>
+              <li>
+                База есть: в 1–4 классах дети решают логические задачи и работают с алгоритмами<sup
+                  class="ref"
+                  >21</sup
+                >
+              </li>
+              <li>
+                Три сезона школьного этапа до муниципального в 7 классе<sup class="ref">9</sup>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row mt" style="align-items: baseline; gap: 36px">
+          <p class="label">Что мешает детям развиваться</p>
+          <div class="legend">
+            <span><i class="on"></i>С этим помогает Олимпус</span
+            ><span><i class="off"></i>Контекст: решают школа, семья и государство</span>
+          </div>
+          <span class="tag obs">Наблюдения команды</span>
+        </div>
+        <div class="probs mt-s">
+          <div class="prob on">
+            <b>Много времени в играх и в сети</b
+            ><span>→ игровой формат: звёзды, медали, пробные олимпиады</span>
+          </div>
+          <div class="prob on">
+            <b>Мало контакта с учителем</b
+            ><span>→ учитель отправляет олимпиаду классу ссылкой</span>
+          </div>
+          <div class="prob on">
+            <b>Дорого платить за кружки, в селе мало занятий рядом<sup class="ref">8</sup></b
+            ><span>→ Олимпус бесплатный и онлайн</span>
+          </div>
+          <div class="prob on">
+            <b>Родители редко садятся за уроки с ребёнком</b
+            ><span>→ короткие уроки, подсказки и разборы</span>
+          </div>
+          <div class="prob on">
+            <b>Семьи мало знают о бесплатных олимпиадах</b
+            ><span>→ календарь 501 олимпиады с ценой и ссылкой</span>
+          </div>
+          <div class="prob"><b>Буллинг в школе</b></div>
+          <div class="prob"><b>Трудно заводить друзей</b></div>
+          <div class="prob"><b>Ремонт школ</b></div>
+          <div class="prob"><b>Разный уровень подготовки учителей</b></div>
+          <div class="prob"><b>Высокая нагрузка на учителей</b></div>
+          <div class="prob"><b>Учителям мало времени на сильных учеников</b></div>
+          <div class="prob"><b>Дети редко ходят на развивающие события</b></div>
+        </div>
+        <p class="source">
+          Источники: [2] портал ВсОШ; [7] форма ОО-1 на начало 2025/26; [8] НИУ ВШЭ, опрос родителей
+          2020/21; [9] Порядок ВсОШ, приказ № 678; [21] ФРП НОО «Математика»; список проблем –
+          наблюдения команды IDA School
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. Анализ: школа в MAX -->
+    <section class="slide" data-block="analysis">
+      <div class="body">
+        <h2 class="title">
+          Каждый пятый пользователь MAX – ученик или родитель в «Сферуме»: учёба и общение детей уже
+          здесь, а раздел олимпиад в MAX свободен
+        </h2>
+        <div class="row grow mt" style="gap: 20px">
+          <div class="card flexcol" style="width: 560px">
+            <p class="label">Школа в MAX</p>
+            <div class="aud mt-s">
+              <div class="aud-row">
+                <b>111 млн</b>
+                <div class="aud-bar" style="width: 100%"></div>
+                <span>зарегистрированы в MAX, апрель 2026<sup class="ref">29</sup></span>
+              </div>
+              <div class="aud-row">
+                <b>26 млн</b>
+                <div class="aud-bar" style="width: 23%"></div>
+                <span
+                  >в «Сферуме» в MAX, 20 млн заходят каждую неделю<sup class="ref">19</sup></span
+                >
+              </div>
+              <div class="aud-row">
+                <b>23,9 млн</b>
+                <div class="aud-bar" style="width: 21.5%"></div>
+                <span>из них – ученики и родители<sup class="ref">19</sup></span>
+              </div>
+            </div>
+            <div class="kpi m push">
+              <b>1 из 5</b
+              ><span
+                >пользователей MAX – ученик или родитель в «Сферуме»
+                <span class="tag calc">Расчёт: 23,9 / 111</span></span
+              >
+            </div>
+            <p class="tiny muted mt-s">
+              MAX оценивает дневную аудиторию в 88 млн вместе с детьми младше 12 лет, Mediascope для
+              12+ – 69,9 млн<sup class="ref">30</sup>
+            </p>
+          </div>
+          <div class="col grow" style="gap: 12px">
+            <p class="label">Что уже есть в MAX для детей и семей</p>
+            <ul class="inmax grow">
+              <li>
+                <b>«Сферум»</b>чаты класса, дневник, доска, тренажёры к экзаменам, викторины<sup
+                  class="ref"
+                  >5</sup
+                ><sup class="ref">20</sup>
+              </li>
+              <li><b>«Безопасный режим»</b>для учеников по умолчанию<sup class="ref">5</sup></li>
+              <li>
+                <b>«Семейная защита»</b>родитель решает, кто пишет и звонит ребёнку<sup class="ref"
+                  >32</sup
+                >
+              </li>
+              <li>
+                <b>Учи.ру для родителей</b>успехи младшеклассника по предметам<sup class="ref"
+                  >31</sup
+                >
+              </li>
+              <li class="gap">
+                <b>Олимпиады – свободная ниша</b>календарь, запись и подготовка к олимпиадам в
+                MAX<sup class="ref">20</sup>
+              </li>
+            </ul>
+          </div>
+          <div class="card flexcol" style="width: 520px">
+            <p class="label">Что мы видим у детей</p>
+            <div class="kpi m mt-s">
+              <b>84%</b
+              ><span
+                >школьников играют онлайн, в сети – около 4 часов в день<sup class="ref"
+                  >23</sup
+                ></span
+              >
+            </div>
+            <ul class="dots mt">
+              <li>Roblox – любимая игра у 22% детей 4–17 лет<sup class="ref">22</sup></li>
+              <li>
+                К олимпиадам готовятся 14% школьников в своей школе и 5% – вне школы<sup class="ref"
+                  >12</sup
+                >
+              </li>
+              <li>
+                Об олимпиадах дети чаще узнают в школе и в основном о ВсОШ
+                <span class="tag obs">Наблюдение команды</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="verdict mt">
+          <b>Вывод.</b> Олимпиадам нужно место там, где дети уже проводят время. Олимпус приносит в
+          MAX календарь олимпиад и подготовку в игровом формате
+        </p>
+        <p class="source">
+          Источники: [5] Минпросвещения, 09.10.2025; [12] НИУ ВШЭ, 2022; [19] VK, 02.06.2026; [20]
+          «Сферум», 29.09.2026; [22] Mediascope, 2025; [23] «Лаборатория Касперского», 2026; [29]
+          РГ, 07.04.2026; [30] «Эксперт», данные Mediascope за август 2026; [31] «Дети Mail»,
+          30.10.2025; [32] «Ведомости», 15.12.2025
+        </p>
+      </div>
+    </section>
+
+    <!-- 6. Проблема и актуальность -->
+    <section class="slide" data-block="analysis">
+      <div class="body">
+        <h2 class="title">
+          Олимпиады дают место на бюджете сильных вузов, а до финала ВсОШ доходят <em>0,1%</em>
+          участников школьного этапа
+        </h2>
+        <div class="row grow mt" style="gap: 24px">
+          <div class="col" style="width: 560px; gap: 16px">
+            <div class="card line">
+              <p class="label">Проблема</p>
+              <p class="mt-s">
+                Ученик 4–6 класса хочет попробовать олимпиаду. Список олимпиад, сроки записи и
+                задачи для подготовки он ищет на разных сайтах, а в школе чаще слышит только о ВсОШ.
+                В итоге ребёнок пропускает запись или приходит на первый тур с одной школьной
+                программой и теряет интерес
+              </p>
+            </div>
+            <div class="card grow">
+              <p class="label">Почему это важно</p>
+              <ul class="dots small mt-s">
+                <li>
+                  Диплом финала ВсОШ 4 года даёт поступление без экзаменов<sup class="ref">10</sup>
+                </li>
+                <li>
+                  В сильных ИТ-вузах олимпиадники занимают 33–73% бюджетных мест<sup class="ref"
+                    >11</sup
+                  >
+                </li>
+                <li>
+                  Школьный этап ВсОШ открыт с 4 класса: ранний старт даёт три сезона практики<sup
+                    class="ref"
+                    >9</sup
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card grow flexcol" style="padding: 24px 28px">
+            <p class="label">Воронка ВсОШ 2025/26, школьников</p>
+            <div class="funnel mt">
+              <div class="f-row">
+                <p class="f-name">Школьный этап</p>
+                <div class="f-line">
+                  <div class="f-bar" style="--v: 100%"><b>8 157 477</b></div>
+                </div>
+                <p class="f-note">24,8 млн участий: многие пишут по нескольким предметам</p>
+              </div>
+              <div class="f-row">
+                <p class="f-name">Муниципальный</p>
+                <div class="f-line">
+                  <div class="f-bar" style="--v: 83%"><b>1 695 003</b></div>
+                </div>
+                <p class="f-note">с 7 класса</p>
+              </div>
+              <div class="f-row">
+                <p class="f-name">Региональный</p>
+                <div class="f-line">
+                  <div class="f-bar" style="--v: 56%"><b>151 453</b></div>
+                </div>
+                <p class="f-note">с 9 класса</p>
+              </div>
+              <div class="f-row last">
+                <p class="f-name">Заключительный</p>
+                <div class="f-line">
+                  <div class="f-bar" style="--v: 24%"><b>8 364</b></div>
+                </div>
+                <p class="f-note"><b>0,1%</b> от школьного этапа, 4 241 дипломант</p>
+              </div>
+            </div>
+            <p class="tiny muted mt-s">
+              Шкала логарифмическая. Ученики 4–6 классов пишут школьный этап<sup class="ref">9</sup
+              ><sup class="ref">2</sup>
+            </p>
+            <div class="grid g2 push" style="gap: 16px">
+              <div class="kpi m">
+                <b>47%</b
+                ><span
+                  >дипломов финала ВсОШ 2026 – у школьников Москвы<sup class="ref">3</sup></span
+                >
+              </div>
+              <div class="kpi m">
+                <b>69%</b
+                ><span>у Москвы, Подмосковья и Петербурга вместе<sup class="ref">3</sup></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card flexcol" style="width: 500px">
+            <p class="label">Зачем олимпиады ребёнку</p>
+            <p class="small mt-s">
+              Доля олимпиадников среди поступивших на бюджет, «Информатика и вычислительная
+              техника», 2025<sup class="ref">11</sup>
+            </p>
+            <div class="bars mt-s" style="--label: 150px; --scale: 3.3px">
+              <div class="bar-row">
+                <span>МИФИ</span>
+                <div class="bar-track"><i class="bar" style="--v: 73"></i><b>73%</b></div>
+              </div>
+              <div class="bar-row">
+                <span>ИТМО</span>
+                <div class="bar-track"><i class="bar" style="--v: 68"></i><b>68%</b></div>
+              </div>
+              <div class="bar-row">
+                <span>МФТИ</span>
+                <div class="bar-track"><i class="bar" style="--v: 51"></i><b>51%</b></div>
+              </div>
+              <div class="bar-row">
+                <span>НИУ ВШЭ</span>
+                <div class="bar-track"><i class="bar" style="--v: 48"></i><b>48%</b></div>
+              </div>
+              <div class="bar-row">
+                <span>МГТУ им. Баумана</span>
+                <div class="bar-track"><i class="bar" style="--v: 33"></i><b>33%</b></div>
+              </div>
+              <div class="bar-row">
+                <span>В среднем по России</span>
+                <div class="bar-track"><i class="bar grey" style="--v: 4"></i><b>4%</b></div>
+              </div>
+            </div>
+            <p class="small muted push">
+              Олимпиадники – зачисленные без вступительных испытаний. В среднем по России их 4%, в
+              сильных вузах – треть бюджетных мест и больше
+            </p>
+          </div>
+        </div>
+        <p class="source">
+          Источники: [2] портал ВсОШ, итоги 2025/26; [3] Olimpiada.ru, рейтинг регионов 2026; [9]
+          Порядок ВсОШ; [10] Минпросвещения, 02.09.2025; [11] НИУ ВШЭ, мониторинг приёма 2025,
+          олимпиадники – зачисленные без вступительных испытаний; проблема – наблюдения команды IDA
+          School
+        </p>
+      </div>
+    </section>
+
+    <!-- 7. Аналоги и конкуренты -->
+    <section class="slide" data-block="analysis">
+      <div class="body">
+        <h2 class="title">
+          Аналоги закрывают отдельные шаги: каталог, тренировку или привычку. Олимпус соединяет
+          календарь, подготовку и пробные олимпиады в MAX
+        </h2>
+        <table class="tbl comp mt">
+          <thead>
+            <tr>
+              <th style="width: 250px">Сервис</th>
+              <th>Что делает хорошо</th>
+              <th>Пробел для ребёнка 4–6 класса</th>
+              <th style="width: 470px">Что мы взяли</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="group">
+              <td colspan="4">Прямые аналоги: про олимпиады</td>
+            </tr>
+            <tr>
+              <td class="name">Olimpiada.ru<sup class="ref">13</sup></td>
+              <td>
+                Большой каталог: 753 олимпиады для школьников Татарстана, фильтры, архив заданий с
+                решениями
+              </td>
+              <td>Сайт для взрослых: задачи с проверкой – на других сайтах</td>
+              <td>Поля карточки: класс, предмет, этап, формат, ссылка на источник</td>
+            </tr>
+            <tr>
+              <td class="name">Сириус.Курсы<sup class="ref">14</sup></td>
+              <td>
+                Онлайн-тур школьного этапа ВсОШ для 4–11 классов по математике, информатике и другим
+                предметам, тренажёр
+              </td>
+              <td>Только школьный этап ВсОШ и только в даты тура</td>
+              <td>Автоматическая проверка ответов и тренировка в формате тура</td>
+            </tr>
+            <tr>
+              <td class="name">МЭШ, олимпиады<sup class="ref">24</sup></td>
+              <td>Олимпиады внутри школьной системы, рядом с дневником</td>
+              <td>
+                Сервис школ Москвы: ученики других регионов записываются там на одну олимпиаду
+              </td>
+              <td>Олимпиады там, где ребёнок уже учится: у нас это MAX и «Сферум»</td>
+            </tr>
+            <tr class="group">
+              <td colspan="4">Непрямые: детские образовательные платформы</td>
+            </tr>
+            <tr>
+              <td class="name">Учи.ру<sup class="ref">25</sup></td>
+              <td>Бесплатные олимпиады для 1–11 классов, 7,2 млн участников в год</td>
+              <td>Только собственные олимпиады Учи.ру</td>
+              <td>Звёзды и медали за прогресс, понятные тексты для ребёнка</td>
+            </tr>
+            <tr>
+              <td class="name">Фоксфорд<sup class="ref">26</sup></td>
+              <td>Олимпиадные курсы с преподавателями для 5–11 классов</td>
+              <td>Платно: около 76 тыс. ₽ за 4 месяца</td>
+              <td>Разбор после каждой задачи и пробной олимпиады</td>
+            </tr>
+            <tr>
+              <td class="name">Яндекс Учебник<sup class="ref">15</sup></td>
+              <td>Бесплатно: задания для 1–4 классов, информатика 5–11 с автопроверкой</td>
+              <td>Школьная программа через учителя, фокус – уроки и экзамены</td>
+              <td>Проверка программ на скрытых тестах, 6 языков</td>
+            </tr>
+            <tr>
+              <td class="name">Duolingo<sup class="ref">27</sup><sup class="ref">33</sup></td>
+              <td>Привычка заниматься каждый день: короткие уроки, серии, лиги</td>
+              <td>Главное – языки, математика – базовый курс</td>
+              <td>Уроки по 5 минут и прогресс, который видно сразу</td>
+            </tr>
+            <tr class="us">
+              <td class="name">Олимпус</td>
+              <td colspan="3">
+                <b>Весь первый шаг в одном месте и бесплатно:</b> 501 олимпиада по классу и региону
+                → «как участвовать» → уроки и задачи с автопроверкой → пробная олимпиада → ближайшие
+                олимпиады в чате MAX
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="s6-note push">
+          Олимпус дополняет каталоги и курсы: запись и участие остаются на официальных сайтах
+          организаторов
+        </p>
+        <p class="source">
+          Источники: [13] olimpiada.ru, каталог для Татарстана; [14] siriusolymp.ru; [15] Яндекс
+          Учебник; [24] МЭШ; [25] Учи.ру; [26] обзор на Хабре, 10.07.2026; [27], [33] Duolingo –
+          страницы открыты 29.09.2026
+        </p>
+      </div>
+    </section>
+
+    <!-- 8. AS IS → TO BE -->
+    <section class="slide" data-block="solution">
+      <div class="body">
+        <h2 class="title">
+          Сегодня семья собирает олимпиады, сроки и задачи по разным сайтам; с Олимпусом выбор,
+          запись и подготовка проходят в одном чате MAX
+        </h2>
+        <div class="lane asis grow mt">
+          <p class="lane-name">AS IS</p>
+          <ol class="lane-steps">
+            <li>
+              <b>Узнать об олимпиаде</b
+              ><span>От учителя, чаще только о ВсОШ, или случайно в чате родителей</span>
+            </li>
+            <li>
+              <b>Понять, подходит&nbsp;ли</b
+              ><span>Класс, предмет, этап и регион: у каждой олимпиады свои правила</span>
+            </li>
+            <li>
+              <b>Найти, как записаться</b
+              ><span
+                >Сайт организатора или через школу: заявку на ВсОШ подают классному руководителю<sup
+                  class="ref"
+                  >2</sup
+                ></span
+              >
+            </li>
+            <li><b>Помнить сроки</b><span>Даты регистрации и туров – на разных сайтах</span></li>
+            <li>
+              <b>Готовиться</b><span>Задачи прошлых лет в PDF, проверка – самостоятельно</span>
+            </li>
+            <li class="bad">
+              <b>Итог</b><span>Пропущенная запись или первый тур с одной школьной программой</span>
+            </li>
+          </ol>
+        </div>
+        <div class="lane tobe grow mt">
+          <p class="lane-name">TO BE</p>
+          <ol class="lane-steps">
+            <li>
+              <em class="tag calc">одно нажатие</em><b>Открыть бота в MAX</b
+              ><span>«Открыть Олимпус»: вход по подписи MAX</span>
+            </li>
+            <li>
+              <em class="tag calc">автоматически</em><b>Выбрать класс и регион</b
+              ><span>Подборка из 501 олимпиады под класс и регион</span>
+            </li>
+            <li>
+              <em class="tag calc">понятно</em><b>Открыть карточку</b
+              ><span>«Записывает школа – спроси учителя» или ссылка на регистрацию</span>
+            </li>
+            <li>
+              <em class="tag calc">в одном месте</em><b>Нажать «Я участвую»</b
+              ><span>Олимпиада в «Моих олимпиадах», ближайшие даты – в чате с ботом</span>
+            </li>
+            <li>
+              <em class="tag calc">новое</em><b>Готовиться по темам</b
+              ><span>Урок → задача → проверка → разбор, пробная олимпиада на время</span>
+            </li>
+            <li class="good">
+              <b>Итог</b><span>Ребёнок записан и уже попробовал формат олимпиады</span>
+            </li>
+          </ol>
+        </div>
+        <p class="source">
+          Источники: [2] портал ВсОШ, «Ответы на вопросы»; TO BE – сценарий работающего MVP; «чаще
+          только о ВсОШ» – наблюдение команды, проверим интервью в пилоте
+        </p>
+      </div>
+    </section>
+
+    <!-- 9. Решение и основной сценарий -->
+    <section class="slide glow" data-block="solution">
+      <div class="body">
+        <h2 class="title">
+          Основной сценарий занимает 5 экранов: бот в MAX, выбор класса и региона, карточка
+          олимпиады, задача с проверкой и пробная олимпиада с баллами
+        </h2>
+        <div class="row grow mt" style="gap: 28px">
+          <div class="flow">
+            <figure
+              class="phone"
+              style="--w: 232px"
+              data-caption="<b>1</b> Бот в MAX: «Открыть Олимпус»"
+            >
+              <div class="chat">
+                <div class="chat-top">
+                  <img src="assets/brand/icon.png" alt="" />
+                  <div><b>Олимпус</b><span>бот</span></div>
+                </div>
+                <div class="chat-feed">
+                  <div class="msg">
+                    <p><b>Привет!</b></p>
+                    <p>
+                      Я чат-бот <b>«Олимпуса»</b>. Помогаю ребятам 4–6 классов готовиться к
+                      олимпиадам по математике и информатике.
+                    </p>
+                    <p>
+                      В приложении – календарь олимпиад, теория, задачи и пробные туры на время.
+                    </p>
+                  </div>
+                  <div class="kb">
+                    <span class="main">Открыть Олимпус</span>
+                    <span>Ближайшие олимпиады</span>
+                    <span>Мой прогресс</span>
+                    <span>Как это работает</span>
+                  </div>
+                  <div class="msg me">Ближайшие олимпиады</div>
+                  <div class="msg">
+                    <p>
+                      <b>Ближайшие олимпиады</b><br />5 класс · Республика Татарстан и вся Россия
+                    </p>
+                    <p>
+                      1. <b>ВсОШ – математика – школьный этап</b><br />14 октября · очно<br />Участников
+                      регистрирует школа
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </figure>
+            <i class="to"></i>
+            <figure
+              class="phone"
+              style="--w: 232px"
+              data-shot="onboarding"
+              data-caption="<b>2</b> Класс, предмет, регион"
+            ></figure>
+            <i class="to"></i>
+            <figure
+              class="phone"
+              style="--w: 232px"
+              data-shot="event"
+              data-caption="<b>3</b> Как участвовать → «Я участвую»"
+            ></figure>
+            <i class="to"></i>
+            <figure
+              class="phone"
+              style="--w: 232px"
+              data-shot="practice-right"
+              data-caption="<b>4</b> Урок → задача → «Верно!»"
+            ></figure>
+            <i class="to"></i>
+            <figure
+              class="phone"
+              style="--w: 232px"
+              data-shot="mock-result"
+              data-caption="<b>5</b> Пробная олимпиада → баллы и разбор"
+            ></figure>
+          </div>
+        </div>
+        <div class="grid g3 mt-s" style="gap: 20px">
+          <div class="card">
+            <p class="label">В чате с ботом – короткие действия</p>
+            <p class="small">
+              Ближайшие олимпиады по классу и региону, мой прогресс, переход сразу в карточку
+              олимпиады
+            </p>
+          </div>
+          <div class="card">
+            <p class="label">В приложении – всё, где нужен экран</p>
+            <p class="small">
+              Календарь олимпиад, уроки и задачи, пробные олимпиады, профиль и кабинет учителя
+            </p>
+          </div>
+          <div class="card">
+            <p class="label">Ответ на каждое действие</p>
+            <p class="small">
+              Загрузка, «Верно!», подсказка после ошибки, «Твой код сохранён» при сбое
+            </p>
+          </div>
+        </div>
+        <p class="source">
+          Источник: экраны работающего MVP на реальных данных, 29.09.2026; тексты бота – из кода
+          чат-бота
+        </p>
+      </div>
+    </section>
+
+    <!-- 10. MVP и MoSCoW -->
+    <section class="slide" data-block="solution">
+      <div class="body">
+        <h2 class="title">
+          MVP работает в MAX: основной сценарий готов целиком, следующие функции расставлены по
+          приоритету MoSCoW
+        </h2>
+        <div class="row grow mt" style="gap: 24px">
+          <div class="mvp-kpi">
+            <div class="kpi s">
+              <b>501</b><span>олимпиада: 433 школьных этапа ВсОШ в 89 регионах и 68 других</span>
+            </div>
+            <div class="kpi s">
+              <b>360</b
+              ><span>задач, все ответы проверены программой, 96 – на программирование</span>
+            </div>
+            <div class="kpi s">
+              <b>12</b><span>пробных олимпиад: 6 тренировочных и 6 больших</span>
+            </div>
+            <div class="kpi s">
+              <b>6</b><span>языков программирования, код проверяется изолированно</span>
+            </div>
+            <div class="kpi s">
+              <b>2 100+</b><span>автотестов, CI/CD с автодеплоем после проверок</span>
+            </div>
+          </div>
+          <div class="moscow grow">
+            <div class="ms must">
+              <p class="ms-h">Must have<small>основной сценарий</small></p>
+              <ul class="dots small">
+                <li>Вход по подписи MAX и гостевой режим</li>
+                <li>Календарь с фильтром класс · предмет · регион</li>
+                <li>«Как участвовать» и «Я участвую»</li>
+                <li>Уроки и задачи с проверкой, подсказкой и разбором</li>
+                <li>Пробная олимпиада на время с баллами</li>
+                <li>Бот: «Открыть Олимпус», ближайшие олимпиады, прогресс</li>
+              </ul>
+            </div>
+            <div class="ms should">
+              <p class="ms-h">Should have<small>удобство и доверие</small></p>
+              <ul class="dots small">
+                <li>Кабинет учителя: формы, CSV-импорт, черновики, история версий</li>
+                <li>Звёзды и медали за прогресс</li>
+                <li>«Поделиться результатом» в MAX</li>
+                <li>Тёмная тема, мобильный MAX и MAX Web</li>
+              </ul>
+            </div>
+            <div class="ms could">
+              <p class="ms-h">Could have<small>следующий релиз</small></p>
+              <ul class="dots small">
+                <li>
+                  Напоминания в чате: код готов, включим после согласия MAX на сервисные
+                  сообщения<sup class="ref">16</sup>
+                </li>
+                <li>План подготовки в календаре</li>
+                <li>Статистика класса для учителя</li>
+              </ul>
+            </div>
+            <div class="ms wont">
+              <p class="ms-h">Won’t have<small>границы MVP</small></p>
+              <ul class="dots small">
+                <li>Регистрация – на официальном сайте олимпиады</li>
+                <li>Из MAX – только id и имя ребёнка</li>
+                <li>Рейтинги – личные, внутри профиля</li>
+                <li>Бесплатно для семьи и школы</li>
+                <li>4–6 классы, математика и информатика</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="maxbar mt">
+          <p class="label">Возможности MAX сверх минимума<sup class="ref">16</sup></p>
+          <p>
+            вход по подписи MAX · системная кнопка «Назад» · вибрация на ответ · вопрос перед
+            выходом из пробной олимпиады · «Поделиться результатом» · ссылки через MAX · переход из
+            сообщения бота сразу в карточку олимпиады · тёмная тема · MAX Web
+          </p>
+        </div>
+        <p class="source">
+          Источники: [1] репозиторий «Олимпуса», 29.09.2026: content/, tests/, CI; [16] документация
+          MAX для разработчиков
+        </p>
+      </div>
+    </section>
+
+    <!-- 11. Ожидаемый эффект -->
+    <section class="slide glow" data-block="solution">
+      <div class="body">
+        <h2 class="title">
+          Гипотеза: ребёнок, который за 3 минуты нашёл свою олимпиаду и в тот же день решил задачу,
+          чаще доходит до участия
+        </h2>
+        <div class="row grow mt" style="gap: 24px">
+          <div class="col" style="width: 560px; gap: 18px">
+            <div class="card line">
+              <p class="label">Гипотеза <span class="tag hyp">проверим в пилоте</span></p>
+              <p class="mt-s">
+                Ученик 4–6 класса и родитель находят олимпиаду по классу и региону и начинают
+                готовиться с короткими уроками и пробными олимпиадами в MAX. Тогда доля детей,
+                которые записываются и приходят подготовленными, вырастет: поиск по сайтам и
+                путаница со сроками уходят, бесплатная практика появляется рядом
+              </p>
+            </div>
+            <div class="card">
+              <p class="label">Как измерим</p>
+              <ul class="dots small mt-s">
+                <li>Уже в данных: отметки «Я участвую», решённые задачи, пробные олимпиады</li>
+                <li>
+                  К пилоту добавим обезличенные события входа – для возвратов и времени до карточки
+                </li>
+                <li>
+                  После даты олимпиады спросим «Ты участвовал?» в приложении и в чате – одно нажатие
+                </li>
+                <li>Только обезличенные события в нашей базе</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tree grow">
+            <div class="ns">
+              <p class="label">Главная метрика</p>
+              <p class="ns-t">Подготовленные участники</p>
+              <p class="small">
+                дети, которые отметили «Я участвую» и решили 5 задач и больше к дате олимпиады
+              </p>
+            </div>
+            <div class="branches">
+              <div class="br">
+                <p class="br-h">1 · Найти</p>
+                <div class="m">
+                  <b>≥ 60%</b><span>новых открывают карточку олимпиады в первый день</span>
+                </div>
+                <div class="m">
+                  <b>≤ 3 мин</b><span>на поиск своей олимпиады с первого экрана</span>
+                </div>
+              </div>
+              <div class="br">
+                <p class="br-h">2 · Готовиться</p>
+                <div class="m"><b>≥ 50%</b><span>решают первую задачу в первый день</span></div>
+                <div class="m">
+                  <b>≥ 25% / 12%</b><span>возвращаются через неделю и через месяц</span>
+                </div>
+                <div class="m"><b>≥ 60%</b><span>завершают начатую пробную олимпиаду</span></div>
+              </div>
+              <div class="br">
+                <p class="br-h">3 · Дойти</p>
+                <div class="m"><b>≥ 35%</b><span>новых отмечают «Я участвую»</span></div>
+                <div class="m">
+                  <b>≥ 70%</b><span>из отметивших участвуют, по опросу в боте</span>
+                </div>
+              </div>
+            </div>
+            <p class="tiny muted">
+              Все цели – гипотезы команды для пилота. Процессные метрики: время поиска, число ручных
+              шагов, доля завершивших сценарий, точность подбора
+            </p>
+          </div>
+        </div>
+        <p class="source">
+          Источник: гипотезы и целевые значения команды; данные для метрик – из работающего MVP [1]
+        </p>
+      </div>
+    </section>
+
+    <!-- 12. Архитектура решения -->
+    <section class="slide" data-block="tech">
+      <div class="body">
+        <h2 class="title">
+          Архитектура MVP: бот и мини-приложение MAX, один сервер в Docker и песочница для кода;
+          весь стек запускается одной командой
+        </h2>
+        <div class="row grow mt" style="gap: 28px">
+          <div class="col" style="width: 700px; gap: 12px">
+            <p class="label">Как устроено</p>
+            <div class="arch big grow">
+              <div class="box max">MAX: iOS, Android, компьютер, web.max.ru</div>
+              <div class="down"></div>
+              <div class="two">
+                <div class="box">
+                  Чат-бот · Bot API<small>кнопки, переход в карточку, ближайшие олимпиады</small>
+                </div>
+                <div class="box">
+                  Мини-приложение · MAX Bridge, MAX UI<small>React 19, вход по подписи MAX</small>
+                </div>
+              </div>
+              <div class="down"></div>
+              <div class="box thin">Caddy: HTTPS и заголовки безопасности</div>
+              <div class="down"></div>
+              <div class="three">
+                <div class="box">bot<small>Node 22</small></div>
+                <div class="box">web<small>экраны, кабинет учителя, API /api/v1</small></div>
+                <div class="box">runner → Judge0<small>код в изоляции, 6 языков</small></div>
+              </div>
+              <div class="down"></div>
+              <div class="box db">PostgreSQL 17: контент, календарь, прогресс, история версий</div>
+            </div>
+          </div>
+          <div class="col grow" style="gap: 16px">
+            <p class="label">Компоненты и роли</p>
+            <table class="tbl roles">
+              <thead>
+                <tr>
+                  <th style="width: 210px">Компонент</th>
+                  <th>Что делает</th>
+                  <th style="width: 280px">Технологии</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="name">Чат-бот</td>
+                  <td>«Открыть Олимпус», ближайшие олимпиады, прогресс, переход в карточку</td>
+                  <td>MAX Bot API, вебхук, Node 22</td>
+                </tr>
+                <tr>
+                  <td class="name">Мини-приложение</td>
+                  <td>Календарь, уроки, задачи, пробные олимпиады, кабинет учителя</td>
+                  <td>MAX Bridge, MAX UI, React 19</td>
+                </tr>
+                <tr>
+                  <td class="name">API /api/v1</td>
+                  <td>Сценарий проверки и внешние системы, описание OpenAPI 3.1</td>
+                  <td>12 обязательных проверок</td>
+                </tr>
+                <tr>
+                  <td class="name">runner и Judge0</td>
+                  <td>Запуск кода ребёнка в изоляции с лимитами времени и памяти</td>
+                  <td>6 языков программирования</td>
+                </tr>
+                <tr>
+                  <td class="name">PostgreSQL 17</td>
+                  <td>Контент, календарь, прогресс, история версий</td>
+                  <td>SQL-миграции</td>
+                </tr>
+                <tr>
+                  <td class="name">Caddy</td>
+                  <td>HTTPS и заголовки безопасности</td>
+                  <td>один адрес для бота и приложения</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="grid g2 push" style="gap: 16px">
+              <div class="card">
+                <p class="label">Качество</p>
+                <ul class="dots small mt-s">
+                  <li>2 100+ автотестов, e2e на телефоне и компьютере<sup class="ref">1</sup></li>
+                  <li>Сборка Docker за 5 минут и меньше, проверка в CI</li>
+                  <li>CodeQL, аудит зависимостей, автодеплой после проверок</li>
+                </ul>
+              </div>
+              <div class="card">
+                <p class="label">Безопасность</p>
+                <ul class="dots small mt-s">
+                  <li>Вход по подписи MAX: проверка initData по HMAC</li>
+                  <li>Из MAX – только id и имя ребёнка</li>
+                  <li>Секреты – только в окружении сервера</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="source">
+          Источники: [1] репозиторий «Олимпуса»: README, docs/ARCHITECTURE.md, docs/SECURITY.md, CI;
+          [16] документация MAX для разработчиков
+        </p>
+      </div>
+    </section>
+
+    <!-- 13. Используемые данные и интеграции -->
+    <section class="slide" data-block="tech">
+      <div class="body">
+        <h2 class="title">
+          Все данные MVP реальные: календарь собран с официальных сайтов, следующая интеграция –
+          «Сферум» с 26 млн пользователей в MAX
+        </h2>
+        <div class="row grow mt" style="gap: 24px">
+          <div class="col grow" style="gap: 14px">
+            <p class="label">Данные</p>
+            <table class="tbl data">
+              <thead>
+                <tr>
+                  <th>Что</th>
+                  <th>Откуда</th>
+                  <th>Как обновляем</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="name">Календарь, 501 олимпиада</td>
+                  <td>
+                    Официальные сайты организаторов олимпиад и региональных операторов, 193 ссылки
+                  </td>
+                  <td>Вручную; у каждой записи источник и дата проверки</td>
+                </tr>
+                <tr>
+                  <td class="name">Уроки, задачи, пробные олимпиады</td>
+                  <td>Авторские материалы команды</td>
+                  <td>Ответы проверены программой; учитель правит в кабинете</td>
+                </tr>
+                <tr>
+                  <td class="name">Прогресс</td>
+                  <td>Действия ребёнка в приложении</td>
+                  <td>Из MAX – только id и имя</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="grid g4" style="gap: 12px">
+              <p class="fx"><b>Факт</b>даты, этапы и правила записи – с сайта организатора</p>
+              <p class="fx"><b>Расчёт</b>«осталось N дней», баллы, звёзды и медали</p>
+              <p class="fx"><b>Рекомендация</b>«Готовиться»: темы и пробная олимпиада</p>
+              <p class="fx"><b>Допущение</b>у 39 олимпиад дата пока «ожидается»</p>
+            </div>
+            <p class="label mt-s">Интеграции</p>
+            <table class="tbl data">
+              <tbody>
+                <tr>
+                  <td class="name">MAX Bot API</td>
+                  <td>Сообщения и кнопки бота, переход по ссылке сразу в карточку олимпиады</td>
+                </tr>
+                <tr>
+                  <td class="name">MAX Bridge и MAX UI</td>
+                  <td>Вход по подписи MAX, кнопка «Назад», «Поделиться», вибрация, тёмная тема</td>
+                </tr>
+                <tr>
+                  <td class="name">Judge0</td>
+                  <td>Проверка кода на своём сервере, 6 языков</td>
+                </tr>
+                <tr>
+                  <td class="name">Сайты олимпиад</td>
+                  <td>
+                    Ручная сверка дат и правил, 193 официальные ссылки<sup class="ref">1</sup>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="name">CSV-импорт</td>
+                  <td>Учитель добавляет школьные олимпиады таблицей</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card blue sferum flexcol">
+            <p class="label">Предлагаем</p>
+            <h3 class="mt-s">Олимпус внутри «Сферума»</h3>
+            <div class="row mt-s" style="gap: 16px; align-items: center">
+              <img src="assets/brand/icon-sferum.png" alt="" />
+              <p class="small">Иконку в стиле «Сферума» мы уже сделали</p>
+            </div>
+            <div class="kpi white mt-s">
+              <b>35<small>млн</small></b
+              ><span
+                >пользователей «Сферума», 26 млн уже в MAX<sup class="ref">4</sup
+                ><sup class="ref">19</sup></span
+              >
+            </div>
+            <ul class="dots small mt-s">
+              <li>
+                В «Сферуме» есть чаты, дневник, тренажёры и викторины; олимпиады – свободная
+                ниша<sup class="ref">20</sup>
+              </li>
+              <li>Учитель отправит олимпиаду классу одним сообщением</li>
+              <li>
+                Нужно: место в витрине сервисов «Сферума» и согласие MAX на сервисные сообщения<sup
+                  class="ref"
+                  >16</sup
+                >
+              </li>
+            </ul>
+            <img class="chatty" src="assets/brand/chatty.png" alt="" />
+          </div>
+        </div>
+        <p class="source">
+          Источники: [1] репозиторий «Олимпуса»: docs/DATA.md, календарь; [4] VK, 03.06.2025; [16]
+          документация MAX для разработчиков; [19] VK, 02.06.2026; [20] «Сферум», 29.09.2026; Чатти
+          – маскот «Сферума»
+        </p>
+      </div>
+    </section>
+
+    <!-- 14. Олимпиада MAX -->
+    <section class="slide glow" data-block="growth">
+      <div class="body">
+        <h2 class="title">
+          Олимпиада MAX для 4–6 классов на платформе Олимпуса: у VK уже есть «Технокубок» для 8–11
+          классов
+        </h2>
+        <div class="grid g3 mt" style="gap: 16px">
+          <div class="card kpi s">
+            <b>8 000+</b
+            ><span
+              >школьников 8–11 классов в «Технокубке» 2025/26 – олимпиаде Перечня от VK, МФТИ и МГТУ
+              им. Баумана<sup class="ref">28</sup></span
+            >
+          </div>
+          <div class="card kpi s">
+            <b>23,9 млн</b
+            ><span
+              >учеников и родителей в «Сферуме»: приглашение дойдёт через школьные чаты<sup
+                class="ref"
+                >19</sup
+              ></span
+            >
+          </div>
+          <div class="card kpi s">
+            <b>с 4 класса</b
+            ><span
+              >открыт школьный этап ВсОШ по математике: дети этого возраста уже в олимпиадах<sup
+                class="ref"
+                >9</sup
+              ></span
+            >
+          </div>
+        </div>
+        <p class="label mt">
+          Как проведём олимпиаду MAX в Олимпусе <span class="tag hyp">Предложение команды</span>
+        </p>
+        <ol class="olymp mt-s">
+          <li>
+            <b>Приглашение</b
+            ><span>Учитель получает олимпиаду в «Сферуме», ребёнок – сообщение бота</span>
+          </li>
+          <li><b>Регистрация</b><span>Одно нажатие в боте, вход по подписи MAX</span></li>
+          <li>
+            <b>Онлайн-тур</b
+            ><span
+              >Таймер по времени сервера, случайный набор задач, автопроверка ответов и кода</span
+            >
+          </li>
+          <li><b>Итоги</b><span>Баллы, разбор и диплом в профиле участника</span></li>
+          <li>
+            <b>Дальше</b
+            ><span
+              >Сильным участникам – маршрут к олимпиадам Перечня и «Технокубку» с 8 класса</span
+            >
+          </li>
+        </ol>
+        <div class="row grow mt" style="gap: 20px">
+          <div class="card grow">
+            <p class="label">Уже работает в Олимпусе</p>
+            <ul class="dots small have mt-s">
+              <li>12 пробных олимпиад с таймером по времени сервера<sup class="ref">1</sup></li>
+              <li>Случайный набор задач из банка темы</li>
+              <li>Автопроверка ответов и кода на 6 языках</li>
+              <li>Бот, карточки олимпиад и «Мои олимпиады»</li>
+            </ul>
+          </div>
+          <div class="card grow">
+            <p class="label">Что нужно</p>
+            <ul class="dots small mt-s">
+              <li>Партнёрство с MAX и VK</li>
+              <li>Задачи от методистов и составителей олимпиад</li>
+              <li>Серверы под сотни тысяч участников и нагрузочные тесты на стенде</li>
+              <li>Правила олимпиады, дипломы, согласие MAX на сервисные сообщения</li>
+            </ul>
+          </div>
+          <div class="card blue" style="width: 520px">
+            <p class="label">План</p>
+            <ul class="dots small mt-s">
+              <li><b>Весна 2027</b> – пробная олимпиада MAX в пилотных школах Татарстана</li>
+              <li>
+                <b>2027/28</b> – всероссийский тур для 4–6 классов по математике и информатике
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p class="source">
+          Источники: [1] репозиторий «Олимпуса»; [9] Порядок ВсОШ, приказ № 678; [19] VK,
+          02.06.2026; [28] VK, «Технокубок», 25.03.2026; формат олимпиады и план – предложение
+          команды
+        </p>
+      </div>
+    </section>
+
+    <!-- 15. Пилот -->
+    <section class="slide glow" data-block="growth">
+      <div class="body">
+        <h2 class="title">
+          Пилот – Татарстан, сезон 2026/27: регион-лидер по олимпиадам и один из первых регионов
+          «Сферума» в MAX
+        </h2>
+        <div class="grid g3 mt" style="gap: 16px">
+          <div class="card kpi s">
+            <b>2-е место</b
+            ><span
+              >по дипломам ВсОШ на 100 тыс. жителей: 6,72, 6% всех дипломов 2026<sup class="ref"
+                >3</sup
+              ></span
+            >
+          </div>
+          <div class="card kpi s">
+            <b>25.08.2025</b
+            ><span
+              >«Сферум» в MAX запущен в Татарстане в числе 6 пилотных регионов<sup class="ref"
+                >6</sup
+              ></span
+            >
+          </div>
+          <div class="card kpi s">
+            <b>6 + ВсОШ</b
+            ><span
+              >республиканских олимпиад и школьный этап ВсОШ уже в календаре<sup class="ref"
+                >1</sup
+              ></span
+            >
+          </div>
+        </div>
+        <div class="pilot mt">
+          <div class="pc">
+            <p class="label">Для кого и где</p>
+            <p>
+              Ученики 4–6 классов 10–15 школ Казани и 2–3 районов, около 1 500 детей
+              <span class="tag hyp">план</span>
+            </p>
+          </div>
+          <div class="pc">
+            <p class="label">Как встроится в процесс</p>
+            <p>
+              Учитель отправляет ссылку на бота в чат класса в «Сферуме». Запись на школьный этап
+              остаётся за школой – Олимпус подсказывает «спроси учителя»<sup class="ref">2</sup>
+            </p>
+          </div>
+          <div class="pc">
+            <p class="label">Данные и участники</p>
+            <p>
+              Графики – с сайта Республиканского олимпиадного центра<sup class="ref">1</sup>;
+              учителя добавляют школьные олимпиады через CSV; методисты IDA School – контент
+            </p>
+          </div>
+          <div class="pc">
+            <p class="label">Доступ и привлечение</p>
+            <p>
+              QR и ссылка в чатах классов и родителей, переход по ссылке сразу в карточку нужной
+              олимпиады
+            </p>
+          </div>
+          <div class="pc">
+            <p class="label">Пилот успешен, если</p>
+            <p>
+              ≥ 60% новых открыли карточку, ≥ 35% отметили «Я участвую», ≥ 12% вернулись через месяц
+              <span class="tag hyp">цели</span>
+            </p>
+          </div>
+          <div class="pc blue">
+            <p class="label">Следующий шаг</p>
+            <p>
+              3–5 регионов из топ-10 рейтинга ВсОШ и предложение Минпросвещения и VK: Олимпус в
+              витрине «Сферума»
+            </p>
+          </div>
+        </div>
+        <div class="tl mt-l">
+          <div class="tl-i">
+            <b>Ноябрь 2026</b><span>подключаем школы, учителя раздают ссылку</span>
+          </div>
+          <div class="tl-i">
+            <b>Ноябрь – декабрь</b
+            ><span>«Эверест» 7 ноября, олимпиады вузов, пробные олимпиады</span>
+          </div>
+          <div class="tl-i">
+            <b>Январь – февраль 2027</b
+            ><span>«Эрудит» 13 февраля, возвраты через неделю и через месяц</span>
+          </div>
+          <div class="tl-i"><b>Март 2027</b><span>итоги пилота, решение о тиражировании</span></div>
+          <div class="tl-i">
+            <b>Сентябрь 2027</b><span>школьный этап ВсОШ во второй волне регионов</span>
+          </div>
+        </div>
+        <p class="source">
+          Источники: [1] календарь «Олимпуса», даты олимпиад – с официальных сайтов; [2] портал
+          ВсОШ; [3] Olimpiada.ru, рейтинг 2026; [6] Минпросвещения, 18.08.2025; размер пилота и цели
+          – план команды
+        </p>
+      </div>
+    </section>
+
+    <!-- 16. Тиражирование и условия адаптации -->
+    <section class="slide" data-block="growth">
+      <div class="body">
+        <h2 class="title">
+          Ядро продукта одинаково для любого региона и класса: при переносе меняются данные, контент
+          и интеграции
+        </h2>
+        <div class="row grow mt" style="gap: 20px">
+          <div class="col" style="width: 520px; gap: 16px">
+            <div class="card blue grow">
+              <p class="label">Ядро – одинаково везде</p>
+              <ul class="dots small mt-s">
+                <li>Сценарий: найти олимпиаду → записаться → подготовиться → пробная олимпиада</li>
+                <li>Бот, мини-приложение и API</li>
+                <li>
+                  Модель олимпиады: класс, предмет, регион, этап, способ записи, источник, дата
+                  проверки
+                </li>
+                <li>Звёзды, медали, пробные олимпиады, тексты для ребёнка</li>
+              </ul>
+            </div>
+            <div class="card grow">
+              <p class="label">Меняется при переносе</p>
+              <ul class="dots small mt-s">
+                <li>
+                  Графики олимпиад региона: школьный этап ВсОШ уже собран для 89 регионов<sup
+                    class="ref"
+                    >1</sup
+                  >
+                </li>
+                <li>Правила записи и роли: школа, региональный оператор, учитель</li>
+                <li>Контент для новых классов и предметов</li>
+                <li>Интеграции: «Сферум», МЭШ, региональные системы</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card line" style="width: 500px">
+            <p class="label">Порядок тиражирования</p>
+            <ol class="waves mt-s">
+              <li><b>Пилот: Татарстан, 2026/27</b><span>10–15 школ, проверяем метрики</span></li>
+              <li>
+                <b>Волна 2: 3–5 регионов из топ-10 рейтинга ВсОШ</b
+                ><span
+                  >ЯНАО, Мордовия, Удмуртия, Калининградская, Вологодская, Ульяновская области<sup
+                    class="ref"
+                    >3</sup
+                  ></span
+                >
+              </li>
+              <li>
+                <b>Волна 3: регионы с малым числом дипломов</b
+                ><span>там меньше кружков и центров, нужны учителя и региональные операторы</span>
+              </li>
+              <li>
+                <b>Все 89 регионов через «Сферум», Москва через МЭШ</b
+                ><span>плюс кружки и центры для одарённых детей</span>
+              </li>
+            </ol>
+          </div>
+          <div class="col grow" style="gap: 16px">
+            <div class="card line">
+              <p class="label">Где ещё применим Олимпус</p>
+              <ul class="dots small mt-s">
+                <li>Школы: учитель ведёт класс по календарю и темам</li>
+                <li>Кружки и центры для одарённых детей: готовые темы и пробные олимпиады</li>
+                <li>Региональные олимпиадные центры: свой календарь через CSV-импорт</li>
+                <li>Москва: связка с МЭШ</li>
+                <li>Олимпиада MAX: платформа для онлайн-тура</li>
+              </ul>
+            </div>
+            <div class="card grow">
+              <p class="label">Условия и риски тиражирования</p>
+              <ul class="dots small mt-s">
+                <li>Методисты под новые классы и предметы: 1–1,5 месяца на класс и предмет</li>
+                <li>Ответственный за календарь в каждом регионе, перепроверка дат осенью</li>
+                <li>Партнёрство с региональным оператором ВсОШ и школами</li>
+              </ul>
+              <p class="tiny muted mt-s">
+                Для 7–11 классов добавятся олимпиады Перечня: 83 олимпиады в 2025/26<sup class="ref"
+                  >17</sup
+                >, 2,17 млн участников отборочных этапов РСОШ<sup class="ref">18</sup>
+              </p>
+            </div>
+          </div>
+        </div>
+        <p class="source">
+          Источники: [1] календарь «Олимпуса»; [3] Olimpiada.ru, рейтинг регионов 2026; [17]
+          Olimpiada.ru о приказе Минобрнауки № 669; [18] Минпросвещения, доклад за 2025 год, с. 52;
+          порядок волн и сроки методистов – оценка команды
+        </p>
+      </div>
+    </section>
+
+    <!-- 17. Развитие продукта -->
+    <section class="slide" data-block="growth">
+      <div class="body">
+        <h2 class="title">
+          Развитие продукта в три очереди: удобство подготовки, рост охвата и вовлечение детей
+        </h2>
+        <div class="row grow mt" style="gap: 28px">
+          <table class="tbl road grow">
+            <thead>
+              <tr>
+                <th>Что добавим</th>
+                <th style="width: 620px">Что для этого нужно</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="group">
+                <td colspan="2">Очередь 1 · после пилота</td>
+              </tr>
+              <tr>
+                <td>Напоминания в чате, код готов</td>
+                <td>Согласие MAX на сервисные сообщения</td>
+              </tr>
+              <tr>
+                <td>
+                  Свой план подготовки в календаре: «10–20 октября – делимость к школьному этапу»
+                </td>
+                <td>Связка «тема – олимпиада», 1 разработчик</td>
+              </tr>
+              <tr>
+                <td>Моя статистика: темы, задачи, пробные олимпиады</td>
+                <td>Данные уже собираются, 1 разработчик</td>
+              </tr>
+              <tr>
+                <td>«Сферум» и МЭШ</td>
+                <td>Партнёрство с VK, Минпросвещения, Департаментом образования Москвы</td>
+              </tr>
+              <tr class="group">
+                <td colspan="2">Очередь 2 · рост охвата</td>
+              </tr>
+              <tr>
+                <td>Все классы 1–11</td>
+                <td>В 3,7 раза больше контента: 22 пары «класс – предмет» вместо 6</td>
+              </tr>
+              <tr>
+                <td>Новые предметы</td>
+                <td>Методисты по предметам, проверка ответов</td>
+              </tr>
+              <tr>
+                <td>Олимпиада MAX для 4–6 классов</td>
+                <td>Партнёрство с MAX и VK, составители задач</td>
+              </tr>
+              <tr class="group">
+                <td colspan="2">Очередь 3 · вовлечение</td>
+              </tr>
+              <tr>
+                <td>Дружеские забеги и сообщество с чатами</td>
+                <td>Модерация, безопасный режим для детей</td>
+              </tr>
+              <tr>
+                <td>Банк олимпиадной литературы: папки с книгами для скачивания</td>
+                <td>Свободные лицензии, партнёрство с издательствами</td>
+              </tr>
+              <tr>
+                <td>Подарки за звёзды, звуки и анимации</td>
+                <td>Дизайнер, партнёры</td>
+              </tr>
+              <tr>
+                <td>Чат поддержки в боте</td>
+                <td>Дежурный методист, база ответов</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col" style="width: 440px; gap: 16px">
+            <div class="card blue">
+              <p class="label">Ресурсы на один класс и предмет</p>
+              <div class="kpi white mt-s">
+                <b>1–1,5<small>месяца</small></b
+                ><span>работы методиста: 12 тем, 60 уроков, 60 задач</span>
+              </div>
+            </div>
+            <div class="card grow">
+              <p class="label">Что уже заложено в MVP</p>
+              <ul class="dots small mt-s">
+                <li>Кабинет учителя: формы, CSV-импорт, черновики, история версий</li>
+                <li>Модель олимпиады с регионом, этапом и способом записи</li>
+                <li>Напоминания в боте: код готов</li>
+                <li>Прогресс ребёнка по темам и пробным олимпиадам</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="source">
+          Источники: [1] репозиторий «Олимпуса»; идеи, очередь и ресурсы – оценка команды
+        </p>
+      </div>
+    </section>
+
+    <!-- 18. Ограничения, риски и допущения -->
+    <section class="slide" data-block="risks">
+      <div class="body">
+        <h2 class="title">
+          Главные риски связаны с данными и доступом к детям через школы: у каждого риска есть мера
+          снижения
+        </h2>
+        <div class="row grow mt" style="gap: 28px">
+          <table class="tbl risks grow">
+            <thead>
+              <tr>
+                <th style="width: 54px">№</th>
+                <th style="width: 420px">Риск</th>
+                <th>Что делаем</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rn">1</td>
+                <td>Даты и ссылки олимпиад меняются</td>
+                <td>
+                  У каждой записи источник и дата проверки, перепроверка раз в неделю осенью,
+                  учитель правит запись в кабинете
+                </td>
+              </tr>
+              <tr>
+                <td class="rn">2</td>
+                <td>MAX откажет в сервисных сообщениях</td>
+                <td>«Мои олимпиады» с отсчётом дней, ближайшие олимпиады в чате по запросу</td>
+              </tr>
+              <tr>
+                <td class="rn">3</td>
+                <td>Дети уходят после первого входа</td>
+                <td>
+                  Звёзды, медали, пробные олимпиады, учитель зовёт класс; возвраты через неделю и
+                  через месяц считаем в пилоте
+                </td>
+              </tr>
+              <tr>
+                <td class="rn">4</td>
+                <td>Доступ к «Сферуму» и школам задерживается</td>
+                <td>
+                  Пилот через учителей региона, затем предложение Минпросвещения и VK с данными
+                  пилота
+                </td>
+              </tr>
+              <tr>
+                <td class="rn">5</td>
+                <td>Сбой внешней проверки кода</td>
+                <td>Код сохраняется и перепроверяется позже, остальная учёба работает</td>
+              </tr>
+              <tr>
+                <td class="rn">6</td>
+                <td>Ребёнок путает «Я участвую» с регистрацией</td>
+                <td>
+                  Подпись «это отметка для тебя», отдельная кнопка регистрации или «Записывает
+                  школа»
+                </td>
+              </tr>
+              <tr>
+                <td class="rn">7</td>
+                <td>Данные детей, 152-ФЗ</td>
+                <td>
+                  Из MAX только id и имя; гостевой режим; политика конфиденциальности в приложении
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="col" style="width: 560px; gap: 12px">
+            <p class="label">Вероятность × влияние</p>
+            <div class="heat" style="height: 420px">
+              <p class="ax-y">Влияние: низкое → высокое</p>
+              <div class="cell c3">
+                <div class="dots-in"><span>7</span></div>
+              </div>
+              <div class="cell c4">
+                <div class="dots-in"><span>3</span><span>4</span></div>
+              </div>
+              <div class="cell c5">
+                <div class="dots-in"><span>1</span></div>
+              </div>
+              <div class="cell c2">
+                <div class="dots-in"><span>5</span></div>
+              </div>
+              <div class="cell c3">
+                <div class="dots-in"><span>2</span><span>6</span></div>
+              </div>
+              <div class="cell c4"></div>
+              <div class="cell c1"></div>
+              <div class="cell c2"></div>
+              <div class="cell c3"></div>
+              <p class="ax-x">Вероятность: низкая → высокая</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid g2 mt" style="gap: 20px">
+          <div class="card">
+            <p class="label">Ключевые допущения</p>
+            <p class="small">
+              Дети 10–12 лет пользуются MAX сами или с родителем: в «Сферуме» в MAX 23,9 млн
+              учеников и родителей<sup class="ref">19</sup>; учителя готовы отправлять ссылку в чаты
+              классов; сайты организаторов олимпиад остаются первоисточником дат
+            </p>
+          </div>
+          <div class="card">
+            <p class="label">Ограничения MVP</p>
+            <p class="small">
+              Только 4–6 классы, математика и информатика; календарь обновляется вручную; один общий
+              пароль учителя; напоминания выключены до согласия MAX
+            </p>
+          </div>
+        </div>
+        <p class="source">
+          Источники: [1] README репозитория, «Известные ограничения»; оценка вероятности и влияния –
+          команда; [19] VK, 02.06.2026
+        </p>
+      </div>
+    </section>
+
+    <!-- 19. Источники -->
+    <section class="slide" data-block="sources">
+      <div class="body">
+        <h2 class="title">
+          Источники: числа и факты на слайдах сверены с первоисточниками 29.09.2026
+        </h2>
+        <div class="row grow mt" style="gap: 36px">
+          <ol class="srcs three grow">
+            <li>
+              <b>1</b
+              ><span
+                >Репозиторий «Олимпуса»: README, docs/, content/. Календарь
+                content/olympiads/2026-27.json – 501 запись, 193 официальные ссылки, проверено
+                29.09.2026; тесты и CI</span
+              >
+            </li>
+            <li>
+              <b>2</b
+              ><span
+                >Центр олимпиадного движения. Портал ВсОШ: презентации «ВсОШ 2024/25» и «ВсОШ
+                2025/26», «Ответы на вопросы» · <span class="mono">vserosolimp.edsoo.ru</span></span
+              >
+            </li>
+            <li>
+              <b>3</b
+              ><span
+                >Olimpiada.ru. Рейтинг регионов по итогам Всероссийской олимпиады 2026 года,
+                05.05.2026 · <span class="mono">olimpiada.ru/article/1251</span></span
+              >
+            </li>
+            <li>
+              <b>4</b
+              ><span
+                >VK. В Сферуме зарегистрировано почти 35 млн пользователей, 03.06.2025: свыше 2,5
+                млн педагогов · <span class="mono">vk.company/ru/press/releases/12024</span></span
+              >
+            </li>
+            <li>
+              <b>5</b
+              ><span
+                >Минпросвещения России. Сервис «Сферум» доступен в национальном мессенджере MAX,
+                09.10.2025 · <span class="mono">edu.gov.ru/press/10553</span></span
+              >
+            </li>
+            <li>
+              <b>6</b
+              ><span
+                >Минпросвещения России. «Сферум» завершил интеграцию в национальный мессенджер,
+                18.08.2025 · <span class="mono">edu.gov.ru/press/10269</span></span
+              >
+            </li>
+            <li>
+              <b>7</b
+              ><span
+                >Минпросвещения России. Форма ФСН № ОО-1 на начало 2025/26 учебного года, Россия,
+                раздел 2.1.1 ·
+                <span class="mono"
+                  >docs.edu.gov.ru/document/93f51afcc09b5803b956e2bffe9253ee</span
+                ></span
+              >
+            </li>
+            <li>
+              <b>8</b
+              ><span
+                >НИУ ВШЭ. Участие школьников в дополнительном образовании. Мониторинг экономики
+                образования, № 13 (30), 2022, с. 31, 36 ·
+                <span class="mono">hse.ru/data/2022/06/22/1847493930/ib_13(30)_2022.pdf</span></span
+              >
+            </li>
+            <li>
+              <b>9</b
+              ><span
+                >Приказ Минпросвещения России от 27.11.2020 № 678 «Об утверждении Порядка проведения
+                всероссийской олимпиады школьников», ред. 2026 ·
+                <span class="mono">garant.ru</span></span
+              >
+            </li>
+            <li>
+              <b>10</b
+              ><span
+                >Минпросвещения России. Стартовал первый этап ВсОШ 2025/26 учебного года, 02.09.2025
+                · <span class="mono">edu.gov.ru/press/10361</span></span
+              >
+            </li>
+            <li>
+              <b>11</b
+              ><span
+                >НИУ ВШЭ. Мониторинг качества приёма в вузы – 2025, бюджетный приём по группам
+                направлений ·
+                <span class="mono">ege.hse.ru/ege/rating/2025/102339002/all</span></span
+              >
+            </li>
+            <li>
+              <b>12</b
+              ><span
+                >НИУ ВШЭ. Возможности для раскрытия и развития талантов детей в общеобразовательных
+                организациях. Мониторинг экономики образования, № 14 (31), 2022, с. 32 ·
+                <span class="mono">hse.ru/data/2022/06/28/1852614498/ib_14(31)_2022.pdf</span></span
+              >
+            </li>
+            <li>
+              <b>13</b
+              ><span
+                >Olimpiada.ru, каталог олимпиад, регион «Республика Татарстан», 29.09.2026 ·
+                <span class="mono">olimpiada.ru/activities</span></span
+              >
+            </li>
+            <li>
+              <b>14</b
+              ><span
+                >Сириус.Курсы. Школьный этап ВсОШ 2026, 29.09.2026 ·
+                <span class="mono">siriusolymp.ru</span></span
+              >
+            </li>
+            <li>
+              <b>15</b
+              ><span
+                >Яндекс Учебник, 29.09.2026 ·
+                <span class="mono">education.yandex.ru/uchebnik/main</span></span
+              >
+            </li>
+            <li>
+              <b>16</b
+              ><span
+                >MAX для разработчиков: MAX Bridge, Bot API, требования к чат-ботам и
+                мини-приложениям, п. 1.5; сверено командой 29.09.2026 ·
+                <span class="mono">dev.max.ru</span></span
+              >
+            </li>
+            <li>
+              <b>17</b
+              ><span
+                >Olimpiada.ru. Утверждён Перечень олимпиад школьников на 2025/26 учебный год: приказ
+                Минобрнауки России от 30.08.2025 № 669 ·
+                <span class="mono">olimpiada.ru/news/32267</span></span
+              >
+            </li>
+            <li>
+              <b>18</b
+              ><span
+                >Минпросвещения России. Доклад за 2025 год о реализации государственной политики в
+                сфере общего образования, 2026, с. 52–53 ·
+                <span class="mono"
+                  >static.government.ru/media/files/rs8XhJZqyNDppMfFrxNTmtjbSOc1w1zg.pdf</span
+                ></span
+              >
+            </li>
+            <li>
+              <b>19</b
+              ><span
+                >РИА Новости по данным VK. Еженедельная аудитория «Сферума» в MAX достигла 20 млн,
+                02.06.2026: 26 млн зарегистрированных, из них 23,9 млн учащихся и родителей ·
+                <span class="mono">ria.ru/20260602/sferum-2096157581.html</span></span
+              >
+            </li>
+            <li>
+              <b>20</b
+              ><span
+                >«Сферум» в MAX: главная страница и справка, 29.09.2026; новые сервисы 2026/27 –
+                «Первое сентября», 01.09.2026 · <span class="mono">sferum.ru</span>,
+                <span class="mono">1sept.ru/news/2026/09/01/73781</span></span
+              >
+            </li>
+            <li>
+              <b>21</b
+              ><span
+                >Федеральная рабочая программа начального общего образования «Математика», 1–4
+                классы (предметная область «Математика и информатика»), с. 3, 13, 16 ·
+                <span class="mono">edsoo.ru</span></span
+              >
+            </li>
+            <li>
+              <b>22</b
+              ><span
+                >Mediascope Kids &amp; Teens, февраль 2025: Roblox – любимая игра у 22% детей 4–17
+                лет, Minecraft – у 21%; по публикации РБК, 01.03.2025 ·
+                <span class="mono">rbc.ru</span></span
+              >
+            </li>
+            <li>
+              <b>23</b
+              ><span
+                >«Лаборатория Касперского». Российские дети проводят в онлайне около четырёх часов
+                ежедневно, 27.03.2026: играют 84% · <span class="mono">kaspersky.ru</span></span
+              >
+            </li>
+            <li>
+              <b>24</b
+              ><span
+                >МЭШ. Справка «Олимпиады в МЭШ», 29.09.2026 ·
+                <span class="mono">school.mos.ru/help/instructions/olympiad</span></span
+              >
+            </li>
+            <li>
+              <b>25</b
+              ><span
+                >Учи.ру. Олимпиады Учи.ру, расписание 2026–27, 29.09.2026 ·
+                <span class="mono">olympiads.uchi.ru</span></span
+              >
+            </li>
+            <li>
+              <b>26</b
+              ><span
+                >Хабр. Подготовка к олимпиадам по математике онлайн: топ-6 курсов, цены, 10.07.2026
+                · <span class="mono">habr.com/ru/articles/1057090</span></span
+              >
+            </li>
+            <li>
+              <b>27</b
+              ><span
+                >Duolingo Help Center: What is a streak? What are leaderboards and leagues? ·
+                <span class="mono">duolingo.com/help</span></span
+              >
+            </li>
+            <li>
+              <b>28</b
+              ><span
+                >VK. VK, МФТИ и МГТУ имени Н. Э. Баумана объявили победителей олимпиады
+                «Технокубок», 25.03.2026: более 8 тыс. школьников 8–11 классов ·
+                <span class="mono">vk.company/ru/esg/blog/12263</span></span
+              >
+            </li>
+            <li>
+              <b>29</b
+              ><span
+                >«Российская газета». Аудитория мессенджера MAX достигла 111 миллионов человек,
+                07.04.2026 · <span class="mono">rg.ru/2026/04/07</span></span
+              >
+            </li>
+            <li>
+              <b>30</b
+              ><span
+                >«Эксперт». Как изменился рынок мессенджеров в России: Mediascope, август 2026 –
+                69,9 млн в день (12+); оценка MAX – 88 млн с детьми младше 12 лет ·
+                <span class="mono">expert.ru/tekhnologii/kak-max-obognal-telegram</span></span
+              >
+            </li>
+            <li>
+              <b>31</b
+              ><span
+                >«Дети Mail». В приложении MAX появился помощник Учи.ру для родителей, 30.10.2025 ·
+                <span class="mono">deti.mail.ru/news/200121</span></span
+              >
+            </li>
+            <li>
+              <b>32</b
+              ><span
+                >«Ведомости». В мессенджере Max запустили режим «Семейная защита», 15.12.2025 ·
+                <span class="mono">vedomosti.ru</span></span
+              >
+            </li>
+            <li>
+              <b>33</b
+              ><span
+                >Duolingo Blog. 2025 Duolingo Highlights, 10.12.2025: математика доступна на русском
+                языке · <span class="mono">blog.duolingo.com/product-highlights</span></span
+              >
+            </li>
+          </ol>
+        </div>
+        <p class="source">
+          Пометки на слайдах: «Гипотеза» – цель пилота, которую проверим; «Оценка команды» и
+          «Наблюдение команды» – расчёт по сценарию и опыт преподавателей команды, без внешнего
+          источника
+        </p>
+      </div>
+    </section>
+
+    <!-- next -->
+  </body>
+  <script src="deck.js"></script>
+</html>

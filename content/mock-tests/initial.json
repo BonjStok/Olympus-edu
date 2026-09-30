@@ -1,0 +1,125 @@
+[
+  {
+    "id": "mock-4-math",
+    "title": "Пробный тур по математике · 4 класс",
+    "grade": 4,
+    "subject": "math",
+    "olympiad": "Пробный тур Олимпуса",
+    "minutes": 60,
+    "taskIds": [
+      "math-4-01-task-2",
+      "math-4-03-task-2",
+      "math-4-05-task-2",
+      "math-4-07-task-2",
+      "math-4-09-task-2",
+      "math-4-02-task-4",
+      "math-4-06-task-4",
+      "math-4-10-task-4",
+      "math-4-04-task-5",
+      "math-4-08-task-5"
+    ],
+    "randomize": false
+  },
+  {
+    "id": "mock-4-info",
+    "title": "Пробный тур по информатике · 4 класс",
+    "grade": 4,
+    "subject": "info",
+    "olympiad": "Пробный тур Олимпуса",
+    "minutes": 75,
+    "taskIds": [
+      "info-4-01-task-1",
+      "info-4-02-task-1",
+      "info-4-03-task-1",
+      "info-4-04-task-1",
+      "info-4-05-task-1",
+      "info-4-06-task-1",
+      "info-4-07-task-4",
+      "info-4-09-task-4",
+      "info-4-11-task-5"
+    ],
+    "randomize": false
+  },
+  {
+    "id": "mock-5-math",
+    "title": "Пробный тур по математике · 5 класс",
+    "grade": 5,
+    "subject": "math",
+    "olympiad": "Пробный тур Олимпуса",
+    "minutes": 60,
+    "taskIds": [
+      "math-5-01-task-2",
+      "math-5-03-task-2",
+      "math-5-05-task-2",
+      "math-5-07-task-2",
+      "math-5-09-task-2",
+      "math-5-02-task-4",
+      "math-5-06-task-4",
+      "math-5-10-task-4",
+      "math-5-04-task-5",
+      "math-5-08-task-5"
+    ],
+    "randomize": false
+  },
+  {
+    "id": "mock-5-info",
+    "title": "Пробный тур по информатике · 5 класс",
+    "grade": 5,
+    "subject": "info",
+    "olympiad": "Пробный тур Олимпуса",
+    "minutes": 75,
+    "taskIds": [
+      "info-5-01-task-1",
+      "info-5-02-task-1",
+      "info-5-03-task-1",
+      "info-5-04-task-1",
+      "info-5-05-task-1",
+      "info-5-06-task-1",
+      "info-5-07-task-4",
+      "info-5-09-task-4",
+      "info-5-11-task-5"
+    ],
+    "randomize": false
+  },
+  {
+    "id": "mock-6-math",
+    "title": "Пробный тур по математике · 6 класс",
+    "grade": 6,
+    "subject": "math",
+    "olympiad": "Пробный тур Олимпуса",
+    "minutes": 60,
+    "taskIds": [
+      "math-6-01-task-2",
+      "math-6-03-task-2",
+      "math-6-05-task-2",
+      "math-6-07-task-2",
+      "math-6-09-task-2",
+      "math-6-02-task-4",
+      "math-6-06-task-4",
+      "math-6-10-task-4",
+      "math-6-04-task-5",
+      "math-6-08-task-5"
+    ],
+    "randomize": false
+  },
+  {
+    "id": "mock-6-info",
+    "title": "Пробный тур по информатике · 6 класс",
+    "grade": 6,
+    "subject": "info",
+    "olympiad": "Пробный тур Олимпуса",
+    "minutes": 75,
+    "taskIds": [
+      "info-6-01-task-1",
+      "info-6-02-task-1",
+      "info-6-03-task-1",
+      "info-6-04-task-1",
+      "info-6-05-task-1",
+      "info-6-06-task-1",
+      "info-6-07-task-4",
+      "info-6-09-task-4",
+      "info-6-11-task-5"
+    ],
+    "randomize": false
+  }
+]

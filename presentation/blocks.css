@@ -1,0 +1,372 @@
+/* Телефон, чат MAX, QR, воронка, столбики, тепловая карта, стрелки, шкала времени */
+
+.phone {
+  flex: none;
+  width: var(--w, 280px);
+  container-type: inline-size;
+}
+
+.phone-body {
+  padding: 2.4cqw;
+  border-radius: 12cqw;
+  background: #141a27;
+}
+
+.phone-screen {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9.8cqw;
+  background: #f4f7fc;
+}
+
+.phone-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10.5cqw;
+  padding: 0 6.4cqw 0 8.4cqw;
+  color: #0b0f17;
+}
+
+.phone-time {
+  font-size: 4.3cqw;
+  font-weight: 700;
+}
+
+.phone-island {
+  width: 27cqw;
+  height: 6.6cqw;
+  border-radius: 99px;
+  background: #0b0f17;
+}
+
+.phone-icons {
+  display: flex;
+  gap: 1.4cqw;
+  align-items: center;
+}
+
+.phone-icons svg {
+  height: 3.4cqw;
+  fill: currentColor;
+}
+
+.phone-view img {
+  width: 100%;
+  height: auto;
+}
+
+.phone figcaption {
+  margin-top: 14px;
+  font-size: 18px;
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* Чат с ботом в MAX, нарисован по текстам из bot/texts.mjs */
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 206cqw;
+  background: #e9eef8;
+  font-size: 4.3cqw;
+  line-height: 1.34;
+}
+
+.chat-top {
+  display: flex;
+  gap: 3cqw;
+  align-items: center;
+  padding: 2.5cqw 5cqw 3.5cqw;
+  border-bottom: 1px solid #d6deec;
+  background: #ffffff;
+}
+
+.chat-top img {
+  width: 10cqw;
+  height: 10cqw;
+  border-radius: 50%;
+}
+
+.chat-top b {
+  display: block;
+  font-size: 4.6cqw;
+}
+
+.chat-top span {
+  color: #66728a;
+  font-size: 3.6cqw;
+}
+
+.chat-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 2.6cqw;
+  padding: 4cqw 4cqw 0;
+}
+
+.msg {
+  max-width: 88%;
+  padding: 3cqw 3.8cqw;
+  border-radius: 4.5cqw 4.5cqw 4.5cqw 1.4cqw;
+  background: #ffffff;
+}
+
+.msg.me {
+  align-self: flex-end;
+  border-radius: 4.5cqw 4.5cqw 1.4cqw 4.5cqw;
+  background: #d9e6ff;
+}
+
+.msg b {
+  font-weight: 700;
+}
+
+.msg p + p {
+  margin-top: 1.6cqw;
+}
+
+.kb {
+  display: grid;
+  gap: 1.6cqw;
+  max-width: 88%;
+}
+
+.kb span {
+  padding: 2.4cqw 3cqw;
+  border-radius: 3cqw;
+  background: #ffffff;
+  color: #1c55e0;
+  font-size: 3.9cqw;
+  font-weight: 700;
+  text-align: center;
+}
+
+.kb span.main {
+  background: #2350f5;
+  color: #ffffff;
+}
+
+/* QR-код на бота */
+
+.qr {
+  flex: none;
+  width: var(--qr, 200px);
+  height: var(--qr, 200px);
+  padding: 12px;
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.qr svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.qr.empty {
+  display: flex;
+  align-items: center;
+  border: 2px dashed var(--line-2);
+  color: var(--muted);
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Воронка: ширина полосы по логарифмической шкале */
+
+.funnel {
+  display: grid;
+  gap: 14px;
+}
+
+.f-row {
+  display: grid;
+  grid-template-columns: 186px 1fr;
+  gap: 4px 14px;
+  align-items: center;
+}
+
+.f-name {
+  grid-row: 1 / 3;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.f-note {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.f-bar {
+  display: flex;
+  align-items: center;
+  width: var(--v);
+  min-width: 120px;
+  height: 50px;
+  padding: 0 16px;
+  border-radius: 12px;
+  background: var(--grad);
+  color: #ffffff;
+}
+
+.f-bar b {
+  font-family: var(--display);
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.f-row.last .f-bar {
+  background: var(--teal-text);
+}
+
+/* Горизонтальные столбики */
+
+.bars {
+  display: grid;
+  gap: 12px;
+}
+
+.bar-row {
+  display: grid;
+  grid-template-columns: var(--label, 230px) 1fr;
+  gap: 14px;
+  align-items: center;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.bar-track {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.bar {
+  width: calc(var(--v) * var(--scale, 1%));
+  height: 30px;
+  border-radius: 8px;
+  background: var(--blue);
+}
+
+.bar.grey {
+  background: #aab6cf;
+}
+
+.bar-track b {
+  font-size: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Тепловая карта рисков: вероятность × влияние */
+
+.heat {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr) 40px;
+  gap: 8px;
+}
+
+.heat .cell {
+  position: relative;
+  border-radius: 14px;
+}
+
+.heat .c1 {
+  background: #dfe8ff;
+}
+
+.heat .c2 {
+  background: #b9ccff;
+}
+
+.heat .c3 {
+  background: #7f9dff;
+}
+
+.heat .c4 {
+  background: #4b6ff7;
+}
+
+.heat .c5 {
+  background: #2645d8;
+}
+
+.heat .ax-y {
+  grid-row: 1 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.heat .ax-x {
+  grid-column: 2 / 5;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.heat .dots-in {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.heat .dots-in span {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--blue-deep);
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 40px;
+  text-align: center;
+}
+
+/* Стрелки между шагами */
+
+.arrow {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  color: var(--blue);
+}
+
+.arrow svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* Номер шага */
+
+.step-n {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+}

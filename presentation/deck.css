@@ -1,0 +1,273 @@
+/* «Олимпус» – презентация. Слайд 1920×1080 CSS px → страница PDF 1440×810 pt */
+
+:root {
+  --blue: #2350f5;
+  --blue-text: #1c3fd1;
+  --blue-bright: #3d7bff;
+  --blue-deep: #1a2fb8;
+  --violet: #6a2bf0;
+  --violet-text: #5520cf;
+  --sky: #eef3ff;
+  --sky-2: #e1e9ff;
+  --sky-3: #c9d8ff;
+  /* Только сине-фиолетовая гамма «Сферума»: синий, фиолетовый, голубой, бирюзовый, серый */
+  --teal: #12b3c2;
+  --teal-text: #0a6c78;
+  --teal-soft: #dcf4f6;
+  --cyan: #3b9bff;
+  --cyan-text: #1459b0;
+  --cyan-soft: #e2efff;
+  --violet-soft: #efe8ff;
+
+  --ink: #0f1830;
+  --ink-2: #26324d;
+  --muted: #4b5670;
+  --faint: #6a7590;
+  --line: #d9e1f2;
+  --line-2: #c3cee6;
+  --paper: #ffffff;
+  --card: #f3f6fd;
+
+  --grad: linear-gradient(120deg, #2350f5 0%, #3a3cf2 45%, #6a2bf0 100%);
+  --sans: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --display: "Inter Display", "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --pad: 80px;
+}
+
+/* Inter 4.1 (OFL): статичные начертания, собираются scripts/fonts.py */
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  font-display: block;
+  src: url("assets/fonts/Inter-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 500;
+  font-display: block;
+  src: url("assets/fonts/Inter-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 600;
+  font-display: block;
+  src: url("assets/fonts/Inter-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 700;
+  font-display: block;
+  src: url("assets/fonts/Inter-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter Display";
+  font-weight: 600;
+  font-display: block;
+  src: url("assets/fonts/InterDisplay-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter Display";
+  font-weight: 700;
+  font-display: block;
+  src: url("assets/fonts/InterDisplay-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter Display";
+  font-weight: 800;
+  font-display: block;
+  src: url("assets/fonts/InterDisplay-800.woff2") format("woff2");
+}
+
+@page {
+  size: 1920px 1080px;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #cfd6e2;
+}
+
+body {
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 22px;
+  line-height: 1.38;
+  -webkit-font-smoothing: antialiased;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+figure,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+/* Слайд */
+
+.slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  background: var(--paper);
+  break-after: page;
+  page-break-after: always;
+}
+
+/* Мягкое голубое свечение в углу, как у «Сферума»; все цвета непрозрачные */
+.slide.glow {
+  background:
+    radial-gradient(900px 620px at 100% 0%, #e4ecff 0%, #f2f6ff 45%, #ffffff 75%), #ffffff;
+}
+
+.slide.sky {
+  background: var(--sky);
+}
+
+@media screen {
+  body {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    padding: 32px 0;
+  }
+}
+
+/* Шапка: логотип и вкладки разделов, активная – жирная */
+
+.head {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex: none;
+  align-items: center;
+  height: 92px;
+  margin: 0 var(--pad);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: auto;
+}
+
+.brand img {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.brand span {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.tabs {
+  display: flex;
+  gap: 34px;
+  align-items: center;
+}
+
+.tabs span {
+  padding: 10px 0 7px;
+  border-bottom: 3px solid transparent;
+  color: var(--faint);
+  font-size: 20px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tabs span.on {
+  border-bottom-color: var(--blue);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+/* Тело слайда */
+
+.body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  padding: 14px var(--pad) 74px;
+}
+
+.title {
+  max-width: 1720px;
+  font-family: var(--display);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.022em;
+}
+
+.title em {
+  color: var(--blue);
+  font-style: normal;
+}
+
+.sub {
+  margin-top: 14px;
+  max-width: 1500px;
+  color: var(--muted);
+  font-size: 24px;
+  line-height: 1.35;
+}
+
+/* Подвал: источник слева */
+
+.source {
+  position: absolute;
+  bottom: 26px;
+  left: var(--pad);
+  max-width: 1600px;
+  color: var(--faint);
+  font-size: 15px;
+  line-height: 1.3;
+}

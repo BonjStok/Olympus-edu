@@ -1,0 +1,111 @@
+name: Deploy
+
+# Rolls the images published by CI out to the production VPS over SSH.
+# Runs automatically after a green CI on main, or manually for a chosen commit.
+# Required repository secrets are listed in docs/DEPLOYMENT.md; without them the
+# job is skipped with a warning instead of failing.
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: Commit SHA on main to deploy (empty = the commit of this run)
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  packages: read
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to production
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'push')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    environment:
+      name: production
+      url: ${{ vars.PUBLIC_URL || 'https://olympus-edu.ru' }}
+    env:
+      DEPLOY_SHA: ${{ github.event.workflow_run.head_sha || inputs.sha || github.sha }}
+      PUBLIC_URL: ${{ vars.PUBLIC_URL || 'https://olympus-edu.ru' }}
+    steps:
+      - name: Check deploy secrets
+        id: config
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          missing=()
+          for name in DEPLOY_HOST DEPLOY_USER DEPLOY_SSH_KEY DEPLOY_KNOWN_HOSTS DEPLOY_PATH; do
+            [ -n "${!name}" ] || missing+=("$name")
+          done
+          if [ "${#missing[@]}" -gt 0 ]; then
+            echo "::warning::Deploy skipped: missing secrets ${missing[*]} (see docs/DEPLOYMENT.md)"
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v7
+        if: steps.config.outputs.enabled == 'true'
+        with:
+          ref: ${{ env.DEPLOY_SHA }}
+
+      - name: Configure SSH
+        if: steps.config.outputs.enabled == 'true'
+        env:
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$DEPLOY_SSH_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
+
+      - name: Deploy over SSH
+        if: steps.config.outputs.enabled == 'true'
+        env:
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+          DEPLOY_PORT: ${{ vars.DEPLOY_PORT || '22' }}
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          image_prefix="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/olympus"
+          ssh_opts=(-i ~/.ssh/deploy_key -p "$DEPLOY_PORT" -o StrictHostKeyChecking=yes -o BatchMode=yes -o ConnectTimeout=20)
+          target="${DEPLOY_USER}@${DEPLOY_HOST}"
+          # Short-lived registry login for pulling the images of this run.
+          # shellcheck disable=SC2029 # the actor name is expanded locally on purpose
+          printf '%s' "$GHCR_TOKEN" | ssh "${ssh_opts[@]}" "$target" \
+            "docker login ghcr.io -u '${GITHUB_ACTOR}' --password-stdin >/dev/null"
+          ssh "${ssh_opts[@]}" "$target" \
+            bash -s -- "$DEPLOY_PATH" "$DEPLOY_SHA" "$image_prefix" < scripts/deploy/remote-deploy.sh
+
+      - name: Public health check
+        if: steps.config.outputs.enabled == 'true'
+        run: |
+          for _ in $(seq 1 30); do
+            if curl -fsS --max-time 10 "${PUBLIC_URL}/api/v1/health"; then
+              echo
+              echo "Production is healthy: ${PUBLIC_URL} @ ${DEPLOY_SHA}" | tee -a "$GITHUB_STEP_SUMMARY"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "::error::${PUBLIC_URL}/api/v1/health did not become healthy"
+          exit 1

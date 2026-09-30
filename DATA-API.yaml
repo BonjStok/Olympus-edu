@@ -1,0 +1,276 @@
+schemaVersion: "1.0"
+
+solution:
+  name: "Олимпус"
+  teamId: "REPLACE_WITH_TEAM_ID"
+
+api:
+  baseUrl: "https://olympus-edu.ru"
+  openapi: "./openapi.yaml"
+  defaultHeaders:
+    Accept: "application/json"
+
+checks:
+  - id: "health"
+    name: "API availability and database health"
+    method: "GET"
+    path: "/api/v1/health"
+    role: "public"
+    expected:
+      statusCodes: [200]
+      contentType: "application/json"
+      requiredFields: ["status", "database", "version"]
+      bodySchema:
+        type: "object"
+        required: ["status", "database", "version"]
+        properties:
+          status: {type: "string"}
+          database: {type: "string"}
+          version: {type: "string"}
+    timeoutMs: 5000
+    repeatable: true
+
+  - id: "login-test-user"
+    name: "Authenticate test account"
+    method: "POST"
+    path: "/api/v1/auth/login"
+    role: "test_user"
+    request:
+      headers:
+        Content-Type: "application/json"
+      body:
+        username: "${TEST_API_USERNAME}"
+        password: "${TEST_API_PASSWORD}"
+    expected:
+      statusCodes: [200]
+      contentType: "application/json"
+      requiredFields: ["accessToken", "tokenType", "role", "userId"]
+    timeoutMs: 5000
+    repeatable: true
+    extract:
+      accessToken: "$.accessToken"
+
+  - id: "reset-test-user"
+    name: "Reset reproducible test account"
+    method: "POST"
+    path: "/api/v1/test/reset"
+    role: "test_user"
+    dependsOn: ["login-test-user"]
+    request:
+      headers:
+        Authorization: "Bearer ${accessToken}"
+    expected:
+      statusCodes: [200]
+      contentType: "application/json"
+      requiredFields: ["ok", "userId", "reset"]
+    timeoutMs: 5000
+    repeatable: true
+
+  - id: "list-content"
+    name: "Read published content catalogue"
+    method: "GET"
+    path: "/api/v1/content"
+    role: "test_user"
+    dependsOn: ["login-test-user"]
+    request:
+      headers:
+        Authorization: "Bearer ${accessToken}"
+    expected:
+      statusCodes: [200]
+      contentType: "application/json"
+      requiredFields: ["records", "count"]
+      bodySchema:
+        type: "object"
+        required: ["records", "count"]
+        properties:
+          records: {type: "array"}
+          count: {type: "integer"}
+    timeoutMs: 5000
+    repeatable: true
+
+  - id: "read-topic"
+    name: "Read one topic with lessons and tasks"
+    method: "GET"
+    path: "/api/v1/topics/{id}"
+    role: "test_user"
+    dependsOn: ["login-test-user"]
+    request:
+      headers:
+        Authorization: "Bearer ${accessToken}"
+      path:
+        id: "math-4-01"
+    expected:
+      statusCodes: [200]
+      contentType: "application/json"
+      requiredFields: ["topic", "lessons", "tasks"]
+    timeoutMs: 5000
+    repeatable: true
+
+  - id: "view-lesson"
+    name: "Save lesson progress"
+    method: "POST"
+    path: "/api/v1/lessons/{id}/view"
+    role: "test_user"
+    dependsOn: ["reset-test-user"]
+    request:
+      headers:
+        Authorization: "Bearer ${accessToken}"
+      path:
+        id: "math-4-01-lesson-1"
+    expected:
+      statusCodes: [200]
+      contentType: "application/json"
+      requiredFields: ["ok", "lessonId", "completed"]
+    timeoutMs: 5000
+    repeatable: true
+
+  - id: "check-task"
+    name: "Check a numeric training task"
+    method: "POST"
+    path: "/api/v1/tasks/{id}/check"
+    role: "test_user"
+    dependsOn: ["reset-test-user"]
+    request:
+      headers:
+        Authorization: "Bearer ${accessToken}"
+        Content-Type: "application/json"
+      path:
+        id: "math-4-01-task-1"
+      body:
+        answer: "26"
+    expected:
+      statusCodes: [200]
+      contentType: "application/json"
+      requiredFields: ["taskId", "correct", "practiceStar"]
+      bodySchema:
+        type: "object"
+        required: ["taskId", "correct", "practiceStar"]
+        properties:
+          taskId: {type: "string"}
+          correct: {type: "boolean"}
+          practiceStar: {type: "boolean"}
+    timeoutMs: 5000
+    repeatable: true
+
+  - id: "register-olympiad"
+    name: "Save olympiad registration mark"
+    method: "POST"
+    path: "/api/v1/olympiads/{id}/register"
+    role: "test_user"
+    dependsOn: ["reset-test-user"]
+    request:
+      headers:
+        Authorization: "Bearer ${accessToken}"
+        Content-Type: "application/json"
+      path:
+        id: "moscow-math-festival-2027"
+      body:
+        registered: true
+    expected:
+      statusCodes: [200]
+      contentType: "application/json"
+      requiredFields: ["ok", "olympiadId", "registered"]
+    timeoutMs: 5000
+    repeatable: true
+
+  - id: "start-mock"
+    name: "Start fixed mock test"
+    method: "POST"
+    path: "/api/v1/mocks/{id}/start"
+    role: "test_user"
+    dependsOn: ["reset-test-user"]
+    request:
+      headers:
+        Authorization: "Bearer ${accessToken}"
+      path:
+        id: "mock-4-math"
+    expected:
+      statusCodes: [201]
+      contentType: "application/json"
+      requiredFields: ["attempt"]
+    timeoutMs: 5000
+    repeatable: false
+    extract:
+      attemptId: "$.attempt.id"
+
+  - id: "save-mock"
+    name: "Save mock answers"
+    method: "PATCH"
+    path: "/api/v1/mock-attempts/{id}"
+    role: "test_user"
+    dependsOn: ["start-mock"]
+    request:
+      headers:
+        Authorization: "Bearer ${accessToken}"
+        Content-Type: "application/json"
+      path:
+        id: "${attemptId}"
+      body:
+        answers:
+          math-4-01-task-2: "25"
+          math-4-03-task-2: "1"
+    expected:
+      statusCodes: [200]
+      contentType: "application/json"
+      requiredFields: ["ok", "attemptId", "saved"]
+    timeoutMs: 5000
+    repeatable: true
+
+  - id: "finish-mock"
+    name: "Finish mock test and calculate result"
+    method: "POST"
+    path: "/api/v1/mock-attempts/{id}/finish"
+    role: "test_user"
+    dependsOn: ["start-mock"]
+    request:
+      headers:
+        Authorization: "Bearer ${accessToken}"
+        Content-Type: "application/json"
+      path:
+        id: "${attemptId}"
+      body:
+        answers:
+          math-4-01-task-2: "25"
+          math-4-03-task-2: "1"
+          math-4-05-task-2: "32"
+          math-4-07-task-2: "19"
+          math-4-09-task-2: "16"
+          math-4-02-task-4: "20"
+          math-4-06-task-4: "48"
+          math-4-10-task-4: "4"
+          math-4-04-task-5: "20"
+          math-4-08-task-5: "20"
+    expected:
+      statusCodes: [200]
+      contentType: "application/json"
+      requiredFields: ["attempt"]
+    timeoutMs: 5000
+    repeatable: true
+
+  - id: "profile"
+    name: "Read saved progress after actions"
+    method: "GET"
+    path: "/api/v1/profile"
+    role: "test_user"
+    dependsOn: ["view-lesson", "check-task", "register-olympiad"]
+    request:
+      headers:
+        Authorization: "Bearer ${accessToken}"
+    expected:
+      statusCodes: [200]
+      contentType: "application/json"
+      requiredFields: ["user", "progress", "updatedAt"]
+    timeoutMs: 5000
+    repeatable: true
+
+cleanup:
+  - id: "reset-test-user-after-check"
+    method: "POST"
+    path: "/api/v1/test/reset"
+    role: "test_user"
+    request:
+      headers:
+        Authorization: "Bearer ${accessToken}"
+    expected:
+      statusCodes: [200]
+    timeoutMs: 5000
