@@ -35,7 +35,10 @@ function fakeWebApp(platform: "ios" | "android" | "web" | "desktop" | null = "io
 }
 
 describe("max bridge", () => {
-  beforeEach(() => bridge.__resetBridgeForTests());
+  beforeEach(() => {
+    window.history.replaceState({}, "", "/");
+    bridge.__resetBridgeForTests();
+  });
   afterEach(() => {
     delete window.WebApp;
     vi.restoreAllMocks();
@@ -88,6 +91,18 @@ describe("max bridge", () => {
 
     await expect(bridge.waitForInitData({ timeoutMs: 100, pollMs: 5 })).resolves.toBe(
       "query_id=bridge&hash=abc",
+    );
+  });
+
+  it("reads WebAppData when Android adds it to the URL after startup", async () => {
+    window.history.replaceState({}, "", "/");
+    bridge.captureLaunchParams();
+    window.setTimeout(() => {
+      window.history.replaceState({}, "", "/#WebAppData=query_id%3Dlate-url%26hash%3Dabc");
+    }, 5);
+
+    await expect(bridge.waitForInitData({ timeoutMs: 100, pollMs: 5 })).resolves.toBe(
+      "query_id=late-url&hash=abc",
     );
   });
 
