@@ -68,6 +68,22 @@ describe("max bridge", () => {
     expect(bridge.startParam()).toBe("event_vsosh-msk");
   });
 
+  it("waits for MAX to finish providing initData", async () => {
+    const { wa } = fakeWebApp("android");
+    wa.initData = "";
+    window.setTimeout(() => {
+      wa.initData = "query_id=late&hash=abc";
+    }, 5);
+
+    await expect(bridge.waitForInitData({ timeoutMs: 100, pollMs: 5 })).resolves.toBe(
+      "query_id=late&hash=abc",
+    );
+  });
+
+  it("does not delay a plain browser without a MAX bridge", async () => {
+    await expect(bridge.waitForInitData()).resolves.toBeUndefined();
+  });
+
   it("captures WebAppData from the launch URL before the router touches the hash", () => {
     bridge.captureLaunchParams({
       hash: "#WebAppData=query_id%3D7&WebAppPlatform=web",
