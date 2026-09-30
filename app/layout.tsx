@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -31,11 +32,10 @@ export default function RootLayout({
     <html lang="ru">
       <head>
         {/*
-          MAX Bridge, connected as the official docs show: a plain synchronous script, so
-          `window.WebApp` exists before the app starts and reads its launch data from the
-          URL before the app's router rewrites the hash. Outside MAX it is inert.
+          Load the MAX bridge before React becomes interactive. On a cold Android launch,
+          rendering the app before this script is ready makes it start as a guest.
         */}
-        <script src="https://st.max.ru/js/max-web-app.js" />
+        <Script src="https://st.max.ru/js/max-web-app.js" strategy="beforeInteractive" />
       </head>
       <body>{children}</body>
     </html>
