@@ -45,6 +45,7 @@ declare global {
 /** `WebAppData` from the launch URL, captured before the router rewrites the hash. */
 let launchInitData: string | undefined;
 let launchStartParam: string | undefined;
+let launchContextSeen = false;
 
 /** Call once at startup, before touching `location.hash`. */
 export function captureLaunchParams(loc: Pick<Location, "hash" | "search"> = location): void {
@@ -59,6 +60,8 @@ export function captureLaunchParams(loc: Pick<Location, "hash" | "search"> = loc
       hash.get("WebAppStartParam") ||
       search.get("startapp") ||
       undefined;
+    if (hash.has("WebAppData") || hash.has("WebAppPlatform") || search.has("WebAppStartParam"))
+      launchContextSeen = true;
     if (initData) launchInitData = initData;
     if (startParam) launchStartParam = startParam;
   } catch {
@@ -121,14 +124,14 @@ export function launchDiagnostics(): {
  * MAX Android can create `window.WebApp` before it fills `initData`.  Do not turn a
  * real MAX user into a guest simply because that small handshake is still running.
  *
- * The wait is bounded: opening the site directly must still work as a guest if MAX
- * never supplies the bridge or launch data.
+ * The wait is bounded. A regular browser without any MAX launch context must not
+ * be delayed; otherwise UI tests and direct visits would wait needlessly.
  */
 export async function waitForInitData(
   options: { timeoutMs?: number; pollMs?: number } = {},
 ): Promise<string | undefined> {
   const immediate = initData();
-  if (immediate) return immediate;
+  if (immediate || (!webApp() && !launchContextSeen)) return immediate;
 
   const timeoutMs = Math.max(0, options.timeoutMs ?? 2_500);
   const pollMs = Math.max(10, options.pollMs ?? 50);
@@ -297,4 +300,5 @@ export function __resetBridgeForTests(): void {
   readySent = false;
   launchInitData = undefined;
   launchStartParam = undefined;
+  launchContextSeen = false;
 }
