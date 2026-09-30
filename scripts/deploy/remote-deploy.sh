@@ -42,6 +42,10 @@ log "Pull images ${IMAGE_PREFIX}-*:${SHA}"
 
 log "Start the new release"
 if "${COMPOSE[@]}" up -d --no-build --remove-orphans --wait --wait-timeout 240; then
+  # Caddy reads its bind-mounted Caddyfile only on startup or reload. The compose
+  # definition is unchanged between releases, so explicitly apply routes/headers.
+  log "Reload Caddy configuration"
+  "${COMPOSE[@]}" exec -T caddy caddy reload --config /etc/caddy/Caddyfile --adapter caddyfile
   echo "$SHA" > "$STATE_DIR/current-tag"
   docker logout ghcr.io >/dev/null 2>&1 || true
   docker image prune -f --filter "until=336h" >/dev/null || true
