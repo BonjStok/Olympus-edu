@@ -432,15 +432,14 @@ PostgreSQL и файлами. Это же – способ полностью с
 |---|---|
 | Адрес проверяемого API | `https://olympus-edu.ru/api/v1` (локально `http://localhost:3000/api/v1`); проверка – `GET /api/v1/health` |
 | OpenAPI 3.1 | [`openapi.yaml`](openapi.yaml) – 12 операций `/api/v1` и `/api/media/{id}` |
-| Сценарий обязательных проверок | [`DATA-API.yaml`](DATA-API.yaml): версия схемы, решение и `teamId`, базовый адрес `https://olympus-edu.ru`, 12 проверок и шаг очистки – метод, путь, параметры, роль, ожидаемые коды, тип ответа и обязательные поля. Id и ответы совпадают с `test-data.json` и контентом (это проверяет `tests/unit/contracts/data-api.test.ts`) |
+| Сценарий обязательных проверок | [`DATA-API.yaml`](DATA-API.yaml): версия схемы, решение «Олимпус» и `teamId` команды `605`, базовый адрес `https://olympus-edu.ru`, 12 проверок и шаг очистки – метод, путь, параметры, роль, ожидаемые коды, тип ответа и обязательные поля. Id и ответы совпадают с `test-data.json` и контентом (это проверяет `tests/unit/contracts/data-api.test.ts`) |
 | Тестовая учётная запись | роль `test_user`, логин `test_user`. Production: пароль – значение `TEST_API_PASSWORD` на сервере, в репозитории не хранится и передаётся проверяющим отдельно (на первом слайде презентации). Локально: `olympus-local-test`. Вход – `POST /api/v1/auth/login`, дальше `Authorization: Bearer <accessToken>`. Администраторский доступ для проверки не нужен |
 | Тестовые данные | [`test-data.json`](test-data.json) |
 | Автопроверка | `node scripts/api-smoke.mjs` / `pnpm test:api` |
 | Описание | [docs/API.md](docs/API.md): все эндпоинты, RPC мини-приложения, коды ошибок, лимиты |
 
 Адрес production уже указан в `DATA-API.yaml` (`api.baseUrl`) и первым в `servers` файла
-`openapi.yaml`. Перед сдачей остаётся заполнить идентификатор команды – `solution.teamId` в
-`DATA-API.yaml` (сейчас заглушка `REPLACE_WITH_TEAM_ID`).
+`openapi.yaml`. Идентификатор команды для проверки указан в `solution.teamId` файла `DATA-API.yaml`: `605`.
 
 ## 17. Документация
 

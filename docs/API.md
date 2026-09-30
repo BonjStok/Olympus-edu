@@ -644,7 +644,7 @@ API_BASE_URL=http://localhost:3000 TEST_API_PASSWORD='…' pnpm test:api
 
 | Где | Поле | Сейчас | Нужно |
 |---|---|---|---|
-| `DATA-API.yaml` | `solution.teamId` | `REPLACE_WITH_TEAM_ID` | идентификатор команды |
+| `DATA-API.yaml` | `solution.teamId` | `605` | идентификатор команды |
 
 ## 11. Известные расхождения и ограничения
 

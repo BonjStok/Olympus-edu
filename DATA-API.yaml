@@ -2,7 +2,7 @@ schemaVersion: "1.0"
 
 solution:
   name: "Олимпус"
-  teamId: "REPLACE_WITH_TEAM_ID"
+  teamId: "605"
 
 api:
   baseUrl: "https://olympus-edu.ru"
