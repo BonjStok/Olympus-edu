@@ -28,7 +28,9 @@ prev_sha="$(git rev-parse HEAD)"
 prev_tag="$(cat "$STATE_DIR/current-tag" 2>/dev/null || true)"
 
 log "Backup PostgreSQL before the release"
-"${COMPOSE[@]}" --profile tools run --rm backup
+# `bash -s` receives this deploy script through stdin; keep the one-off backup
+# container from consuming the remainder of that script.
+"${COMPOSE[@]}" --profile tools run --rm --no-TTY --interactive=false backup
 
 log "Check out ${SHA}"
 git fetch --quiet origin
