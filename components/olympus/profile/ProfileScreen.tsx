@@ -66,7 +66,7 @@ function GuestCard() {
           <p>
             Состояние входа: мост MAX - {max.bridge ? "есть" : "нет"}; данные запуска -
             {max.bridgeData ? " в мосте" : max.urlData ? " в ссылке" : " не получены"}
-            {max.platform ? `; платформа — ${max.platform}` : ""}.
+            {max.platform ? `; платформа - ${max.platform}` : ""}.
           </p>
         </>
       ) : state.features.max ? (

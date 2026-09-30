@@ -45,6 +45,9 @@ export default defineConfig({
           include: ["tests/ui/**/*.test.{ts,tsx}"],
           environment: "jsdom",
           setupFiles: ["tests/support/ui-setup.ts"],
+          // UI suites share browser-like global state and are timing-sensitive on busy CI runners.
+          // Running files serially avoids intermittent first-render timeouts.
+          fileParallelism: false,
           // Whole screens rendered in jsdom and typed into with userEvent take ~1-3 s; on a busy
           // CI runner or laptop the default 5 s limit turns that into random timeouts.
           testTimeout: 15_000,

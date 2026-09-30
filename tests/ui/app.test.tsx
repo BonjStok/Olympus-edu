@@ -41,7 +41,7 @@ describe("navigation", () => {
   it("MAX BackButton appears on nested screens and goes back", async () => {
     let onBack: (() => void) | undefined;
     window.WebApp = {
-      initData: "",
+      initData: "query_id=1",
       platform: "android",
       ready: vi.fn(),
       BackButton: {

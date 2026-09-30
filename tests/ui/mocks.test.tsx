@@ -157,7 +157,7 @@ describe("mock tests", () => {
 
   it("asks before leaving a running mock and asks MAX to confirm closing", async () => {
     const wa = {
-      initData: "",
+      initData: "query_id=1",
       platform: "ios" as const,
       enableClosingConfirmation: vi.fn(),
       disableClosingConfirmation: vi.fn(),
