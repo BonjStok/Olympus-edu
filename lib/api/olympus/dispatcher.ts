@@ -130,10 +130,6 @@ export async function handleOlympusPost(
 ): Promise<Response> {
   const now = Date.now();
   try {
-    // Cookie-authenticated (or anonymous) browser requests must come from our own origin.
-    // Requests with an Authorization header cannot be forged cross-site and skip this check.
-    if (!usesHeaderAuth(req) && !isSameOrigin(req))
-      throw forbidden("Запрос отклонён: недопустимый источник", "BAD_ORIGIN");
     if (!isJsonContentType(req))
       throw new ApiError(
         415,
@@ -148,6 +144,14 @@ export async function handleOlympusPost(
       });
       if (!isPlainObject(value)) throw badRequest("Тело запроса должно быть JSON-объектом");
       if (!isAction(value.action)) throw badRequest("Неизвестное действие", "UNKNOWN_ACTION");
+      // Cookie-authenticated browser requests normally have to come from our own origin.
+      // MAX Android reports its container origin for the initial login, though. That one request
+      // is safe to accept because signInWithMax verifies the signed launch data; every other
+      // request still keeps the regular Origin protection.
+      const isSignedMaxSession =
+        value.action === "session" && typeof value.initData === "string" && value.initData !== "";
+      if (!usesHeaderAuth(req) && !isSameOrigin(req) && !isSignedMaxSession)
+        throw forbidden("Запрос отклонён: недопустимый источник", "BAD_ORIGIN");
       const route = routes[value.action] as RpcRoute<OlympusAction>;
       if (bytes > (route.maxBody ?? DEFAULT_BODY_LIMIT))
         throw new ApiError(

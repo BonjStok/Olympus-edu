@@ -395,6 +395,18 @@ describe("admin login", () => {
 });
 
 describe("origin and transport checks", () => {
+  it("accepts signed MAX login data from the Android MAX container origin", async () => {
+    const response = await rpc(
+      POST,
+      "session",
+      { initData: await signInitData({ user: { id: 777, first_name: "Аня" } }) },
+      {},
+      { origin: "https://web.max.ru" },
+    );
+    expect(response.status).toBe(200);
+    expect(response.body).toMatchObject({ ok: true });
+  });
+
   it("rejects cookie-authenticated requests from a foreign origin", async () => {
     const token = await guestToken(POST);
     const response = await rpc(
