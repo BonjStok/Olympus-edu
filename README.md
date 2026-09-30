@@ -72,8 +72,8 @@
    │  /max/webhook* → bot:8090                  остальное → web:3000         │
    └──────┬─────────────────────────────────────────┬────────────────────────┘
           ▼                                         ▼
-   bot (Node 22)                            web: vinext + React 19 в workerd
-   ─► platform-api2.max.ru                  (wrangler dev в Node 22)
+   bot (Node 26)                            web: vinext + React 19 в workerd
+   ─► platform-api2.max.ru                  (wrangler dev в Node 26)
           │                                         │
           │ SQL                                     ├── HTTP + RUNNER_TOKEN ──► runner:8080
           │                                         │                              │
@@ -139,7 +139,7 @@ docker compose up -d --build
 | Docker | Engine ≥ 25 и Docker Compose ≥ 2.24 (используются `env_file.required` и `healthcheck.start_interval`) |
 | Свободный порт | `3000` на машине (меняется `OLYMPUS_PORT`) |
 | Ресурсы | работающий стек занимает около 0,6 ГБ RAM (web ≈ 0,5 ГБ; runner и бот ограничены 256 МБ каждый), образы – около 1,2 ГБ диска; для сборки рекомендуем выделить Docker не меньше 4 ГБ RAM |
-| Интернет при сборке | скачать базовые образы `node:22-bookworm-slim`, `postgres:17-alpine` и npm-пакеты по lockfile |
+| Интернет при сборке | скачать базовые образы `node:26-bookworm-slim`, `postgres:17-alpine` и npm-пакеты по lockfile |
 | Интернет при работе | браузер загружает `https://st.max.ru/js/max-web-app.js` (MAX Bridge; вне MAX он ничего не делает); бот обращается к `platform-api2.max.ru`; runner – к Judge0 |
 | Production | домен, открытые порты 80/443, токен бота MAX, пароли в `.env` ([docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)) |
 
@@ -202,14 +202,14 @@ CI проверяет, что сборка всех образов с нуля (
 
 | Что | Версия |
 |---|---|
-| Node.js | ≥ 22.13 (`engines`); образы – `node:22-bookworm-slim` |
+| Node.js | ≥ 22.13 (`engines`); образы – `node:26-bookworm-slim` |
 | pnpm | 11.25.0 (`packageManager`; через Corepack) |
-| PostgreSQL | 17 (`postgres:17-alpine`), драйвер `pg` 8.16.3 |
-| Веб-приложение | React 19.2.8, vinext 1.0.0-beta.5 (Next.js-совместимый App Router на Vite 8.0.13), `next` 16.3.4 (Next.js API, который реализует vinext), wrangler 4.92.0 / workerd (среда выполнения), `@cloudflare/vite-plugin` 1.37.1 |
+| PostgreSQL | 17 (`postgres:17-alpine`), драйвер `pg` 8.23.0 |
+| Веб-приложение | React 19.3.0, vinext 1.0.0-beta.5 (Next.js-совместимый App Router на Vite 8.3.0), `next` 16.3.6 (Next.js API, который реализует vinext), wrangler 4.136.3 / workerd (среда выполнения), `@cloudflare/vite-plugin` 1.57.3 |
 | Интерфейс | `@maxhub/max-ui` 0.5.0 (MAX UI), `radix-ui` 1.6.7 (диалоги), `lucide-react` 1.31.0 (иконки), KaTeX 0.18.7 (формулы) |
-| Бот и runner | без npm-зависимостей: Node 22 (`fetch`, `node:http`), бот использует `pg` из образа `web` |
+| Бот и runner | без npm-зависимостей: Node 26 (`fetch`, `node:http`), бот использует `pg` из образа `web` |
 | Прокси | Caddy 2.10 (`caddy:2.10-alpine`) |
-| Тесты и качество | Vitest 5, Testing Library, jsdom, Playwright 1.63, ESLint 10, Prettier 3, TypeScript 5.9.3 |
+| Тесты и качество | Vitest 5, Testing Library, jsdom, Playwright 1.63, ESLint 10, Prettier 3, TypeScript 6.0.3 |
 
 Политика цепочки поставок (`pnpm-workspace.yaml`): пакеты моложе 7 дней не устанавливаются,
 сборочные скрипты разрешены только перечисленным пакетам, уязвимые транзитивные версии
