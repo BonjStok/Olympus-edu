@@ -93,7 +93,10 @@ export function initData(): string | undefined {
   // MAX documents WebAppData in the URL fragment as well as WebApp.initData.
   // Re-read it here because some Android launches populate the fragment late.
   if (typeof window !== "undefined") captureLaunchParams();
-  // The fragment is the launch envelope MAX put on *this* opening. Android can keep an\n  // older bridge object alive between openings, so its non-empty initData may be stale.\n  // Prefer the URL value when it is available; the bridge remains the fallback.\n  return launchInitData || webApp()?.initData || undefined;
+  // The fragment is the launch envelope MAX put on *this* opening. Android can keep an
+  // older bridge object alive between openings, so its non-empty initData may be stale.
+  // Prefer the URL value when it is available; the bridge remains the fallback.
+  return launchInitData || webApp()?.initData || undefined;
 }
 
 /** Safe, value-free status for diagnosing a failed MAX launch on a user's device. */
