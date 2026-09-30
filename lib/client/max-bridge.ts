@@ -86,6 +86,33 @@ export function initData(): string | undefined {
   return webApp()?.initData || launchInitData || undefined;
 }
 
+/**
+ * MAX Android can create `window.WebApp` before it fills `initData`.  Do not turn a
+ * real MAX user into a guest simply because that small handshake is still running.
+ *
+ * A normal browser has no bridge at all, so it is not delayed.  The wait is bounded:
+ * opening the site directly must still work as a guest if MAX never supplies data.
+ */
+export async function waitForInitData(
+  options: { timeoutMs?: number; pollMs?: number } = {},
+): Promise<string | undefined> {
+  const immediate = initData();
+  if (immediate || !webApp()) return immediate;
+
+  const timeoutMs = Math.max(0, options.timeoutMs ?? 2_500);
+  const pollMs = Math.max(10, options.pollMs ?? 50);
+  const until = Date.now() + timeoutMs;
+
+  return new Promise((resolve) => {
+    const check = () => {
+      const value = initData();
+      if (value || Date.now() >= until) return resolve(value);
+      window.setTimeout(check, pollMs);
+    };
+    check();
+  });
+}
+
 export function startParam(): string | undefined {
   return webApp()?.initDataUnsafe?.start_param || launchStartParam || undefined;
 }
