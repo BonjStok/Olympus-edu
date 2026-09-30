@@ -8,12 +8,10 @@
     Referrer-Policy "strict-origin-when-cross-origin"
     Permissions-Policy "camera=(), microphone=(), geolocation=()"
     Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # MAX Android can otherwise retain an old mini-app document after a deploy.
+    Cache-Control "no-store"
     -Server
   }
-
-  # MAX Android may retain the app document between launches. Keep hashed static assets cacheable,
-  # but always revalidate the HTML entry point so a deployed client update is picked up.
-  header / Cache-Control "no-store"
 
   # MAX chat-bot webhook (docs/BOT.md); matched before the catch-all proxy below.
   reverse_proxy /max/webhook* bot:8090
