@@ -80,7 +80,7 @@ curl -fsS https://<домен>/api/v1/health    # {"status":"ok","database":"ok"
 ```text
 push в main ─► CI (.github/workflows/ci.yml)
                quality · integration · docker-e2e · workflows ─► publish: образы в GHCR
-                   ghcr.io/<владелец>/olympus-web:<sha>, olympus-runner:<sha> (+ :latest)
+                   ghcr.io/<владелец>/olympus-edu-web:<sha>, olympus-edu-runner:<sha> (+ :latest)
           ─► Deploy (.github/workflows/deploy.yml), только после успешного CI на push в main
                ssh на сервер → docker login ghcr.io (временный токен запуска)
                → scripts/deploy/remote-deploy.sh <DEPLOY_PATH> <sha> <префикс образов>

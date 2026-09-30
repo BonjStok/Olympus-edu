@@ -206,7 +206,7 @@ jobs:
       - uses: actions/checkout@v7
 
       - name: Resolve image names
-        run: echo "IMAGE_PREFIX=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/olympus" >> "$GITHUB_ENV"
+        run: echo "IMAGE_PREFIX=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/olympus-edu" >> "$GITHUB_ENV"
 
       - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
 
