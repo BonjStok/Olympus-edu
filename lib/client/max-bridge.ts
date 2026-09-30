@@ -51,12 +51,16 @@ export function captureLaunchParams(loc: Pick<Location, "hash" | "search"> = loc
   try {
     const hash = new URLSearchParams(loc.hash.replace(/^#\/?/, ""));
     const search = new URLSearchParams(loc.search);
-    launchInitData = hash.get("WebAppData") || undefined;
-    launchStartParam =
+    // Android MAX may add these values after the first script evaluation.  Keep an
+    // already captured value when a later read sees the application's own hash.
+    const initData = hash.get("WebAppData") || undefined;
+    const startParam =
       search.get("WebAppStartParam") ||
       hash.get("WebAppStartParam") ||
       search.get("startapp") ||
       undefined;
+    if (initData) launchInitData = initData;
+    if (startParam) launchStartParam = startParam;
   } catch {
     /* malformed URL: nothing to capture */
   }
@@ -83,6 +87,9 @@ export function isMobileMax(): boolean {
 }
 
 export function initData(): string | undefined {
+  // MAX documents WebAppData in the URL fragment as well as WebApp.initData.
+  // Re-read it here because some Android launches populate the fragment late.
+  if (typeof window !== "undefined") captureLaunchParams();
   return webApp()?.initData || launchInitData || undefined;
 }
 
