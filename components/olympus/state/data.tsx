@@ -213,7 +213,9 @@ function useDataStore(api: ApiClient) {
   const start = useCallback(async () => {
     dispatch({ type: "loading" });
     let startParam = bridge.startParam() ?? null;
-    const init = bridge.initData();
+    // On a cold Android launch MAX may expose WebApp before its signed launch
+    // data. Wait briefly instead of permanently creating a guest session.
+    const init = await bridge.waitForInitData();
     if (init) {
       try {
         const res = await api.session(init);
