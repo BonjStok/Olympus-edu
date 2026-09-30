@@ -93,6 +93,30 @@ export function initData(): string | undefined {
   return webApp()?.initData || launchInitData || undefined;
 }
 
+/** Safe, value-free status for diagnosing a failed MAX launch on a user's device. */
+export function launchDiagnostics(): {
+  bridge: boolean;
+  bridgeData: boolean;
+  urlData: boolean;
+  platform: MaxPlatform | null;
+} {
+  const wa = webApp();
+  let urlData = false;
+  if (typeof window !== "undefined") {
+    try {
+      urlData = Boolean(new URLSearchParams(location.hash.replace(/^#\/?/, "")).get("WebAppData"));
+    } catch {
+      /* malformed URL: no diagnostic data */
+    }
+  }
+  return {
+    bridge: Boolean(wa),
+    bridgeData: Boolean(wa?.initData),
+    urlData: urlData || Boolean(launchInitData),
+    platform: wa?.platform ?? null,
+  };
+}
+
 /**
  * MAX Android can create `window.WebApp` before it fills `initData`.  Do not turn a
  * real MAX user into a guest simply because that small handshake is still running.
