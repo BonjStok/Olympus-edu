@@ -69,6 +69,12 @@ describe("max bridge", () => {
     expect(bridge.isMobileMax()).toBe(true);
     expect(bridge.initData()).toBe("query_id=1&hash=abc");
     expect(bridge.startParam()).toBe("event_vsosh-msk");
+    expect(bridge.launchDiagnostics()).toEqual({
+      bridge: true,
+      bridgeData: true,
+      urlData: false,
+      platform: "android",
+    });
   });
 
   it("waits for MAX to finish providing initData", async () => {
@@ -84,6 +90,8 @@ describe("max bridge", () => {
   });
 
   it("waits for the MAX bridge itself on a cold launch", async () => {
+    window.history.replaceState({}, "", "/#WebAppPlatform=android");
+    bridge.captureLaunchParams();
     window.setTimeout(() => {
       fakeWebApp("android");
       window.WebApp!.initData = "query_id=bridge&hash=abc";
@@ -95,7 +103,7 @@ describe("max bridge", () => {
   });
 
   it("reads WebAppData when Android adds it to the URL after startup", async () => {
-    window.history.replaceState({}, "", "/");
+    window.history.replaceState({}, "", "/#WebAppPlatform=android");
     bridge.captureLaunchParams();
     window.setTimeout(() => {
       window.history.replaceState({}, "", "/#WebAppData=query_id%3Dlate-url%26hash%3Dabc");
