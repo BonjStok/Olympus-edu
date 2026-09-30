@@ -80,8 +80,19 @@ describe("max bridge", () => {
     );
   });
 
-  it("does not delay a plain browser without a MAX bridge", async () => {
-    await expect(bridge.waitForInitData()).resolves.toBeUndefined();
+  it("waits for the MAX bridge itself on a cold launch", async () => {
+    window.setTimeout(() => {
+      fakeWebApp("android");
+      window.WebApp!.initData = "query_id=bridge&hash=abc";
+    }, 5);
+
+    await expect(bridge.waitForInitData({ timeoutMs: 100, pollMs: 5 })).resolves.toBe(
+      "query_id=bridge&hash=abc",
+    );
+  });
+
+  it("gives a plain browser a guest fallback after the bounded wait", async () => {
+    await expect(bridge.waitForInitData({ timeoutMs: 0 })).resolves.toBeUndefined();
   });
 
   it("captures WebAppData from the launch URL before the router touches the hash", () => {
