@@ -16,6 +16,8 @@ export default tseslint.config(
       "playwright-report/**",
       "test-results/**",
       "presentation/dist/**",
+      "work/**",
+      "outputs/**",
       "lib/seed.json",
       "next-env.d.ts",
     ],

@@ -30,6 +30,10 @@ web (lib/services/runner.ts) ──► runner (runner/server.mjs) ──► Judg
 отдельно (официальный репозиторий judge0/judge0, инструкция по установке CE), а воспроизводимой
 частью репозитория остаётся runner.
 
+Код и входные данные передаются с `base64_encoded=true`; вывод, stderr и сообщения компилятора
+декодируются runner из Base64 обратно в UTF-8. Это сохраняет кириллицу и предотвращает HTTP 400
+Judge0 при чтении результатов, которые сервис не может вернуть обычным JSON-текстом.
+
 ## 2. Лимиты посылки в Judge0
 
 | Параметр | Значение |
@@ -41,7 +45,8 @@ web (lib/services/runner.ts) ──► runner (runner/server.mjs) ──► Judg
 | Сеть | выключена (`enable_network: false`) |
 
 Языки: Python 3, C++, Java, JavaScript, Kotlin, Pascal. Runner берёт из `GET /languages` Judge0
-самую новую установленную версию каждого (по имени: `Python (3…`, `C++…`, `Java (…`,
+самую новую установленную версию каждого, если для Python не задан `JUDGE0_PYTHON_LANGUAGE_ID`
+(по имени: `Python (3…`, `C++…`, `Java (…`,
 `JavaScript…`, `Kotlin…`, `Pascal…`). Если нужного языка в Judge0 нет – ребёнок видит «Этот язык
 сейчас недоступен для проверки. Выбери другой язык».
 

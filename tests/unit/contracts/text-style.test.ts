@@ -10,9 +10,20 @@ import { describe, expect, it } from "vitest";
 
 const ROOT = path.resolve(__dirname, "../../..");
 
-const tracked = execFileSync("git", ["ls-files"], { cwd: ROOT, encoding: "utf8" })
-  .split("\n")
-  .filter(Boolean);
+// Source ZIPs have no Git metadata. Apply the same text rules to their source
+// folders rather than failing before any text has been checked. A checkout still
+// uses Git's tracked file list, and Git errors in an existing checkout still fail.
+const tracked = fs.existsSync(path.join(ROOT, ".git"))
+  ? execFileSync("git", ["ls-files"], { cwd: ROOT, encoding: "utf8" }).split("\n").filter(Boolean)
+  : [
+      "README.md",
+      ".env.example",
+      ...["docs", "content", "components", "bot", "lib"].flatMap((dir) =>
+        fs
+          .readdirSync(path.join(ROOT, dir), { recursive: true, encoding: "utf8" })
+          .map((file) => `${dir}/${file.split(path.sep).join("/")}`),
+      ),
+    ];
 
 const HUMAN_TEXT =
   /^(README\.md|docs\/.+\.md|content\/.+\.(json|md)|bot\/texts\.mjs|components\/.+\.tsx|lib\/client\/errors\.ts|lib\/ui\/.+\.ts|\.env\.example)$/;

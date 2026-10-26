@@ -7,7 +7,7 @@ import {
   createContext,
   useCallback,
   useContext,
-  useEffect,
+  useLayoutEffect,
   useMemo,
   useReducer,
   useRef,
@@ -182,7 +182,9 @@ function serverSettings(s: LocalSettings): UserSettings {
 function useDataStore(api: ApiClient) {
   const [state, dispatch] = useReducer(reducer, INITIAL);
   const stateRef = useRef(state);
-  useEffect(() => {
+  // Children may save settings in a passive effect immediately after bootstrap.
+  // Refresh the snapshot first, so that save preserves onboarded/region flags.
+  useLayoutEffect(() => {
     stateRef.current = state;
   });
 

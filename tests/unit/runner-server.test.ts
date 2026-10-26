@@ -128,6 +128,10 @@ async function startFakeJudge(options: FakeJudgeOptions = {}): Promise<FakeJudge
       }
       if (url.pathname === "/submissions" && req.method === "POST") {
         const submission = JSON.parse(raw) as Submission;
+        if (url.searchParams.get("base64_encoded") === "true") {
+          submission.source_code = Buffer.from(submission.source_code, "base64").toString("utf8");
+          submission.stdin = Buffer.from(submission.stdin, "base64").toString("utf8");
+        }
         fake.submissions.push(submission);
         const resolved = waiters;
         waiters = [];
@@ -142,7 +146,14 @@ async function startFakeJudge(options: FakeJudgeOptions = {}): Promise<FakeJudge
         fake.polls += 1;
         const queue = queues.get(decodeURIComponent(match[1]));
         if (!queue) return reply(404, { error: "unknown token" });
-        return reply(200, queue.length > 1 ? queue.shift() : queue[0]);
+        const result = { ...(queue.length > 1 ? queue.shift() : queue[0]) };
+        if (url.searchParams.get("base64_encoded") === "true") {
+          for (const field of ["stdout", "stderr", "compile_output", "message"] as const) {
+            if (typeof result[field] === "string")
+              result[field] = Buffer.from(result[field], "utf8").toString("base64");
+          }
+        }
+        return reply(200, result);
       }
       return reply(404, { error: "not found" });
     });
@@ -385,6 +396,18 @@ describe("pure helpers", () => {
 // ---------------------------------------------------------------------------
 
 describe("POST /execute", () => {
+  it("round-trips Unicode code, input and output using Judge0 Base64 transport", async () => {
+    const { judge, url } = await withJudge({ run: () => [accepted("Привет, ёжик!\n")] });
+    const code = "print(input()) # Привет";
+    const response = await call(url, graded(code, [{ input: "ёжик\n", output: null }] as never));
+    expect(response.body.output).toBe("Привет, ёжик!\n");
+    expect(judge.submissions[0]).toMatchObject({ source_code: code, stdin: "ёжик\n" });
+    expect(judge.requests.filter((request) => request.url.startsWith("/submissions"))).toSatisfy(
+      (requests: FakeJudge["requests"]) =>
+        requests.every((request) => request.url.includes("base64_encoded=true")),
+    );
+  });
+
   it("uses the pinned Python version for practice, grading and cached requests", async () => {
     const { judge, url } = await withJudge({}, { pythonLanguageId: 71 });
     const tests = [
@@ -536,7 +559,7 @@ describe("POST /execute", () => {
     expect(response.body).toMatchObject({ correct: true, passed: 1 });
     expect(judge.polls).toBe(4);
     const poll = judge.requests.find((request) => request.url.startsWith("/submissions/token-1"));
-    expect(poll?.url).toContain("base64_encoded=false");
+    expect(poll?.url).toContain("base64_encoded=true");
   });
 
   it("gives up after the polling deadline", async () => {

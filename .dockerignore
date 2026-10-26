@@ -25,3 +25,7 @@ data
 *.dump
 
 tsconfig.tsbuildinfo
+work
+outputs
+.agents
+.codex

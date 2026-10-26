@@ -1,0 +1,848 @@
+{
+  "complete": false,
+  "taskCount": 360,
+  "groups": {
+    "math-4": {
+      "total": 60,
+      "number": 60,
+      "code": 0
+    },
+    "math-5": {
+      "total": 60,
+      "number": 60,
+      "code": 0
+    },
+    "math-6": {
+      "total": 60,
+      "number": 60,
+      "code": 0
+    },
+    "info-4": {
+      "total": 60,
+      "number": 36,
+      "code": 24
+    },
+    "info-5": {
+      "total": 60,
+      "number": 24,
+      "code": 36
+    },
+    "info-6": {
+      "total": 60,
+      "number": 24,
+      "code": 36
+    }
+  },
+  "topics": [
+    {
+      "topicId": "info-4-01",
+      "title": "Алгоритм и исполнитель",
+      "types": ["number", "number", "number", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-4-02",
+      "title": "Ввод и вывод",
+      "types": ["number", "number", "number", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-4-03",
+      "title": "Переменные",
+      "types": ["number", "number", "number", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-4-04",
+      "title": "Арифметика в программе",
+      "types": ["number", "number", "number", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-4-05",
+      "title": "Условия",
+      "types": ["number", "number", "number", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-4-06",
+      "title": "Повторение действий",
+      "types": ["number", "number", "number", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-4-07",
+      "title": "Счётчики и суммы",
+      "types": ["number", "number", "number", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-4-08",
+      "title": "Числа и цифры",
+      "types": ["number", "number", "number", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-4-09",
+      "title": "Строки",
+      "types": ["number", "number", "number", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-4-10",
+      "title": "Списки",
+      "types": ["number", "number", "number", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-4-11",
+      "title": "Поиск наибольшего и наименьшего",
+      "types": ["number", "number", "number", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-4-12",
+      "title": "Проверка программы",
+      "types": ["number", "number", "number", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-5-01",
+      "title": "Ввод и вывод нескольких чисел",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-5-02",
+      "title": "Целочисленное деление и остаток",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 5
+    },
+    {
+      "topicId": "info-5-03",
+      "title": "Сложные условия: and, or, not",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-5-04",
+      "title": "Цикл for и функция range",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-5-05",
+      "title": "Цикл while",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-5-06",
+      "title": "Суммы и произведения",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-5-07",
+      "title": "Обработка цифр числа",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-5-08",
+      "title": "Строки и символы",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-5-09",
+      "title": "Списки (массивы)",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-5-10",
+      "title": "Линейный поиск",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-5-11",
+      "title": "Минимум и максимум",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-5-12",
+      "title": "Граничные случаи и тестирование",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-6-01",
+      "title": "Оценка сложности",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-6-02",
+      "title": "Делители и простые числа",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-6-03",
+      "title": "Алгоритм Евклида",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-6-04",
+      "title": "Вложенные циклы",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-6-05",
+      "title": "Префиксные суммы",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-6-06",
+      "title": "Частоты элементов",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-6-07",
+      "title": "Обработка строк",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-6-08",
+      "title": "Сортировка",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-6-09",
+      "title": "Двоичный поиск",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-6-10",
+      "title": "Системы счисления",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-6-11",
+      "title": "Координаты и сетки",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "info-6-12",
+      "title": "Полный перебор",
+      "types": ["number", "number", "code", "code", "code"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-4-01",
+      "title": "Чётность и нечётность",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-4-02",
+      "title": "Закономерности и ряды",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-4-03",
+      "title": "Логические задачи",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-4-04",
+      "title": "Перебор вариантов",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-4-05",
+      "title": "Задачи на сумму и разность",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-4-06",
+      "title": "Задачи на движение",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-4-07",
+      "title": "Часы и календарь",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-4-08",
+      "title": "Периметр и площадь",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-4-09",
+      "title": "Разрезания фигур",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-4-10",
+      "title": "Весы и взвешивания",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-4-11",
+      "title": "Игры и стратегии",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-4-12",
+      "title": "Ребусы и цифры",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-5-01",
+      "title": "Делимость чисел",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-5-02",
+      "title": "Остатки от деления",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-5-03",
+      "title": "Простые числа",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-5-04",
+      "title": "Дроби в задачах",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-5-05",
+      "title": "Проценты",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-5-06",
+      "title": "Комбинаторика: считаем варианты",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 5
+    },
+    {
+      "topicId": "math-5-07",
+      "title": "Принцип Дирихле",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-5-08",
+      "title": "Геометрия на клетках",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-5-09",
+      "title": "Движение и встречи",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-5-10",
+      "title": "Работа и производительность",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-5-11",
+      "title": "Инварианты",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-5-12",
+      "title": "Логика и доказательства",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-6-01",
+      "title": "НОД и НОК",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-6-02",
+      "title": "Делимость и остатки",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-6-03",
+      "title": "Последняя цифра степени",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-6-04",
+      "title": "Отношения и пропорции",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-6-05",
+      "title": "Проценты и изменения величин",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-6-06",
+      "title": "Подсчёт вариантов",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-6-07",
+      "title": "Принцип Дирихле",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-6-08",
+      "title": "Площади и масштаб",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-6-09",
+      "title": "Движение навстречу и вдогонку",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-6-10",
+      "title": "Уравнения в текстовых задачах",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-6-11",
+      "title": "Инварианты и раскраски",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    },
+    {
+      "topicId": "math-6-12",
+      "title": "Оценка и пример",
+      "types": ["number", "number", "number", "number", "number"],
+      "replaced": 0
+    }
+  ],
+  "preservedTaskTypes": true,
+  "replaced": 10,
+  "pending": 350,
+  "pendingTaskIds": [
+    "info-4-01-task-1",
+    "info-4-01-task-2",
+    "info-4-01-task-3",
+    "info-4-01-task-4",
+    "info-4-01-task-5",
+    "info-4-02-task-1",
+    "info-4-02-task-2",
+    "info-4-02-task-3",
+    "info-4-02-task-4",
+    "info-4-02-task-5",
+    "info-4-03-task-1",
+    "info-4-03-task-2",
+    "info-4-03-task-3",
+    "info-4-03-task-4",
+    "info-4-03-task-5",
+    "info-4-04-task-1",
+    "info-4-04-task-2",
+    "info-4-04-task-3",
+    "info-4-04-task-4",
+    "info-4-04-task-5",
+    "info-4-05-task-1",
+    "info-4-05-task-2",
+    "info-4-05-task-3",
+    "info-4-05-task-4",
+    "info-4-05-task-5",
+    "info-4-06-task-1",
+    "info-4-06-task-2",
+    "info-4-06-task-3",
+    "info-4-06-task-4",
+    "info-4-06-task-5",
+    "info-4-07-task-1",
+    "info-4-07-task-2",
+    "info-4-07-task-3",
+    "info-4-07-task-4",
+    "info-4-07-task-5",
+    "info-4-08-task-1",
+    "info-4-08-task-2",
+    "info-4-08-task-3",
+    "info-4-08-task-4",
+    "info-4-08-task-5",
+    "info-4-09-task-1",
+    "info-4-09-task-2",
+    "info-4-09-task-3",
+    "info-4-09-task-4",
+    "info-4-09-task-5",
+    "info-4-10-task-1",
+    "info-4-10-task-2",
+    "info-4-10-task-3",
+    "info-4-10-task-4",
+    "info-4-10-task-5",
+    "info-4-11-task-1",
+    "info-4-11-task-2",
+    "info-4-11-task-3",
+    "info-4-11-task-4",
+    "info-4-11-task-5",
+    "info-4-12-task-1",
+    "info-4-12-task-2",
+    "info-4-12-task-3",
+    "info-4-12-task-4",
+    "info-4-12-task-5",
+    "info-5-01-task-1",
+    "info-5-01-task-2",
+    "info-5-01-task-3",
+    "info-5-01-task-4",
+    "info-5-01-task-5",
+    "info-5-03-task-1",
+    "info-5-03-task-2",
+    "info-5-03-task-3",
+    "info-5-03-task-4",
+    "info-5-03-task-5",
+    "info-5-04-task-1",
+    "info-5-04-task-2",
+    "info-5-04-task-3",
+    "info-5-04-task-4",
+    "info-5-04-task-5",
+    "info-5-05-task-1",
+    "info-5-05-task-2",
+    "info-5-05-task-3",
+    "info-5-05-task-4",
+    "info-5-05-task-5",
+    "info-5-06-task-1",
+    "info-5-06-task-2",
+    "info-5-06-task-3",
+    "info-5-06-task-4",
+    "info-5-06-task-5",
+    "info-5-07-task-1",
+    "info-5-07-task-2",
+    "info-5-07-task-3",
+    "info-5-07-task-4",
+    "info-5-07-task-5",
+    "info-5-08-task-1",
+    "info-5-08-task-2",
+    "info-5-08-task-3",
+    "info-5-08-task-4",
+    "info-5-08-task-5",
+    "info-5-09-task-1",
+    "info-5-09-task-2",
+    "info-5-09-task-3",
+    "info-5-09-task-4",
+    "info-5-09-task-5",
+    "info-5-10-task-1",
+    "info-5-10-task-2",
+    "info-5-10-task-3",
+    "info-5-10-task-4",
+    "info-5-10-task-5",
+    "info-5-11-task-1",
+    "info-5-11-task-2",
+    "info-5-11-task-3",
+    "info-5-11-task-4",
+    "info-5-11-task-5",
+    "info-5-12-task-1",
+    "info-5-12-task-2",
+    "info-5-12-task-3",
+    "info-5-12-task-4",
+    "info-5-12-task-5",
+    "info-6-01-task-1",
+    "info-6-01-task-2",
+    "info-6-01-task-3",
+    "info-6-01-task-4",
+    "info-6-01-task-5",
+    "info-6-02-task-1",
+    "info-6-02-task-2",
+    "info-6-02-task-3",
+    "info-6-02-task-4",
+    "info-6-02-task-5",
+    "info-6-03-task-1",
+    "info-6-03-task-2",
+    "info-6-03-task-3",
+    "info-6-03-task-4",
+    "info-6-03-task-5",
+    "info-6-04-task-1",
+    "info-6-04-task-2",
+    "info-6-04-task-3",
+    "info-6-04-task-4",
+    "info-6-04-task-5",
+    "info-6-05-task-1",
+    "info-6-05-task-2",
+    "info-6-05-task-3",
+    "info-6-05-task-4",
+    "info-6-05-task-5",
+    "info-6-06-task-1",
+    "info-6-06-task-2",
+    "info-6-06-task-3",
+    "info-6-06-task-4",
+    "info-6-06-task-5",
+    "info-6-07-task-1",
+    "info-6-07-task-2",
+    "info-6-07-task-3",
+    "info-6-07-task-4",
+    "info-6-07-task-5",
+    "info-6-08-task-1",
+    "info-6-08-task-2",
+    "info-6-08-task-3",
+    "info-6-08-task-4",
+    "info-6-08-task-5",
+    "info-6-09-task-1",
+    "info-6-09-task-2",
+    "info-6-09-task-3",
+    "info-6-09-task-4",
+    "info-6-09-task-5",
+    "info-6-10-task-1",
+    "info-6-10-task-2",
+    "info-6-10-task-3",
+    "info-6-10-task-4",
+    "info-6-10-task-5",
+    "info-6-11-task-1",
+    "info-6-11-task-2",
+    "info-6-11-task-3",
+    "info-6-11-task-4",
+    "info-6-11-task-5",
+    "info-6-12-task-1",
+    "info-6-12-task-2",
+    "info-6-12-task-3",
+    "info-6-12-task-4",
+    "info-6-12-task-5",
+    "math-4-01-task-1",
+    "math-4-01-task-2",
+    "math-4-01-task-3",
+    "math-4-01-task-4",
+    "math-4-01-task-5",
+    "math-4-02-task-1",
+    "math-4-02-task-2",
+    "math-4-02-task-3",
+    "math-4-02-task-4",
+    "math-4-02-task-5",
+    "math-4-03-task-1",
+    "math-4-03-task-2",
+    "math-4-03-task-3",
+    "math-4-03-task-4",
+    "math-4-03-task-5",
+    "math-4-04-task-1",
+    "math-4-04-task-2",
+    "math-4-04-task-3",
+    "math-4-04-task-4",
+    "math-4-04-task-5",
+    "math-4-05-task-1",
+    "math-4-05-task-2",
+    "math-4-05-task-3",
+    "math-4-05-task-4",
+    "math-4-05-task-5",
+    "math-4-06-task-1",
+    "math-4-06-task-2",
+    "math-4-06-task-3",
+    "math-4-06-task-4",
+    "math-4-06-task-5",
+    "math-4-07-task-1",
+    "math-4-07-task-2",
+    "math-4-07-task-3",
+    "math-4-07-task-4",
+    "math-4-07-task-5",
+    "math-4-08-task-1",
+    "math-4-08-task-2",
+    "math-4-08-task-3",
+    "math-4-08-task-4",
+    "math-4-08-task-5",
+    "math-4-09-task-1",
+    "math-4-09-task-2",
+    "math-4-09-task-3",
+    "math-4-09-task-4",
+    "math-4-09-task-5",
+    "math-4-10-task-1",
+    "math-4-10-task-2",
+    "math-4-10-task-3",
+    "math-4-10-task-4",
+    "math-4-10-task-5",
+    "math-4-11-task-1",
+    "math-4-11-task-2",
+    "math-4-11-task-3",
+    "math-4-11-task-4",
+    "math-4-11-task-5",
+    "math-4-12-task-1",
+    "math-4-12-task-2",
+    "math-4-12-task-3",
+    "math-4-12-task-4",
+    "math-4-12-task-5",
+    "math-5-01-task-1",
+    "math-5-01-task-2",
+    "math-5-01-task-3",
+    "math-5-01-task-4",
+    "math-5-01-task-5",
+    "math-5-02-task-1",
+    "math-5-02-task-2",
+    "math-5-02-task-3",
+    "math-5-02-task-4",
+    "math-5-02-task-5",
+    "math-5-03-task-1",
+    "math-5-03-task-2",
+    "math-5-03-task-3",
+    "math-5-03-task-4",
+    "math-5-03-task-5",
+    "math-5-04-task-1",
+    "math-5-04-task-2",
+    "math-5-04-task-3",
+    "math-5-04-task-4",
+    "math-5-04-task-5",
+    "math-5-05-task-1",
+    "math-5-05-task-2",
+    "math-5-05-task-3",
+    "math-5-05-task-4",
+    "math-5-05-task-5",
+    "math-5-07-task-1",
+    "math-5-07-task-2",
+    "math-5-07-task-3",
+    "math-5-07-task-4",
+    "math-5-07-task-5",
+    "math-5-08-task-1",
+    "math-5-08-task-2",
+    "math-5-08-task-3",
+    "math-5-08-task-4",
+    "math-5-08-task-5",
+    "math-5-09-task-1",
+    "math-5-09-task-2",
+    "math-5-09-task-3",
+    "math-5-09-task-4",
+    "math-5-09-task-5",
+    "math-5-10-task-1",
+    "math-5-10-task-2",
+    "math-5-10-task-3",
+    "math-5-10-task-4",
+    "math-5-10-task-5",
+    "math-5-11-task-1",
+    "math-5-11-task-2",
+    "math-5-11-task-3",
+    "math-5-11-task-4",
+    "math-5-11-task-5",
+    "math-5-12-task-1",
+    "math-5-12-task-2",
+    "math-5-12-task-3",
+    "math-5-12-task-4",
+    "math-5-12-task-5",
+    "math-6-01-task-1",
+    "math-6-01-task-2",
+    "math-6-01-task-3",
+    "math-6-01-task-4",
+    "math-6-01-task-5",
+    "math-6-02-task-1",
+    "math-6-02-task-2",
+    "math-6-02-task-3",
+    "math-6-02-task-4",
+    "math-6-02-task-5",
+    "math-6-03-task-1",
+    "math-6-03-task-2",
+    "math-6-03-task-3",
+    "math-6-03-task-4",
+    "math-6-03-task-5",
+    "math-6-04-task-1",
+    "math-6-04-task-2",
+    "math-6-04-task-3",
+    "math-6-04-task-4",
+    "math-6-04-task-5",
+    "math-6-05-task-1",
+    "math-6-05-task-2",
+    "math-6-05-task-3",
+    "math-6-05-task-4",
+    "math-6-05-task-5",
+    "math-6-06-task-1",
+    "math-6-06-task-2",
+    "math-6-06-task-3",
+    "math-6-06-task-4",
+    "math-6-06-task-5",
+    "math-6-07-task-1",
+    "math-6-07-task-2",
+    "math-6-07-task-3",
+    "math-6-07-task-4",
+    "math-6-07-task-5",
+    "math-6-08-task-1",
+    "math-6-08-task-2",
+    "math-6-08-task-3",
+    "math-6-08-task-4",
+    "math-6-08-task-5",
+    "math-6-09-task-1",
+    "math-6-09-task-2",
+    "math-6-09-task-3",
+    "math-6-09-task-4",
+    "math-6-09-task-5",
+    "math-6-10-task-1",
+    "math-6-10-task-2",
+    "math-6-10-task-3",
+    "math-6-10-task-4",
+    "math-6-10-task-5",
+    "math-6-11-task-1",
+    "math-6-11-task-2",
+    "math-6-11-task-3",
+    "math-6-11-task-4",
+    "math-6-11-task-5",
+    "math-6-12-task-1",
+    "math-6-12-task-2",
+    "math-6-12-task-3",
+    "math-6-12-task-4",
+    "math-6-12-task-5"
+  ],
+  "numericAnswersIndependentlyChecked": {
+    "info-5-02-task-1": "4",
+    "info-5-02-task-2": "0",
+    "math-5-06-task-1": "8",
+    "math-5-06-task-2": "110",
+    "math-5-06-task-3": "120",
+    "math-5-06-task-4": "15",
+    "math-5-06-task-5": "200"
+  },
+  "referencesExecuted": 96,
+  "storedReferenceTestsExecuted": 738,
+  "storedReferenceTestFailures": [],
+  "newCodeTasksWithIndependentOracles": 3,
+  "newStoredOutputsIndependentlyChecked": 29,
+  "differentialCases": 2687,
+  "mockTestsChecked": 12,
+  "errors": [],
+  "limits": [
+    "Human source review covers only the reviewed batch.",
+    "Passing stored tests is not independent proof for the 93 unchanged code tasks.",
+    "Numerical semantics of 257 unchanged number tasks have not been independently verified.",
+    "No live Judge0 service was contacted; resource compatibility is checked statically."
+  ]
+}

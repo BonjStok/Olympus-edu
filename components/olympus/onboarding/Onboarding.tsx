@@ -9,11 +9,15 @@ import { Segmented } from "../shared/controls";
 import { GRADE_OPTIONS, SUBJECT_OPTIONS } from "../shared/ContextPicker";
 import { RegionCombobox } from "../shared/RegionCombobox";
 import { useLearner } from "../state/learner";
+import { useCatalog } from "../state/data";
+import { useNav } from "../state/navigation";
 import { useToast } from "../state/toast";
 
 export function Onboarding() {
   const learner = useLearner();
   const toast = useToast();
+  const nav = useNav();
+  const catalog = useCatalog();
   const regionLabel = useId();
   const [grade, setGrade] = useState<Grade | null>(learner.settings.grade ?? null);
   const [subject, setSubject] = useState<Subject | "both" | null>(null);
@@ -35,6 +39,16 @@ export function Onboarding() {
             : { bothSubjects: false, subject: subject ?? learner.subject }),
         };
     try {
+      const topicId = nav.screen?.name === "topic" ? nav.screen.id : null;
+      const topic = catalog.topics.find((item) => item.id === topicId);
+      if (
+        !skip &&
+        topic &&
+        (grade !== topic.grade || (subject !== "both" && subject !== topic.subject))
+      ) {
+        // The pupil's explicit first-run choice takes priority over an old link.
+        nav.go("learn");
+      }
       await learner.update(patch);
     } catch (e) {
       // Saved on this device anyway; the server copy will follow next time.

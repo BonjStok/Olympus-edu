@@ -342,10 +342,10 @@ export function createRunner(options = {}) {
    * @returns {Promise<Exclude<JudgeOutcome, { kind: "pending" | "unavailable" }>>}
    */
   async function runTest(code, languageId, input) {
-    const submission = await judge("/submissions?base64_encoded=false&wait=false", {
-      source_code: code,
+    const submission = await judge("/submissions?base64_encoded=true&wait=false", {
+      source_code: Buffer.from(code, "utf8").toString("base64"),
       language_id: languageId,
-      stdin: input,
+      stdin: Buffer.from(input, "utf8").toString("base64"),
       cpu_time_limit: 2,
       wall_time_limit: 5,
       memory_limit: 262_144,
@@ -356,11 +356,20 @@ export function createRunner(options = {}) {
       throw judgeUnavailable("Judge0 did not return a submission token");
     const resultPath =
       `/submissions/${encodeURIComponent(submission.token)}` +
-      "?base64_encoded=false&fields=status,stdout,stderr,compile_output,message";
+      "?base64_encoded=true&fields=status,stdout,stderr,compile_output,message";
     const deadline = Date.now() + config.pollTimeoutMs;
     for (;;) {
       await sleep(config.pollIntervalMs);
-      const outcome = judgeOutcome(await judge(resultPath));
+      const result = await judge(resultPath);
+      // Judge0 can reject plain JSON results with HTTP 400 for non-ASCII or binary output.
+      // Text fields use Base64 on the wire; status and its description remain plain JSON.
+      if (result && typeof result === "object") {
+        for (const field of ["stdout", "stderr", "compile_output", "message"]) {
+          if (typeof result[field] === "string")
+            result[field] = Buffer.from(result[field], "base64").toString("utf8");
+        }
+      }
+      const outcome = judgeOutcome(result);
       if (outcome.kind === "unavailable") throw judgeUnavailable(outcome.detail);
       if (outcome.kind !== "pending") return outcome;
       if (Date.now() >= deadline) return { kind: "failed", output: MESSAGES.timeout };
