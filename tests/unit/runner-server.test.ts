@@ -242,6 +242,24 @@ describe("pure helpers", () => {
     expect(pickLanguageId([{ id: "abc", name: "Python (3.12)" }], "python")).toBeNull();
   });
 
+  it("pins an installed Python 3 version and rejects missing or mismatched ids", () => {
+    expect(pickLanguageId(LANGUAGES, "python", 71)).toBe(71);
+    expect(pickLanguageId(LANGUAGES, "python", 113)).toBeNull();
+    expect(pickLanguageId(LANGUAGES, "python", 70)).toBeNull();
+    expect(pickLanguageId(LANGUAGES, "python", 105)).toBeNull();
+    expect(configFromEnv({ JUDGE0_PYTHON_LANGUAGE_ID: " 71 " }).pythonLanguageId).toBe(71);
+    expect(configFromEnv({}).pythonLanguageId).toBeNull();
+  });
+
+  it.each(["0", "-1", "71.5", "abc", "9007199254740992"])(
+    "rejects an invalid Python language id: %s",
+    (value) => {
+      expect(() => configFromEnv({ JUDGE0_PYTHON_LANGUAGE_ID: value })).toThrow(
+        "JUDGE0_PYTHON_LANGUAGE_ID must be a positive integer",
+      );
+    },
+  );
+
   it.each([
     ["a non-object body", []],
     ["an unknown language", { code: "x", language: "ruby", tests: [{ input: "", output: "" }] }],
@@ -367,6 +385,39 @@ describe("pure helpers", () => {
 // ---------------------------------------------------------------------------
 
 describe("POST /execute", () => {
+  it("uses the pinned Python version for practice, grading and cached requests", async () => {
+    const { judge, url } = await withJudge({}, { pythonLanguageId: 71 });
+    const tests = [
+      { input: "2", output: "4" },
+      { input: "5", output: "10" },
+    ];
+    expect((await call(url, graded("print(int(input())*2)", tests))).body.correct).toBe(true);
+    expect(
+      (await call(url, graded("print(int(input())*2)", [{ input: "7", output: null }] as never)))
+        .body.output,
+    ).toBe("14  \r\n");
+    expect(judge.submissions.map((submission) => submission.language_id)).toEqual([71, 71, 71]);
+    await call(url, graded("print(int(input())*2)", undefined, "cpp"));
+    expect(judge.submissions.at(-1)?.language_id).toBe(105);
+  });
+
+  it("does not submit code to another version when the pinned id disappears", async () => {
+    const languages = [...LANGUAGES];
+    const { judge, url } = await withJudge({ languages }, { pythonLanguageId: 71 });
+    await call(url, graded("x"));
+    languages.splice(
+      languages.findIndex((language) => language.id === 71),
+      1,
+    );
+    const before = judge.submissions.length;
+    // Refresh the cached catalogue through the health endpoint.
+    await call(url, {}, {}, "/health", "GET");
+    const response = await call(url, graded("x"));
+    expect(response.status).toBe(503);
+    expect(response.body.error.code).toBe("LANGUAGE_UNAVAILABLE");
+    expect(judge.submissions).toHaveLength(before);
+  });
+
   it("grades every test against the hidden outputs", async () => {
     const { judge, url } = await withJudge();
     const response = await call(
