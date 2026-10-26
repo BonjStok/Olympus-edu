@@ -1,0 +1,3253 @@
+{
+  "capturedAt": "2026-10-25",
+  "files": {
+    "content/tasks/info-4.json": "a71d88d5b04138dfbeb09f6c15c432a45edd41ffe59eaf4d5562f03197f3b1df",
+    "content/tasks/info-5.json": "0600a88fee539aa9877bff851b3141024ba07a9d71f170e67aaf83fd604109bf",
+    "content/tasks/info-6.json": "fb07a0cbcb830dd0d36ef557adcf3a3459aa511a813a3b9ad5bcd120b66c5a07",
+    "content/tasks/math-4.json": "1d1d0be5e16df5b35ab09f35eefa7b7606ab8a910b1bdeb9c53175641948f274",
+    "content/tasks/math-5.json": "29a519c6dbe0095c267400e1ec47fa989709d86c314c0f9eebb9de8ed8e2265b",
+    "content/tasks/math-6.json": "43f83f49225adac119bcea37851dd89e6b60f7257e77f72bde2f7985eb1f2216"
+  },
+  "tasks": [
+    {
+      "taskId": "info-4-01-task-1",
+      "type": "number",
+      "topicId": "info-4-01",
+      "order": 1,
+      "file": "content/tasks/info-4.json",
+      "index": 0,
+      "sha256": "f94e98f2a7f9b5a31316da9bf501201f7794b85333b2231931c5968a68391a13"
+    },
+    {
+      "taskId": "info-4-01-task-2",
+      "type": "number",
+      "topicId": "info-4-01",
+      "order": 2,
+      "file": "content/tasks/info-4.json",
+      "index": 1,
+      "sha256": "13c18c2761fb48d425df9ec75da727c18a9f612beafb06e941070261384cadfd"
+    },
+    {
+      "taskId": "info-4-01-task-3",
+      "type": "number",
+      "topicId": "info-4-01",
+      "order": 3,
+      "file": "content/tasks/info-4.json",
+      "index": 2,
+      "sha256": "964443065eba384431db626b7d17d41e182fea3b1e3d4f10e990d35b6a5f44ce"
+    },
+    {
+      "taskId": "info-4-01-task-4",
+      "type": "code",
+      "topicId": "info-4-01",
+      "order": 4,
+      "file": "content/tasks/info-4.json",
+      "index": 3,
+      "sha256": "61f6df9fab7bc275341de587b77b1f76fd11328dfc6d0d1bcac49af8c1cec35b"
+    },
+    {
+      "taskId": "info-4-01-task-5",
+      "type": "code",
+      "topicId": "info-4-01",
+      "order": 5,
+      "file": "content/tasks/info-4.json",
+      "index": 4,
+      "sha256": "f29540811f267381b52f9869b26ab0a3ea47eacc8be6acdca79259d0b2e3a3fb"
+    },
+    {
+      "taskId": "info-4-02-task-1",
+      "type": "number",
+      "topicId": "info-4-02",
+      "order": 1,
+      "file": "content/tasks/info-4.json",
+      "index": 5,
+      "sha256": "4de861e7c4506a149e4cbd70e4989dbdf785dc75c9908ffad24f07f59be09064"
+    },
+    {
+      "taskId": "info-4-02-task-2",
+      "type": "number",
+      "topicId": "info-4-02",
+      "order": 2,
+      "file": "content/tasks/info-4.json",
+      "index": 6,
+      "sha256": "5a9acc7feece808cc7908282b2efd9de6b41373b33d57d452bfbaa440f96eae0"
+    },
+    {
+      "taskId": "info-4-02-task-3",
+      "type": "number",
+      "topicId": "info-4-02",
+      "order": 3,
+      "file": "content/tasks/info-4.json",
+      "index": 7,
+      "sha256": "ffca01934b388ec2a5d05ebe30950730e59c6846b4e1fb2a86f36adb9c9bf34e"
+    },
+    {
+      "taskId": "info-4-02-task-4",
+      "type": "code",
+      "topicId": "info-4-02",
+      "order": 4,
+      "file": "content/tasks/info-4.json",
+      "index": 8,
+      "sha256": "140ec7505971cc09aab2d484d69f91201ab531764fbab60f16d3f5b18dc12fe8"
+    },
+    {
+      "taskId": "info-4-02-task-5",
+      "type": "code",
+      "topicId": "info-4-02",
+      "order": 5,
+      "file": "content/tasks/info-4.json",
+      "index": 9,
+      "sha256": "5264e24f0b454a3782507e493ec4de14cbec417b15d2c4ca5ff5d6c01cf66473"
+    },
+    {
+      "taskId": "info-4-03-task-1",
+      "type": "number",
+      "topicId": "info-4-03",
+      "order": 1,
+      "file": "content/tasks/info-4.json",
+      "index": 10,
+      "sha256": "99b2b633558a103e7cff9d86aca49c655d809c1bf2b8719fd20e8eb2b3f3b7e7"
+    },
+    {
+      "taskId": "info-4-03-task-2",
+      "type": "number",
+      "topicId": "info-4-03",
+      "order": 2,
+      "file": "content/tasks/info-4.json",
+      "index": 11,
+      "sha256": "f677a12e19bf888350ac66a92b3c98fc4c4cfb191e49128a2b24b8f47d37641f"
+    },
+    {
+      "taskId": "info-4-03-task-3",
+      "type": "number",
+      "topicId": "info-4-03",
+      "order": 3,
+      "file": "content/tasks/info-4.json",
+      "index": 12,
+      "sha256": "28923dc02007033827b34c50b279dc55249bfa7b1385306271770ae9a925ee4b"
+    },
+    {
+      "taskId": "info-4-03-task-4",
+      "type": "code",
+      "topicId": "info-4-03",
+      "order": 4,
+      "file": "content/tasks/info-4.json",
+      "index": 13,
+      "sha256": "10c547d66e20db44b3bcc3a77b22b60a3c0fcd29811b8ddda416847f77e389c9"
+    },
+    {
+      "taskId": "info-4-03-task-5",
+      "type": "code",
+      "topicId": "info-4-03",
+      "order": 5,
+      "file": "content/tasks/info-4.json",
+      "index": 14,
+      "sha256": "04283bfc129f3001a01450ae2ccc2558a4130563660230b3aaacbd23da9b57c3"
+    },
+    {
+      "taskId": "info-4-04-task-1",
+      "type": "number",
+      "topicId": "info-4-04",
+      "order": 1,
+      "file": "content/tasks/info-4.json",
+      "index": 15,
+      "sha256": "27fe80c2e847475f39eb5823d67e4032960e21d116c65a965715b59e245d7727"
+    },
+    {
+      "taskId": "info-4-04-task-2",
+      "type": "number",
+      "topicId": "info-4-04",
+      "order": 2,
+      "file": "content/tasks/info-4.json",
+      "index": 16,
+      "sha256": "17cbae82902874fb5bdacee056ca4932da7d1d27ab0c90cda387917184df9a4c"
+    },
+    {
+      "taskId": "info-4-04-task-3",
+      "type": "number",
+      "topicId": "info-4-04",
+      "order": 3,
+      "file": "content/tasks/info-4.json",
+      "index": 17,
+      "sha256": "ec1d4c5987d200180abedb55e403b9456f85bc1bb01aab41cd0818ac6965dc40"
+    },
+    {
+      "taskId": "info-4-04-task-4",
+      "type": "code",
+      "topicId": "info-4-04",
+      "order": 4,
+      "file": "content/tasks/info-4.json",
+      "index": 18,
+      "sha256": "6a1681dc020c02b652aea2ec731acc0ce0589628308540a67980925ccbd163ae"
+    },
+    {
+      "taskId": "info-4-04-task-5",
+      "type": "code",
+      "topicId": "info-4-04",
+      "order": 5,
+      "file": "content/tasks/info-4.json",
+      "index": 19,
+      "sha256": "35110c82a832e173f90b029c1dd164daee60a75d9af353195d566ad96797bac1"
+    },
+    {
+      "taskId": "info-4-05-task-1",
+      "type": "number",
+      "topicId": "info-4-05",
+      "order": 1,
+      "file": "content/tasks/info-4.json",
+      "index": 20,
+      "sha256": "357409df7e5bfbc5f15cb99c613c25e60b45668bb213a9c56d5f217ab4dc09bf"
+    },
+    {
+      "taskId": "info-4-05-task-2",
+      "type": "number",
+      "topicId": "info-4-05",
+      "order": 2,
+      "file": "content/tasks/info-4.json",
+      "index": 21,
+      "sha256": "f06c0786bd22667baa73a465d78af32587347ee67a46dbbc81d168fb9fd778ae"
+    },
+    {
+      "taskId": "info-4-05-task-3",
+      "type": "number",
+      "topicId": "info-4-05",
+      "order": 3,
+      "file": "content/tasks/info-4.json",
+      "index": 22,
+      "sha256": "baba8629436ac9f07e1deec17ede4dbac11cead93e4bded2d3a3b7dd47d904a0"
+    },
+    {
+      "taskId": "info-4-05-task-4",
+      "type": "code",
+      "topicId": "info-4-05",
+      "order": 4,
+      "file": "content/tasks/info-4.json",
+      "index": 23,
+      "sha256": "3c350eb4e84c742c06d7818c00e3771466897fd54fa2e5c3fea4c1775268110e"
+    },
+    {
+      "taskId": "info-4-05-task-5",
+      "type": "code",
+      "topicId": "info-4-05",
+      "order": 5,
+      "file": "content/tasks/info-4.json",
+      "index": 24,
+      "sha256": "64f85d97cd792a5cecec784c498c1139dddb070f47cd05fbb2c0dcefe605a323"
+    },
+    {
+      "taskId": "info-4-06-task-1",
+      "type": "number",
+      "topicId": "info-4-06",
+      "order": 1,
+      "file": "content/tasks/info-4.json",
+      "index": 25,
+      "sha256": "381182f43a674f0faf50d1e8541ebe71e70355dfa998a6dcf712559384097f32"
+    },
+    {
+      "taskId": "info-4-06-task-2",
+      "type": "number",
+      "topicId": "info-4-06",
+      "order": 2,
+      "file": "content/tasks/info-4.json",
+      "index": 26,
+      "sha256": "578b246c6fd5aed2e801350e3ff189c8337d811413a38ed4c479a50ef6e51c68"
+    },
+    {
+      "taskId": "info-4-06-task-3",
+      "type": "number",
+      "topicId": "info-4-06",
+      "order": 3,
+      "file": "content/tasks/info-4.json",
+      "index": 27,
+      "sha256": "142d95231db41d589fb7b7484c87413c893867efd56ae539704de151989b4a12"
+    },
+    {
+      "taskId": "info-4-06-task-4",
+      "type": "code",
+      "topicId": "info-4-06",
+      "order": 4,
+      "file": "content/tasks/info-4.json",
+      "index": 28,
+      "sha256": "0b36f8fb6b492f8bc51ff712d6238df8a45059a49a12d40b52e87b39cf753ee0"
+    },
+    {
+      "taskId": "info-4-06-task-5",
+      "type": "code",
+      "topicId": "info-4-06",
+      "order": 5,
+      "file": "content/tasks/info-4.json",
+      "index": 29,
+      "sha256": "af7ce5a2f4682fc665f1ab2171628f708a8611245b84a93dafed34f3608028a3"
+    },
+    {
+      "taskId": "info-4-07-task-1",
+      "type": "number",
+      "topicId": "info-4-07",
+      "order": 1,
+      "file": "content/tasks/info-4.json",
+      "index": 30,
+      "sha256": "22b91c056516183bf748d1bdce34a92ad7866f9bcf7dd083fb70ee4b061de49a"
+    },
+    {
+      "taskId": "info-4-07-task-2",
+      "type": "number",
+      "topicId": "info-4-07",
+      "order": 2,
+      "file": "content/tasks/info-4.json",
+      "index": 31,
+      "sha256": "b2d44a2b6785a33477505f3f2a7fb20f68b04bf5aa99b8246ec1086ce4faacc6"
+    },
+    {
+      "taskId": "info-4-07-task-3",
+      "type": "number",
+      "topicId": "info-4-07",
+      "order": 3,
+      "file": "content/tasks/info-4.json",
+      "index": 32,
+      "sha256": "923601c11fea90b361f0d57f9283ac0cbb393f314a443bf207c96e898a99b3ee"
+    },
+    {
+      "taskId": "info-4-07-task-4",
+      "type": "code",
+      "topicId": "info-4-07",
+      "order": 4,
+      "file": "content/tasks/info-4.json",
+      "index": 33,
+      "sha256": "c64d37b5bd0f9df14687871586514902b618e6f079c6bedc3b21257b203474ca"
+    },
+    {
+      "taskId": "info-4-07-task-5",
+      "type": "code",
+      "topicId": "info-4-07",
+      "order": 5,
+      "file": "content/tasks/info-4.json",
+      "index": 34,
+      "sha256": "2abc759bd9984afc8587e24e614e93603339ce5a56bcce5601ff58aaa80a59a4"
+    },
+    {
+      "taskId": "info-4-08-task-1",
+      "type": "number",
+      "topicId": "info-4-08",
+      "order": 1,
+      "file": "content/tasks/info-4.json",
+      "index": 35,
+      "sha256": "242f991f2103ca7f475c3dbe4b5e2cceee06bc22644bd6a545a1137006bf8ca2"
+    },
+    {
+      "taskId": "info-4-08-task-2",
+      "type": "number",
+      "topicId": "info-4-08",
+      "order": 2,
+      "file": "content/tasks/info-4.json",
+      "index": 36,
+      "sha256": "5899992e823dd6e81e8d26db9243f6f08fff71644a1d8a861c051eb37ff1ca1c"
+    },
+    {
+      "taskId": "info-4-08-task-3",
+      "type": "number",
+      "topicId": "info-4-08",
+      "order": 3,
+      "file": "content/tasks/info-4.json",
+      "index": 37,
+      "sha256": "64a2cf26e9bed24eaa8d2e8ace772aeaed37fbeaac83c52b2e420f5a33858b0b"
+    },
+    {
+      "taskId": "info-4-08-task-4",
+      "type": "code",
+      "topicId": "info-4-08",
+      "order": 4,
+      "file": "content/tasks/info-4.json",
+      "index": 38,
+      "sha256": "1671ff478ef9a78f9c8d2ee7f018cf91a4f934d9fac7a9ecea476ea819809fea"
+    },
+    {
+      "taskId": "info-4-08-task-5",
+      "type": "code",
+      "topicId": "info-4-08",
+      "order": 5,
+      "file": "content/tasks/info-4.json",
+      "index": 39,
+      "sha256": "f6e12bab630e5695dc7e7550bbe06f80d391b0096d83d1b1406cd38915ada23d"
+    },
+    {
+      "taskId": "info-4-09-task-1",
+      "type": "number",
+      "topicId": "info-4-09",
+      "order": 1,
+      "file": "content/tasks/info-4.json",
+      "index": 40,
+      "sha256": "3792400441981d0124d98aaeb45bdf5672be108df0bdb38ec03fd0a7d94e27be"
+    },
+    {
+      "taskId": "info-4-09-task-2",
+      "type": "number",
+      "topicId": "info-4-09",
+      "order": 2,
+      "file": "content/tasks/info-4.json",
+      "index": 41,
+      "sha256": "4928b6282783ec457bf2527b042580ce43ef597bef6c899b3315e0fa69df9121"
+    },
+    {
+      "taskId": "info-4-09-task-3",
+      "type": "number",
+      "topicId": "info-4-09",
+      "order": 3,
+      "file": "content/tasks/info-4.json",
+      "index": 42,
+      "sha256": "7164f56b909e9ea7e58c771000c7ce99e860f59c99cbe26d0dfd9a8d543db8c1"
+    },
+    {
+      "taskId": "info-4-09-task-4",
+      "type": "code",
+      "topicId": "info-4-09",
+      "order": 4,
+      "file": "content/tasks/info-4.json",
+      "index": 43,
+      "sha256": "e3bee15e6963256e217261e26b4a2ffe55c264a958b0cdb997a28975513616d7"
+    },
+    {
+      "taskId": "info-4-09-task-5",
+      "type": "code",
+      "topicId": "info-4-09",
+      "order": 5,
+      "file": "content/tasks/info-4.json",
+      "index": 44,
+      "sha256": "88f32e0c0b05f348818acbfae724236a0719532da7284936a2c94f7dcc4641cc"
+    },
+    {
+      "taskId": "info-4-10-task-1",
+      "type": "number",
+      "topicId": "info-4-10",
+      "order": 1,
+      "file": "content/tasks/info-4.json",
+      "index": 45,
+      "sha256": "23864ab74de196b0ecabb5c86bb452646b905f057699aeabb81e48e26a2a7372"
+    },
+    {
+      "taskId": "info-4-10-task-2",
+      "type": "number",
+      "topicId": "info-4-10",
+      "order": 2,
+      "file": "content/tasks/info-4.json",
+      "index": 46,
+      "sha256": "e3c6ecba53839c2f5ae44dd39c23d836f9e0f0851f32ca0f79313066f4a3717d"
+    },
+    {
+      "taskId": "info-4-10-task-3",
+      "type": "number",
+      "topicId": "info-4-10",
+      "order": 3,
+      "file": "content/tasks/info-4.json",
+      "index": 47,
+      "sha256": "84631976ae66bd6dd0b4114f8eeac667ddf37efa579e952bd5da035388d4788a"
+    },
+    {
+      "taskId": "info-4-10-task-4",
+      "type": "code",
+      "topicId": "info-4-10",
+      "order": 4,
+      "file": "content/tasks/info-4.json",
+      "index": 48,
+      "sha256": "2bf8659870ac7ff55c78f0d99db16bd56ba94d1a2d0c94394bd3f7a2321f922d"
+    },
+    {
+      "taskId": "info-4-10-task-5",
+      "type": "code",
+      "topicId": "info-4-10",
+      "order": 5,
+      "file": "content/tasks/info-4.json",
+      "index": 49,
+      "sha256": "183f6b6d4e0203a718beda38353c69871e9d8e593c580cdb761ddf8d4ce4f5fd"
+    },
+    {
+      "taskId": "info-4-11-task-1",
+      "type": "number",
+      "topicId": "info-4-11",
+      "order": 1,
+      "file": "content/tasks/info-4.json",
+      "index": 50,
+      "sha256": "50fba0960754d992466fd64360294f62a6bf03c9a1a1cfdc34302136273c7eb2"
+    },
+    {
+      "taskId": "info-4-11-task-2",
+      "type": "number",
+      "topicId": "info-4-11",
+      "order": 2,
+      "file": "content/tasks/info-4.json",
+      "index": 51,
+      "sha256": "f15c0c4b4b9831facbe1e3e67f0ed33ffa133f6aba035927ff58cbf8d5486900"
+    },
+    {
+      "taskId": "info-4-11-task-3",
+      "type": "number",
+      "topicId": "info-4-11",
+      "order": 3,
+      "file": "content/tasks/info-4.json",
+      "index": 52,
+      "sha256": "699d6d79e1f224ad6e99498c0799c8dca163d373168216435713e59a49750d4a"
+    },
+    {
+      "taskId": "info-4-11-task-4",
+      "type": "code",
+      "topicId": "info-4-11",
+      "order": 4,
+      "file": "content/tasks/info-4.json",
+      "index": 53,
+      "sha256": "ebc0b68cdfeb7e6525475b09a8f231738bdfcb46a39620f137f39230599d086d"
+    },
+    {
+      "taskId": "info-4-11-task-5",
+      "type": "code",
+      "topicId": "info-4-11",
+      "order": 5,
+      "file": "content/tasks/info-4.json",
+      "index": 54,
+      "sha256": "0d61282af982193a841fa878cdf7115a6e5807d119bbf9aa353c15f7ed8f09c3"
+    },
+    {
+      "taskId": "info-4-12-task-1",
+      "type": "number",
+      "topicId": "info-4-12",
+      "order": 1,
+      "file": "content/tasks/info-4.json",
+      "index": 55,
+      "sha256": "4590dba55819e0dfa2240df93d1c221249fe59b8e5b6d2bd71838a1149a7cf21"
+    },
+    {
+      "taskId": "info-4-12-task-2",
+      "type": "number",
+      "topicId": "info-4-12",
+      "order": 2,
+      "file": "content/tasks/info-4.json",
+      "index": 56,
+      "sha256": "cf83fd501ada25c0e71c0a0c79c5be8c16ef4e9355147c0aa5717f3775ec4f44"
+    },
+    {
+      "taskId": "info-4-12-task-3",
+      "type": "number",
+      "topicId": "info-4-12",
+      "order": 3,
+      "file": "content/tasks/info-4.json",
+      "index": 57,
+      "sha256": "6357602c73427afa2ce643a14b0bd426378f9946947581df75dff62be8c0a941"
+    },
+    {
+      "taskId": "info-4-12-task-4",
+      "type": "code",
+      "topicId": "info-4-12",
+      "order": 4,
+      "file": "content/tasks/info-4.json",
+      "index": 58,
+      "sha256": "7d39217310a610d6c81e20116ba39e542cd33430ec9c94c6ad92b07d077dccf8"
+    },
+    {
+      "taskId": "info-4-12-task-5",
+      "type": "code",
+      "topicId": "info-4-12",
+      "order": 5,
+      "file": "content/tasks/info-4.json",
+      "index": 59,
+      "sha256": "32f614f82044cc16aa51651b3965a09f61ac5efacdb1a4bb1a8a0ca0fa1c23ab"
+    },
+    {
+      "taskId": "info-5-01-task-1",
+      "type": "number",
+      "topicId": "info-5-01",
+      "order": 1,
+      "file": "content/tasks/info-5.json",
+      "index": 0,
+      "sha256": "f1fff40748d9169dc15107d546346d694db254436efd12c28ebcfb4b8b0bd652"
+    },
+    {
+      "taskId": "info-5-01-task-2",
+      "type": "number",
+      "topicId": "info-5-01",
+      "order": 2,
+      "file": "content/tasks/info-5.json",
+      "index": 1,
+      "sha256": "469258a3e2359d9262bb329974ce9c49d5b34688ad2460c695552e5192f38c4c"
+    },
+    {
+      "taskId": "info-5-01-task-3",
+      "type": "code",
+      "topicId": "info-5-01",
+      "order": 3,
+      "file": "content/tasks/info-5.json",
+      "index": 2,
+      "sha256": "2489ee205dbcc0e8ed7c80c55a8cc7c6ab9e19a5b32ec6dffa1d23699c632d1b"
+    },
+    {
+      "taskId": "info-5-01-task-4",
+      "type": "code",
+      "topicId": "info-5-01",
+      "order": 4,
+      "file": "content/tasks/info-5.json",
+      "index": 3,
+      "sha256": "57e6a067ad87c05b33d0aa0621ecf8a0e88ef73cced0df3c93399e3131536646"
+    },
+    {
+      "taskId": "info-5-01-task-5",
+      "type": "code",
+      "topicId": "info-5-01",
+      "order": 5,
+      "file": "content/tasks/info-5.json",
+      "index": 4,
+      "sha256": "9e3aa664ec3a918efc5afbc4ad6e606ec9e2c08a2340173083ae884186e62aac"
+    },
+    {
+      "taskId": "info-5-02-task-1",
+      "type": "number",
+      "topicId": "info-5-02",
+      "order": 1,
+      "file": "content/tasks/info-5.json",
+      "index": 5,
+      "sha256": "43d056f4a183912626b0598e0307fef1577077492a5bee4ae25265c5c1fadab3"
+    },
+    {
+      "taskId": "info-5-02-task-2",
+      "type": "number",
+      "topicId": "info-5-02",
+      "order": 2,
+      "file": "content/tasks/info-5.json",
+      "index": 6,
+      "sha256": "472f71dc6910b358b113c46b6ed93ff51c61a5560055d57142f07b90ecc607dc"
+    },
+    {
+      "taskId": "info-5-02-task-3",
+      "type": "code",
+      "topicId": "info-5-02",
+      "order": 3,
+      "file": "content/tasks/info-5.json",
+      "index": 7,
+      "sha256": "dd6ab9447cb0f01e5448e0b50c304d22c177cb3e1c562fba37dcd32aa0236f3b"
+    },
+    {
+      "taskId": "info-5-02-task-4",
+      "type": "code",
+      "topicId": "info-5-02",
+      "order": 4,
+      "file": "content/tasks/info-5.json",
+      "index": 8,
+      "sha256": "d22b62645eb3c2eae218f0f5ae146ab62b27af0f1de38f5f090f89d7313efaf8"
+    },
+    {
+      "taskId": "info-5-02-task-5",
+      "type": "code",
+      "topicId": "info-5-02",
+      "order": 5,
+      "file": "content/tasks/info-5.json",
+      "index": 9,
+      "sha256": "e42f3fac8d46256241bdf038ae87b7afa827183544999d637239e68166a59d58"
+    },
+    {
+      "taskId": "info-5-03-task-1",
+      "type": "number",
+      "topicId": "info-5-03",
+      "order": 1,
+      "file": "content/tasks/info-5.json",
+      "index": 10,
+      "sha256": "663a779c018135fed4fda8477f94e7d32559445d972c97288fce7f00bb2fd6f3"
+    },
+    {
+      "taskId": "info-5-03-task-2",
+      "type": "number",
+      "topicId": "info-5-03",
+      "order": 2,
+      "file": "content/tasks/info-5.json",
+      "index": 11,
+      "sha256": "6f51820f3e52200c66e26a41a48181a0f6c62663178af970b238ecf70b86afd2"
+    },
+    {
+      "taskId": "info-5-03-task-3",
+      "type": "code",
+      "topicId": "info-5-03",
+      "order": 3,
+      "file": "content/tasks/info-5.json",
+      "index": 12,
+      "sha256": "0e7aa68f03ec3370de1a8d142ed93289a6aea2c9be78f68dc132ab9e5fd7c3ee"
+    },
+    {
+      "taskId": "info-5-03-task-4",
+      "type": "code",
+      "topicId": "info-5-03",
+      "order": 4,
+      "file": "content/tasks/info-5.json",
+      "index": 13,
+      "sha256": "0b1c5e04f5e495bc5bb7f46483fba6689c05e2a3df583500b530fe21aec631e7"
+    },
+    {
+      "taskId": "info-5-03-task-5",
+      "type": "code",
+      "topicId": "info-5-03",
+      "order": 5,
+      "file": "content/tasks/info-5.json",
+      "index": 14,
+      "sha256": "2b8f858bb489b9fa75a62d15dc61cb3db2cfb345e9b324c0f4fbb05c4d8241b3"
+    },
+    {
+      "taskId": "info-5-04-task-1",
+      "type": "number",
+      "topicId": "info-5-04",
+      "order": 1,
+      "file": "content/tasks/info-5.json",
+      "index": 15,
+      "sha256": "2b3ed730c6f80cca457333d1c4bb6f60816bbec3f40440204a5b9307d95927e8"
+    },
+    {
+      "taskId": "info-5-04-task-2",
+      "type": "number",
+      "topicId": "info-5-04",
+      "order": 2,
+      "file": "content/tasks/info-5.json",
+      "index": 16,
+      "sha256": "048190cc3793824f0f52002fb4c56ead197a698cf61c4c6e28cc9c42c430d24a"
+    },
+    {
+      "taskId": "info-5-04-task-3",
+      "type": "code",
+      "topicId": "info-5-04",
+      "order": 3,
+      "file": "content/tasks/info-5.json",
+      "index": 17,
+      "sha256": "aef5c60bddb79af2575f72e96e084de071bb4a897d878730c3632021db1bf14f"
+    },
+    {
+      "taskId": "info-5-04-task-4",
+      "type": "code",
+      "topicId": "info-5-04",
+      "order": 4,
+      "file": "content/tasks/info-5.json",
+      "index": 18,
+      "sha256": "6aaffffefa82309c84e715dec692e6e261b6461d614ce2f99d6b9bddac4253eb"
+    },
+    {
+      "taskId": "info-5-04-task-5",
+      "type": "code",
+      "topicId": "info-5-04",
+      "order": 5,
+      "file": "content/tasks/info-5.json",
+      "index": 19,
+      "sha256": "e9ec7df96f5b0263d39117aa2e89143c76065b2e8c8c67bc5c35ffae86bd9b3d"
+    },
+    {
+      "taskId": "info-5-05-task-1",
+      "type": "number",
+      "topicId": "info-5-05",
+      "order": 1,
+      "file": "content/tasks/info-5.json",
+      "index": 20,
+      "sha256": "2edc80e89abb8ccce0aff6c14a8a72c6ef9dbe0256c5242ae0d74b9b42087bfd"
+    },
+    {
+      "taskId": "info-5-05-task-2",
+      "type": "number",
+      "topicId": "info-5-05",
+      "order": 2,
+      "file": "content/tasks/info-5.json",
+      "index": 21,
+      "sha256": "6d80390f2bbd59896e75101cece5e926416ca0f53ba46dcd276f4b39fe9cfcee"
+    },
+    {
+      "taskId": "info-5-05-task-3",
+      "type": "code",
+      "topicId": "info-5-05",
+      "order": 3,
+      "file": "content/tasks/info-5.json",
+      "index": 22,
+      "sha256": "8e61aa3c800ef980f72bdaf5e8bdca93f6040eaacfc6f4fb6de9dedb4ce01217"
+    },
+    {
+      "taskId": "info-5-05-task-4",
+      "type": "code",
+      "topicId": "info-5-05",
+      "order": 4,
+      "file": "content/tasks/info-5.json",
+      "index": 23,
+      "sha256": "13e7adfe2a60d22f89ed276f914e89ef02b4ae7f4ee9e58a57bf58a017338748"
+    },
+    {
+      "taskId": "info-5-05-task-5",
+      "type": "code",
+      "topicId": "info-5-05",
+      "order": 5,
+      "file": "content/tasks/info-5.json",
+      "index": 24,
+      "sha256": "53484802a946c35ec5caa3eb7331a196773fba3987a30c89b61841982e062dc5"
+    },
+    {
+      "taskId": "info-5-06-task-1",
+      "type": "number",
+      "topicId": "info-5-06",
+      "order": 1,
+      "file": "content/tasks/info-5.json",
+      "index": 25,
+      "sha256": "267d2fa49dce6cdc7decb5ee277615763bea1e4200e96dde84203ebe4e8c3795"
+    },
+    {
+      "taskId": "info-5-06-task-2",
+      "type": "number",
+      "topicId": "info-5-06",
+      "order": 2,
+      "file": "content/tasks/info-5.json",
+      "index": 26,
+      "sha256": "27c4d3f8f362730c315d3c1098d162e673f3b4b94b3593dd2021659917ce06fe"
+    },
+    {
+      "taskId": "info-5-06-task-3",
+      "type": "code",
+      "topicId": "info-5-06",
+      "order": 3,
+      "file": "content/tasks/info-5.json",
+      "index": 27,
+      "sha256": "c603c841ba18ef800ecdd7c1ba420e3c7e9a01fa9b49fa7a963a4a6762ca96bb"
+    },
+    {
+      "taskId": "info-5-06-task-4",
+      "type": "code",
+      "topicId": "info-5-06",
+      "order": 4,
+      "file": "content/tasks/info-5.json",
+      "index": 28,
+      "sha256": "454127c642294a817fac85aafe9ba660cfaf3f8552e715dfa2520fb4b98970e4"
+    },
+    {
+      "taskId": "info-5-06-task-5",
+      "type": "code",
+      "topicId": "info-5-06",
+      "order": 5,
+      "file": "content/tasks/info-5.json",
+      "index": 29,
+      "sha256": "4d96253b6b32deff8ba97226b4729542aa5a920b92f20b9182898753c4789376"
+    },
+    {
+      "taskId": "info-5-07-task-1",
+      "type": "number",
+      "topicId": "info-5-07",
+      "order": 1,
+      "file": "content/tasks/info-5.json",
+      "index": 30,
+      "sha256": "193d27547cbe139b76ce1d03df83c4dccc759f0bf97ea6386cfb77a75872f8e9"
+    },
+    {
+      "taskId": "info-5-07-task-2",
+      "type": "number",
+      "topicId": "info-5-07",
+      "order": 2,
+      "file": "content/tasks/info-5.json",
+      "index": 31,
+      "sha256": "0d6a58f5a3c2f107d0d8fe372e1cade312c0a320dedecf5301af6b0536b31c0a"
+    },
+    {
+      "taskId": "info-5-07-task-3",
+      "type": "code",
+      "topicId": "info-5-07",
+      "order": 3,
+      "file": "content/tasks/info-5.json",
+      "index": 32,
+      "sha256": "2b9067a75a5f46b2cd5a259e464697d03bd9f43e739f5c779936d1c3b3100f70"
+    },
+    {
+      "taskId": "info-5-07-task-4",
+      "type": "code",
+      "topicId": "info-5-07",
+      "order": 4,
+      "file": "content/tasks/info-5.json",
+      "index": 33,
+      "sha256": "983a187d8b37cf69e92406b58dafb3ec2477bf05fa1536391386e11d60b20bc5"
+    },
+    {
+      "taskId": "info-5-07-task-5",
+      "type": "code",
+      "topicId": "info-5-07",
+      "order": 5,
+      "file": "content/tasks/info-5.json",
+      "index": 34,
+      "sha256": "2cc80d757a5dedb352a67af8126bbeb9a90a3fbd594c911358460947fa4c0898"
+    },
+    {
+      "taskId": "info-5-08-task-1",
+      "type": "number",
+      "topicId": "info-5-08",
+      "order": 1,
+      "file": "content/tasks/info-5.json",
+      "index": 35,
+      "sha256": "156a2e438b8532d249bd664c179749fea341d3b4ffa4c7ab27b04bcb370c1889"
+    },
+    {
+      "taskId": "info-5-08-task-2",
+      "type": "number",
+      "topicId": "info-5-08",
+      "order": 2,
+      "file": "content/tasks/info-5.json",
+      "index": 36,
+      "sha256": "543924a5400ed535d080437540450979ee13885f5da4ec5604adf91156579cdd"
+    },
+    {
+      "taskId": "info-5-08-task-3",
+      "type": "code",
+      "topicId": "info-5-08",
+      "order": 3,
+      "file": "content/tasks/info-5.json",
+      "index": 37,
+      "sha256": "731409d443b02b0a5fd57cca3714a33d5512f03df2b5d6bc42b48614aa6ab156"
+    },
+    {
+      "taskId": "info-5-08-task-4",
+      "type": "code",
+      "topicId": "info-5-08",
+      "order": 4,
+      "file": "content/tasks/info-5.json",
+      "index": 38,
+      "sha256": "bc3b8cd23da4748408401719b8cd7058ad526c435ef48bd0ad38c84d3fd31a58"
+    },
+    {
+      "taskId": "info-5-08-task-5",
+      "type": "code",
+      "topicId": "info-5-08",
+      "order": 5,
+      "file": "content/tasks/info-5.json",
+      "index": 39,
+      "sha256": "88d878fb353363b193c994c708571d19565eab9eeca85f120ba834496ac3daad"
+    },
+    {
+      "taskId": "info-5-09-task-1",
+      "type": "number",
+      "topicId": "info-5-09",
+      "order": 1,
+      "file": "content/tasks/info-5.json",
+      "index": 40,
+      "sha256": "2ec47a730eeba1954116c5bcb2aebe09f9b23219ce15f46c44d0be390db1a502"
+    },
+    {
+      "taskId": "info-5-09-task-2",
+      "type": "number",
+      "topicId": "info-5-09",
+      "order": 2,
+      "file": "content/tasks/info-5.json",
+      "index": 41,
+      "sha256": "6fc8cf78cf91a6cfc60db4386cad58a379d4f392ba5195d19baf9f92aca4e576"
+    },
+    {
+      "taskId": "info-5-09-task-3",
+      "type": "code",
+      "topicId": "info-5-09",
+      "order": 3,
+      "file": "content/tasks/info-5.json",
+      "index": 42,
+      "sha256": "2aa22329054ed58702b62c10e8ef0df7a8aad6d94afacd55bf64eac9202a13db"
+    },
+    {
+      "taskId": "info-5-09-task-4",
+      "type": "code",
+      "topicId": "info-5-09",
+      "order": 4,
+      "file": "content/tasks/info-5.json",
+      "index": 43,
+      "sha256": "6253f0ac3c53487653151956ec541a8869fbe44bb3660a569a39623952fcc785"
+    },
+    {
+      "taskId": "info-5-09-task-5",
+      "type": "code",
+      "topicId": "info-5-09",
+      "order": 5,
+      "file": "content/tasks/info-5.json",
+      "index": 44,
+      "sha256": "d58622a951f52355aa06a153a848ecedad03c717dd956f16a74771182845e142"
+    },
+    {
+      "taskId": "info-5-10-task-1",
+      "type": "number",
+      "topicId": "info-5-10",
+      "order": 1,
+      "file": "content/tasks/info-5.json",
+      "index": 45,
+      "sha256": "3e5396e2d45e099f82dc5bbcdee517a0a461eba8b0510d0b6cf5145c6c014bcf"
+    },
+    {
+      "taskId": "info-5-10-task-2",
+      "type": "number",
+      "topicId": "info-5-10",
+      "order": 2,
+      "file": "content/tasks/info-5.json",
+      "index": 46,
+      "sha256": "aa80d3b0c7cbddb6f4aaeee762e1812345236d122e00961c7df2f5ebf5d12030"
+    },
+    {
+      "taskId": "info-5-10-task-3",
+      "type": "code",
+      "topicId": "info-5-10",
+      "order": 3,
+      "file": "content/tasks/info-5.json",
+      "index": 47,
+      "sha256": "e73deee556ea7275921af7dc13b82d29e2e2ebb876fe1a927befb67a31cca1e2"
+    },
+    {
+      "taskId": "info-5-10-task-4",
+      "type": "code",
+      "topicId": "info-5-10",
+      "order": 4,
+      "file": "content/tasks/info-5.json",
+      "index": 48,
+      "sha256": "4fddb88b1e5c6255775488a4b5ba918047a9e99b2a785258db9eaba760a992b0"
+    },
+    {
+      "taskId": "info-5-10-task-5",
+      "type": "code",
+      "topicId": "info-5-10",
+      "order": 5,
+      "file": "content/tasks/info-5.json",
+      "index": 49,
+      "sha256": "de3fce92372c80d4344c1a29fe82bd79c2c296e72804615c0cf29fa34c163913"
+    },
+    {
+      "taskId": "info-5-11-task-1",
+      "type": "number",
+      "topicId": "info-5-11",
+      "order": 1,
+      "file": "content/tasks/info-5.json",
+      "index": 50,
+      "sha256": "b44402667b28b4c7060ed782bc8c202f47416098240a462bb48475042398dd5a"
+    },
+    {
+      "taskId": "info-5-11-task-2",
+      "type": "number",
+      "topicId": "info-5-11",
+      "order": 2,
+      "file": "content/tasks/info-5.json",
+      "index": 51,
+      "sha256": "5344e5a06a2dc51a9b3a665367ca082e6a94720809c932d120c5149acc8af0d0"
+    },
+    {
+      "taskId": "info-5-11-task-3",
+      "type": "code",
+      "topicId": "info-5-11",
+      "order": 3,
+      "file": "content/tasks/info-5.json",
+      "index": 52,
+      "sha256": "88f15fbb66eb6d87be88f4e1d5fdb7ed7a247580cedde7e2eaf33b7cf7d4ce38"
+    },
+    {
+      "taskId": "info-5-11-task-4",
+      "type": "code",
+      "topicId": "info-5-11",
+      "order": 4,
+      "file": "content/tasks/info-5.json",
+      "index": 53,
+      "sha256": "96d16c31b25a473747930943ef3b76aae59eb736e093da5718de20a6994df686"
+    },
+    {
+      "taskId": "info-5-11-task-5",
+      "type": "code",
+      "topicId": "info-5-11",
+      "order": 5,
+      "file": "content/tasks/info-5.json",
+      "index": 54,
+      "sha256": "8d61d44deaefab89485d77f637c9963ad478565cfed58e3fd67386f82454b155"
+    },
+    {
+      "taskId": "info-5-12-task-1",
+      "type": "number",
+      "topicId": "info-5-12",
+      "order": 1,
+      "file": "content/tasks/info-5.json",
+      "index": 55,
+      "sha256": "607c8c2a78e4b53bc5587f50380524b23c5cad5e9fe2acf704fa68447b5973bd"
+    },
+    {
+      "taskId": "info-5-12-task-2",
+      "type": "number",
+      "topicId": "info-5-12",
+      "order": 2,
+      "file": "content/tasks/info-5.json",
+      "index": 56,
+      "sha256": "ee15c5ee356e6eecc8dc715fd7601d8240948bc70194b4938ddac2de74af542b"
+    },
+    {
+      "taskId": "info-5-12-task-3",
+      "type": "code",
+      "topicId": "info-5-12",
+      "order": 3,
+      "file": "content/tasks/info-5.json",
+      "index": 57,
+      "sha256": "dcb1bddefeeadb44adb99b6ebcdbbf5338e41dd63cb1cab7e2eaa8e892fc8ed1"
+    },
+    {
+      "taskId": "info-5-12-task-4",
+      "type": "code",
+      "topicId": "info-5-12",
+      "order": 4,
+      "file": "content/tasks/info-5.json",
+      "index": 58,
+      "sha256": "52ff7ad47b03dea96d6af05fbef8d0a7bfefc094bdb3cd7ae0e7d879555449a4"
+    },
+    {
+      "taskId": "info-5-12-task-5",
+      "type": "code",
+      "topicId": "info-5-12",
+      "order": 5,
+      "file": "content/tasks/info-5.json",
+      "index": 59,
+      "sha256": "a896abcd4a38fbd7ff50bddf0ef6af314dbb3317edd3fe34ab0570bfd981fc98"
+    },
+    {
+      "taskId": "info-6-01-task-1",
+      "type": "number",
+      "topicId": "info-6-01",
+      "order": 1,
+      "file": "content/tasks/info-6.json",
+      "index": 0,
+      "sha256": "c401093926b97bfec51adbe9c8cbf3658c17246c24aa6fdd0cf20281dce71e81"
+    },
+    {
+      "taskId": "info-6-01-task-2",
+      "type": "number",
+      "topicId": "info-6-01",
+      "order": 2,
+      "file": "content/tasks/info-6.json",
+      "index": 1,
+      "sha256": "28d7d8d17dfa5bbf5d59cdd1906c69d157ebd1ff48625fadce7f6d868066a091"
+    },
+    {
+      "taskId": "info-6-01-task-3",
+      "type": "code",
+      "topicId": "info-6-01",
+      "order": 3,
+      "file": "content/tasks/info-6.json",
+      "index": 2,
+      "sha256": "bdb75808b7f11d5a271a4655e168b8fe6cf2129e42953a7c4d5feb3c67806686"
+    },
+    {
+      "taskId": "info-6-01-task-4",
+      "type": "code",
+      "topicId": "info-6-01",
+      "order": 4,
+      "file": "content/tasks/info-6.json",
+      "index": 3,
+      "sha256": "4ae20c1498650b3a08d4b1446b36ab22f4e456da077869ab14544c02b6a92245"
+    },
+    {
+      "taskId": "info-6-01-task-5",
+      "type": "code",
+      "topicId": "info-6-01",
+      "order": 5,
+      "file": "content/tasks/info-6.json",
+      "index": 4,
+      "sha256": "480b82246ce3fe98ce80eaa0ec53c072ee397e7aeafd172d7973fe315b67c10a"
+    },
+    {
+      "taskId": "info-6-02-task-1",
+      "type": "number",
+      "topicId": "info-6-02",
+      "order": 1,
+      "file": "content/tasks/info-6.json",
+      "index": 5,
+      "sha256": "48c5beabf449f351cbeb245e2755c6a7aef1fdfa6ea805f2bee3c53835ea0ac7"
+    },
+    {
+      "taskId": "info-6-02-task-2",
+      "type": "number",
+      "topicId": "info-6-02",
+      "order": 2,
+      "file": "content/tasks/info-6.json",
+      "index": 6,
+      "sha256": "beddc7e4fe297b3d65bfe3de20c3c403f8fa72219dddacd730ac29e8fe4a468e"
+    },
+    {
+      "taskId": "info-6-02-task-3",
+      "type": "code",
+      "topicId": "info-6-02",
+      "order": 3,
+      "file": "content/tasks/info-6.json",
+      "index": 7,
+      "sha256": "0267fabec449318870def4c8e9d1235a314cfbce2a141247928e4a493407ca06"
+    },
+    {
+      "taskId": "info-6-02-task-4",
+      "type": "code",
+      "topicId": "info-6-02",
+      "order": 4,
+      "file": "content/tasks/info-6.json",
+      "index": 8,
+      "sha256": "3931661fa34f7d4ef9bb0cdf3798896d14bbbf1a8375ac2cb315139a9d8257a4"
+    },
+    {
+      "taskId": "info-6-02-task-5",
+      "type": "code",
+      "topicId": "info-6-02",
+      "order": 5,
+      "file": "content/tasks/info-6.json",
+      "index": 9,
+      "sha256": "a83265515ab285fe0a3a8069cdfd02cd08f81b1ba5e048823236e833987b5364"
+    },
+    {
+      "taskId": "info-6-03-task-1",
+      "type": "number",
+      "topicId": "info-6-03",
+      "order": 1,
+      "file": "content/tasks/info-6.json",
+      "index": 10,
+      "sha256": "eb234cef3199ef3491a761b734c542bf61508289518c80742e2d330115a98cfe"
+    },
+    {
+      "taskId": "info-6-03-task-2",
+      "type": "number",
+      "topicId": "info-6-03",
+      "order": 2,
+      "file": "content/tasks/info-6.json",
+      "index": 11,
+      "sha256": "50fe34e1c523f84590472d38b2b7da17c8f4fa6a187df1fcab1cdd1338a50539"
+    },
+    {
+      "taskId": "info-6-03-task-3",
+      "type": "code",
+      "topicId": "info-6-03",
+      "order": 3,
+      "file": "content/tasks/info-6.json",
+      "index": 12,
+      "sha256": "05c1d732f31560828f0ee5292d1104800f1b16dc70b4beb54d8b3527ecd46fa5"
+    },
+    {
+      "taskId": "info-6-03-task-4",
+      "type": "code",
+      "topicId": "info-6-03",
+      "order": 4,
+      "file": "content/tasks/info-6.json",
+      "index": 13,
+      "sha256": "7156f7b9778b834cdc38859a17da82f992f26a02a2f437c5c06f7f3df05a6781"
+    },
+    {
+      "taskId": "info-6-03-task-5",
+      "type": "code",
+      "topicId": "info-6-03",
+      "order": 5,
+      "file": "content/tasks/info-6.json",
+      "index": 14,
+      "sha256": "b0110861658d4d4f2c0cf0edf5cc7882e075e5800dfe8b6d6aec369d1821d66f"
+    },
+    {
+      "taskId": "info-6-04-task-1",
+      "type": "number",
+      "topicId": "info-6-04",
+      "order": 1,
+      "file": "content/tasks/info-6.json",
+      "index": 15,
+      "sha256": "e641b1eae3e4908994a3a3943603ff95266b144da07b3d60491c0e1815bee9e4"
+    },
+    {
+      "taskId": "info-6-04-task-2",
+      "type": "number",
+      "topicId": "info-6-04",
+      "order": 2,
+      "file": "content/tasks/info-6.json",
+      "index": 16,
+      "sha256": "e54b436759c5a4c8352d240ece2f09a7123fb20b7adce4e31082665aa06ce18c"
+    },
+    {
+      "taskId": "info-6-04-task-3",
+      "type": "code",
+      "topicId": "info-6-04",
+      "order": 3,
+      "file": "content/tasks/info-6.json",
+      "index": 17,
+      "sha256": "acd4a434f43a342fa67425dec151df081ceea91a6e0f761679e69548249f8007"
+    },
+    {
+      "taskId": "info-6-04-task-4",
+      "type": "code",
+      "topicId": "info-6-04",
+      "order": 4,
+      "file": "content/tasks/info-6.json",
+      "index": 18,
+      "sha256": "1978ff1f023107246b443cd58dd6c648a6cc369405910a357da990b55395c868"
+    },
+    {
+      "taskId": "info-6-04-task-5",
+      "type": "code",
+      "topicId": "info-6-04",
+      "order": 5,
+      "file": "content/tasks/info-6.json",
+      "index": 19,
+      "sha256": "5dcac89168f3c8f92727f13a7b1ad11ca941c621d2fc70926f1a2d2abf16b1d5"
+    },
+    {
+      "taskId": "info-6-05-task-1",
+      "type": "number",
+      "topicId": "info-6-05",
+      "order": 1,
+      "file": "content/tasks/info-6.json",
+      "index": 20,
+      "sha256": "776a284924acb33d96240a736091a388eabcf60657edea98ef42163026b28413"
+    },
+    {
+      "taskId": "info-6-05-task-2",
+      "type": "number",
+      "topicId": "info-6-05",
+      "order": 2,
+      "file": "content/tasks/info-6.json",
+      "index": 21,
+      "sha256": "820252173027e5a29d7cf7c5582182597e753f6ac29a609622d31e4935c4a879"
+    },
+    {
+      "taskId": "info-6-05-task-3",
+      "type": "code",
+      "topicId": "info-6-05",
+      "order": 3,
+      "file": "content/tasks/info-6.json",
+      "index": 22,
+      "sha256": "7858e19445770b3f942f89b25d999fd894a87e3b36875ac8bffee70d55c8cba5"
+    },
+    {
+      "taskId": "info-6-05-task-4",
+      "type": "code",
+      "topicId": "info-6-05",
+      "order": 4,
+      "file": "content/tasks/info-6.json",
+      "index": 23,
+      "sha256": "dc9098777c639774cbf66f45e39e044ab0ba64662d8e0f59f8fd6283070d2e6f"
+    },
+    {
+      "taskId": "info-6-05-task-5",
+      "type": "code",
+      "topicId": "info-6-05",
+      "order": 5,
+      "file": "content/tasks/info-6.json",
+      "index": 24,
+      "sha256": "8e327a0629e1181847fc3480582fa1b2ff84bee54dc3d5817e469437ee865cb7"
+    },
+    {
+      "taskId": "info-6-06-task-1",
+      "type": "number",
+      "topicId": "info-6-06",
+      "order": 1,
+      "file": "content/tasks/info-6.json",
+      "index": 25,
+      "sha256": "8d6be9520bfa17383d394b671c7a30fb90717a882dc23288d21a33944516120e"
+    },
+    {
+      "taskId": "info-6-06-task-2",
+      "type": "number",
+      "topicId": "info-6-06",
+      "order": 2,
+      "file": "content/tasks/info-6.json",
+      "index": 26,
+      "sha256": "f49b59b1c421bd651d5543c40bf7cb413589d98f0e09c99f8702cb25dbb7a526"
+    },
+    {
+      "taskId": "info-6-06-task-3",
+      "type": "code",
+      "topicId": "info-6-06",
+      "order": 3,
+      "file": "content/tasks/info-6.json",
+      "index": 27,
+      "sha256": "718a6329f336744ab94f7618854ca3f0ccc586ce685c56e0026251664fbb6750"
+    },
+    {
+      "taskId": "info-6-06-task-4",
+      "type": "code",
+      "topicId": "info-6-06",
+      "order": 4,
+      "file": "content/tasks/info-6.json",
+      "index": 28,
+      "sha256": "7a0b136bebd80e736b2bd6f343c2aea61c00bbf4e009cfba58239efb3fef25b1"
+    },
+    {
+      "taskId": "info-6-06-task-5",
+      "type": "code",
+      "topicId": "info-6-06",
+      "order": 5,
+      "file": "content/tasks/info-6.json",
+      "index": 29,
+      "sha256": "cdfc5df287ddab02984d692447c62f70c2ad757c629cefcd3833cac623cba338"
+    },
+    {
+      "taskId": "info-6-07-task-1",
+      "type": "number",
+      "topicId": "info-6-07",
+      "order": 1,
+      "file": "content/tasks/info-6.json",
+      "index": 30,
+      "sha256": "37361426372b52b27136b8383e41067a072f00db17e4894e5161b2fef50d57ef"
+    },
+    {
+      "taskId": "info-6-07-task-2",
+      "type": "number",
+      "topicId": "info-6-07",
+      "order": 2,
+      "file": "content/tasks/info-6.json",
+      "index": 31,
+      "sha256": "382d7bb5ec6da5147098bd7e505cb61e71bb17be69e630e212b601c254ee715c"
+    },
+    {
+      "taskId": "info-6-07-task-3",
+      "type": "code",
+      "topicId": "info-6-07",
+      "order": 3,
+      "file": "content/tasks/info-6.json",
+      "index": 32,
+      "sha256": "888cba555b8df419c9c01bc44d3e91c7ac3d953010ffb610ebbe5eee28577e80"
+    },
+    {
+      "taskId": "info-6-07-task-4",
+      "type": "code",
+      "topicId": "info-6-07",
+      "order": 4,
+      "file": "content/tasks/info-6.json",
+      "index": 33,
+      "sha256": "5180e0db42c0a9b08651423d7be7d642c0ca7ec39ac927c20ddc3b4c9e55d057"
+    },
+    {
+      "taskId": "info-6-07-task-5",
+      "type": "code",
+      "topicId": "info-6-07",
+      "order": 5,
+      "file": "content/tasks/info-6.json",
+      "index": 34,
+      "sha256": "688491764ac64cb99e4bfa2ad012e5bb614602d747892f12d5a44084a293d60d"
+    },
+    {
+      "taskId": "info-6-08-task-1",
+      "type": "number",
+      "topicId": "info-6-08",
+      "order": 1,
+      "file": "content/tasks/info-6.json",
+      "index": 35,
+      "sha256": "b5bcc78715f0ff68b1d067b633939e9ecb7c947decde4b0bf2ed4a899aace788"
+    },
+    {
+      "taskId": "info-6-08-task-2",
+      "type": "number",
+      "topicId": "info-6-08",
+      "order": 2,
+      "file": "content/tasks/info-6.json",
+      "index": 36,
+      "sha256": "f9b5f0ec25d879ff1f1d5249d276249550fad95dd61a5efdd78d29efe8828b56"
+    },
+    {
+      "taskId": "info-6-08-task-3",
+      "type": "code",
+      "topicId": "info-6-08",
+      "order": 3,
+      "file": "content/tasks/info-6.json",
+      "index": 37,
+      "sha256": "0ab2a514a94f7dfe2b771442ef2d19c3ebcbed15f9cf28778de8a13e7373abc6"
+    },
+    {
+      "taskId": "info-6-08-task-4",
+      "type": "code",
+      "topicId": "info-6-08",
+      "order": 4,
+      "file": "content/tasks/info-6.json",
+      "index": 38,
+      "sha256": "86ae520c7fdcb05286cc9aad84396486559148084ec29c4d1b1d005793d3deec"
+    },
+    {
+      "taskId": "info-6-08-task-5",
+      "type": "code",
+      "topicId": "info-6-08",
+      "order": 5,
+      "file": "content/tasks/info-6.json",
+      "index": 39,
+      "sha256": "86e2a19c8ed9d759695b23ac2821ad8332392dc518de75b4fdd44b6627aa4a6f"
+    },
+    {
+      "taskId": "info-6-09-task-1",
+      "type": "number",
+      "topicId": "info-6-09",
+      "order": 1,
+      "file": "content/tasks/info-6.json",
+      "index": 40,
+      "sha256": "bb423b6705963e646d96f55cbe0fa219834019f9250f361c92d5252c2d021234"
+    },
+    {
+      "taskId": "info-6-09-task-2",
+      "type": "number",
+      "topicId": "info-6-09",
+      "order": 2,
+      "file": "content/tasks/info-6.json",
+      "index": 41,
+      "sha256": "e4a9e63d31d3a8032a03c7a81afbe64ad7f1be35983315f385854ebfcf0af4f7"
+    },
+    {
+      "taskId": "info-6-09-task-3",
+      "type": "code",
+      "topicId": "info-6-09",
+      "order": 3,
+      "file": "content/tasks/info-6.json",
+      "index": 42,
+      "sha256": "b84ce9d191d900dde7c934e02590eed87e30d7ee4f8f31d5981efad199896dd8"
+    },
+    {
+      "taskId": "info-6-09-task-4",
+      "type": "code",
+      "topicId": "info-6-09",
+      "order": 4,
+      "file": "content/tasks/info-6.json",
+      "index": 43,
+      "sha256": "daa94ba3faf0b71d037788080fe6a00b80a765becf2e5d8ca66458741f84cca3"
+    },
+    {
+      "taskId": "info-6-09-task-5",
+      "type": "code",
+      "topicId": "info-6-09",
+      "order": 5,
+      "file": "content/tasks/info-6.json",
+      "index": 44,
+      "sha256": "e54a21fa1e2490d01d490649015d28edf0c9a1a1126ca902e5eef44e3f8fa2cb"
+    },
+    {
+      "taskId": "info-6-10-task-1",
+      "type": "number",
+      "topicId": "info-6-10",
+      "order": 1,
+      "file": "content/tasks/info-6.json",
+      "index": 45,
+      "sha256": "10ac0763db17b2dc59a9dae55216f846538b51753d51015985aeae0ed802c3ed"
+    },
+    {
+      "taskId": "info-6-10-task-2",
+      "type": "number",
+      "topicId": "info-6-10",
+      "order": 2,
+      "file": "content/tasks/info-6.json",
+      "index": 46,
+      "sha256": "1ba682d401edcc813be31c01db9463710cb61e3ebfb45eb95f5f4edbe32f9f79"
+    },
+    {
+      "taskId": "info-6-10-task-3",
+      "type": "code",
+      "topicId": "info-6-10",
+      "order": 3,
+      "file": "content/tasks/info-6.json",
+      "index": 47,
+      "sha256": "215103fcb2b3e26db45edf46073bf8730a27cfd0355201a144ad1ebb6beca387"
+    },
+    {
+      "taskId": "info-6-10-task-4",
+      "type": "code",
+      "topicId": "info-6-10",
+      "order": 4,
+      "file": "content/tasks/info-6.json",
+      "index": 48,
+      "sha256": "fd88239eb0092c2b67caa346f39fce5542c8996f7c2d22cbabfdb37b8ae32645"
+    },
+    {
+      "taskId": "info-6-10-task-5",
+      "type": "code",
+      "topicId": "info-6-10",
+      "order": 5,
+      "file": "content/tasks/info-6.json",
+      "index": 49,
+      "sha256": "e55897bd35c2f656b58aa5e4fc6abdd002ae50bc582e399323da2db7ca0a04e5"
+    },
+    {
+      "taskId": "info-6-11-task-1",
+      "type": "number",
+      "topicId": "info-6-11",
+      "order": 1,
+      "file": "content/tasks/info-6.json",
+      "index": 50,
+      "sha256": "46f18cc8ec035c97bdd6f117abb002c1b5a74c430c79211b9df3afb0c4162c12"
+    },
+    {
+      "taskId": "info-6-11-task-2",
+      "type": "number",
+      "topicId": "info-6-11",
+      "order": 2,
+      "file": "content/tasks/info-6.json",
+      "index": 51,
+      "sha256": "25e0a4caf9e835c36e5a71fa6af7ef1d4b82e9407838b88371df231ec277ec71"
+    },
+    {
+      "taskId": "info-6-11-task-3",
+      "type": "code",
+      "topicId": "info-6-11",
+      "order": 3,
+      "file": "content/tasks/info-6.json",
+      "index": 52,
+      "sha256": "aac35fe47a45beb84092da2ce2fcedb16c767ae03a20a2a585718f120f382e8e"
+    },
+    {
+      "taskId": "info-6-11-task-4",
+      "type": "code",
+      "topicId": "info-6-11",
+      "order": 4,
+      "file": "content/tasks/info-6.json",
+      "index": 53,
+      "sha256": "1db6935674561595005ffc3037c9da2e33bc3f0531f3af39ad758bccc75f0dbd"
+    },
+    {
+      "taskId": "info-6-11-task-5",
+      "type": "code",
+      "topicId": "info-6-11",
+      "order": 5,
+      "file": "content/tasks/info-6.json",
+      "index": 54,
+      "sha256": "73cf56cca0e1d0960e862368f29d4cf35c1b033c4aec8ff455b4664380624884"
+    },
+    {
+      "taskId": "info-6-12-task-1",
+      "type": "number",
+      "topicId": "info-6-12",
+      "order": 1,
+      "file": "content/tasks/info-6.json",
+      "index": 55,
+      "sha256": "da16c50c48adf7fd2667c58b5a38c8d7ad4f0c17160ba6f8c765b02a8e32de0f"
+    },
+    {
+      "taskId": "info-6-12-task-2",
+      "type": "number",
+      "topicId": "info-6-12",
+      "order": 2,
+      "file": "content/tasks/info-6.json",
+      "index": 56,
+      "sha256": "65f4ffc449a78f2ce6a81afb645d4a7e47224cf8ac3b7511ad7370760aa06643"
+    },
+    {
+      "taskId": "info-6-12-task-3",
+      "type": "code",
+      "topicId": "info-6-12",
+      "order": 3,
+      "file": "content/tasks/info-6.json",
+      "index": 57,
+      "sha256": "43ffc48a039b6a13524bb1e1445130f09f256ae7c1d79a9ac8f119afaf07051e"
+    },
+    {
+      "taskId": "info-6-12-task-4",
+      "type": "code",
+      "topicId": "info-6-12",
+      "order": 4,
+      "file": "content/tasks/info-6.json",
+      "index": 58,
+      "sha256": "67870d43f58f35a46663720e2fc540e21892f714560002b6239c5392980920da"
+    },
+    {
+      "taskId": "info-6-12-task-5",
+      "type": "code",
+      "topicId": "info-6-12",
+      "order": 5,
+      "file": "content/tasks/info-6.json",
+      "index": 59,
+      "sha256": "6f16c62228e95f93cbc6d1068ec0caac78b414aab4b9ac648c4bed78c4949371"
+    },
+    {
+      "taskId": "math-4-01-task-1",
+      "type": "number",
+      "topicId": "math-4-01",
+      "order": 1,
+      "file": "content/tasks/math-4.json",
+      "index": 0,
+      "sha256": "358360721c291632667f10db440f7132e10b5d6f8e169caa8750769e37357b35"
+    },
+    {
+      "taskId": "math-4-01-task-2",
+      "type": "number",
+      "topicId": "math-4-01",
+      "order": 2,
+      "file": "content/tasks/math-4.json",
+      "index": 1,
+      "sha256": "fd379bd763ddffcdb9bc3c3a41b5e858bff542d70886cef13f5597858834b3a2"
+    },
+    {
+      "taskId": "math-4-01-task-3",
+      "type": "number",
+      "topicId": "math-4-01",
+      "order": 3,
+      "file": "content/tasks/math-4.json",
+      "index": 2,
+      "sha256": "0d0a51e7f4dc3351688307de0777410307922fa5531cc6b38b1021f5393a90c2"
+    },
+    {
+      "taskId": "math-4-01-task-4",
+      "type": "number",
+      "topicId": "math-4-01",
+      "order": 4,
+      "file": "content/tasks/math-4.json",
+      "index": 3,
+      "sha256": "c936c446f93f7acc53069a0df3edf870a6f34233939e13df5173bc8b6ebe0a7a"
+    },
+    {
+      "taskId": "math-4-01-task-5",
+      "type": "number",
+      "topicId": "math-4-01",
+      "order": 5,
+      "file": "content/tasks/math-4.json",
+      "index": 4,
+      "sha256": "af80d20ed286bbe5f686afb87f8c44bdb96ed10ded7c257c47da3820fad31784"
+    },
+    {
+      "taskId": "math-4-02-task-1",
+      "type": "number",
+      "topicId": "math-4-02",
+      "order": 1,
+      "file": "content/tasks/math-4.json",
+      "index": 5,
+      "sha256": "c35f03cb28ecbd377902568611c6319b4cac47e0838b4e1fdec631ccb51265e0"
+    },
+    {
+      "taskId": "math-4-02-task-2",
+      "type": "number",
+      "topicId": "math-4-02",
+      "order": 2,
+      "file": "content/tasks/math-4.json",
+      "index": 6,
+      "sha256": "da42ed94adf458400cb7800ee4f3510e2b32740bb2262627bdfb2b11af241dc8"
+    },
+    {
+      "taskId": "math-4-02-task-3",
+      "type": "number",
+      "topicId": "math-4-02",
+      "order": 3,
+      "file": "content/tasks/math-4.json",
+      "index": 7,
+      "sha256": "338c49c65a2dbcb54d3ff724ba09299231d50a4b8a14d75f777b88b2980674d6"
+    },
+    {
+      "taskId": "math-4-02-task-4",
+      "type": "number",
+      "topicId": "math-4-02",
+      "order": 4,
+      "file": "content/tasks/math-4.json",
+      "index": 8,
+      "sha256": "52382958737f281714b09777a047eba4b9ef14658b0649cd8db454c666455358"
+    },
+    {
+      "taskId": "math-4-02-task-5",
+      "type": "number",
+      "topicId": "math-4-02",
+      "order": 5,
+      "file": "content/tasks/math-4.json",
+      "index": 9,
+      "sha256": "61f215ed2196b0b163a61db895dae8b07369336a5121c88e26601816bafd1bf9"
+    },
+    {
+      "taskId": "math-4-03-task-1",
+      "type": "number",
+      "topicId": "math-4-03",
+      "order": 1,
+      "file": "content/tasks/math-4.json",
+      "index": 10,
+      "sha256": "28d88e118c2225c07c234e1187e99a506080c0bde299c8e329c64ad8d73c6da6"
+    },
+    {
+      "taskId": "math-4-03-task-2",
+      "type": "number",
+      "topicId": "math-4-03",
+      "order": 2,
+      "file": "content/tasks/math-4.json",
+      "index": 11,
+      "sha256": "2eb177deee4106608c3e30aba36a27bc55359e979b6ffd8676a8b2c8605c8c53"
+    },
+    {
+      "taskId": "math-4-03-task-3",
+      "type": "number",
+      "topicId": "math-4-03",
+      "order": 3,
+      "file": "content/tasks/math-4.json",
+      "index": 12,
+      "sha256": "76a02af2974d55a9a6da7b19329ab739738df42314c9274372fa3755d7b8e6fe"
+    },
+    {
+      "taskId": "math-4-03-task-4",
+      "type": "number",
+      "topicId": "math-4-03",
+      "order": 4,
+      "file": "content/tasks/math-4.json",
+      "index": 13,
+      "sha256": "a8b818058b66d86906544a9c4a4f24f983f36e90d43b2e6ec1b0ecb3106ac768"
+    },
+    {
+      "taskId": "math-4-03-task-5",
+      "type": "number",
+      "topicId": "math-4-03",
+      "order": 5,
+      "file": "content/tasks/math-4.json",
+      "index": 14,
+      "sha256": "bd86be411396eff3d17fc94f3772745735dc9324d48403b81404d63268acd943"
+    },
+    {
+      "taskId": "math-4-04-task-1",
+      "type": "number",
+      "topicId": "math-4-04",
+      "order": 1,
+      "file": "content/tasks/math-4.json",
+      "index": 15,
+      "sha256": "3217e89c41a68b8a050946ea73e52e69c3efcf04e47d09bf0e5227fabbf19f79"
+    },
+    {
+      "taskId": "math-4-04-task-2",
+      "type": "number",
+      "topicId": "math-4-04",
+      "order": 2,
+      "file": "content/tasks/math-4.json",
+      "index": 16,
+      "sha256": "34c0a6da7cf8cfc305d178d0689ac73f4cac1109083288eec42ceceb474919c3"
+    },
+    {
+      "taskId": "math-4-04-task-3",
+      "type": "number",
+      "topicId": "math-4-04",
+      "order": 3,
+      "file": "content/tasks/math-4.json",
+      "index": 17,
+      "sha256": "0e5cd38812dde27fc823c878a1d1fdf1ecc76700c17bfd01f59dd4dde50a2b2e"
+    },
+    {
+      "taskId": "math-4-04-task-4",
+      "type": "number",
+      "topicId": "math-4-04",
+      "order": 4,
+      "file": "content/tasks/math-4.json",
+      "index": 18,
+      "sha256": "b1a5e736deba48da48ad43c5da50fd5fbd2563e13a5160d490d0c8d76fc81af6"
+    },
+    {
+      "taskId": "math-4-04-task-5",
+      "type": "number",
+      "topicId": "math-4-04",
+      "order": 5,
+      "file": "content/tasks/math-4.json",
+      "index": 19,
+      "sha256": "0bd8712e991e2656b0a77bad3c6a2600bb02a76606359683cdc7584d6b86f9f6"
+    },
+    {
+      "taskId": "math-4-05-task-1",
+      "type": "number",
+      "topicId": "math-4-05",
+      "order": 1,
+      "file": "content/tasks/math-4.json",
+      "index": 20,
+      "sha256": "9cb36b0e4a6e84c802dc2d156af54220d4c48a5f64a9dc10fd4307728f14944a"
+    },
+    {
+      "taskId": "math-4-05-task-2",
+      "type": "number",
+      "topicId": "math-4-05",
+      "order": 2,
+      "file": "content/tasks/math-4.json",
+      "index": 21,
+      "sha256": "a3aab2532975f4d2a556c5634259d0880f6a35e6bcd4b6b7fe293ad7712a754b"
+    },
+    {
+      "taskId": "math-4-05-task-3",
+      "type": "number",
+      "topicId": "math-4-05",
+      "order": 3,
+      "file": "content/tasks/math-4.json",
+      "index": 22,
+      "sha256": "1b600beb14fce582efab86194ab4bf151ed0474b265789ad80a439141161696a"
+    },
+    {
+      "taskId": "math-4-05-task-4",
+      "type": "number",
+      "topicId": "math-4-05",
+      "order": 4,
+      "file": "content/tasks/math-4.json",
+      "index": 23,
+      "sha256": "3e795bd096fb1c441c7ef4017be2cf301eed5298f7437bd1c68d7c34a6a390e8"
+    },
+    {
+      "taskId": "math-4-05-task-5",
+      "type": "number",
+      "topicId": "math-4-05",
+      "order": 5,
+      "file": "content/tasks/math-4.json",
+      "index": 24,
+      "sha256": "af93f5892a3bf7a55ee118b7025d3c7c814024c81a6591a22e3164b6db2a4329"
+    },
+    {
+      "taskId": "math-4-06-task-1",
+      "type": "number",
+      "topicId": "math-4-06",
+      "order": 1,
+      "file": "content/tasks/math-4.json",
+      "index": 25,
+      "sha256": "570812965cf517a90ed000ded39c7cc59417dd722175b006131586dd7f51fd42"
+    },
+    {
+      "taskId": "math-4-06-task-2",
+      "type": "number",
+      "topicId": "math-4-06",
+      "order": 2,
+      "file": "content/tasks/math-4.json",
+      "index": 26,
+      "sha256": "1211810b13be5f51bb735f940ed9a08e87620ac8cf3a69ed2bf544984b4d5082"
+    },
+    {
+      "taskId": "math-4-06-task-3",
+      "type": "number",
+      "topicId": "math-4-06",
+      "order": 3,
+      "file": "content/tasks/math-4.json",
+      "index": 27,
+      "sha256": "ed1b7cf60f2ed57c596d406c5a8c3bbaacf87a7aa5a56afec3a05262bc56988e"
+    },
+    {
+      "taskId": "math-4-06-task-4",
+      "type": "number",
+      "topicId": "math-4-06",
+      "order": 4,
+      "file": "content/tasks/math-4.json",
+      "index": 28,
+      "sha256": "93c625fc3a5d64091deaa078c3fe3d282896f665765d045d49ad723dadd1979f"
+    },
+    {
+      "taskId": "math-4-06-task-5",
+      "type": "number",
+      "topicId": "math-4-06",
+      "order": 5,
+      "file": "content/tasks/math-4.json",
+      "index": 29,
+      "sha256": "c43c757ce8ef706fa6e2ebe5cf901e22132c996278998c9fecb0087e2e9eb372"
+    },
+    {
+      "taskId": "math-4-07-task-1",
+      "type": "number",
+      "topicId": "math-4-07",
+      "order": 1,
+      "file": "content/tasks/math-4.json",
+      "index": 30,
+      "sha256": "f15982d5ed23989fb32ce1ee61c941f9644405710c2ac96f8725a8abf78e331f"
+    },
+    {
+      "taskId": "math-4-07-task-2",
+      "type": "number",
+      "topicId": "math-4-07",
+      "order": 2,
+      "file": "content/tasks/math-4.json",
+      "index": 31,
+      "sha256": "2478e656938cc8de63a4fe9870ce7b0f021cb5c68ff2fe3a462de54ef7267fc4"
+    },
+    {
+      "taskId": "math-4-07-task-3",
+      "type": "number",
+      "topicId": "math-4-07",
+      "order": 3,
+      "file": "content/tasks/math-4.json",
+      "index": 32,
+      "sha256": "2ae82e27f0f0b94df6d3c5a1c2190f77ddd771b36a2ab8bac129848535504ec6"
+    },
+    {
+      "taskId": "math-4-07-task-4",
+      "type": "number",
+      "topicId": "math-4-07",
+      "order": 4,
+      "file": "content/tasks/math-4.json",
+      "index": 33,
+      "sha256": "196a2b3bdf4ab92021f0a19843306c74839847942e1bb01c6036b86929e2862d"
+    },
+    {
+      "taskId": "math-4-07-task-5",
+      "type": "number",
+      "topicId": "math-4-07",
+      "order": 5,
+      "file": "content/tasks/math-4.json",
+      "index": 34,
+      "sha256": "c0d94eec51edfb4e1f815880cf5b42cf8e01c1a6cc12d637747b7eb70e4426a6"
+    },
+    {
+      "taskId": "math-4-08-task-1",
+      "type": "number",
+      "topicId": "math-4-08",
+      "order": 1,
+      "file": "content/tasks/math-4.json",
+      "index": 35,
+      "sha256": "fd5392ec761e7740830201777798b6e045d5d3ed9524ce01a884a679612673c9"
+    },
+    {
+      "taskId": "math-4-08-task-2",
+      "type": "number",
+      "topicId": "math-4-08",
+      "order": 2,
+      "file": "content/tasks/math-4.json",
+      "index": 36,
+      "sha256": "9b1f3aaf204dc932fff9d3c7c5c0289c5dd69f4cfa12aec4fc1ce303e52121cc"
+    },
+    {
+      "taskId": "math-4-08-task-3",
+      "type": "number",
+      "topicId": "math-4-08",
+      "order": 3,
+      "file": "content/tasks/math-4.json",
+      "index": 37,
+      "sha256": "24f2ae2e305e15dc11209815dfc0c78c77cce72a66c0391b9a7c5cd2b4578617"
+    },
+    {
+      "taskId": "math-4-08-task-4",
+      "type": "number",
+      "topicId": "math-4-08",
+      "order": 4,
+      "file": "content/tasks/math-4.json",
+      "index": 38,
+      "sha256": "b162a377b7ea0bf7274cd6ea4a4c126501cc8e702b52254013b577f2886cdfe6"
+    },
+    {
+      "taskId": "math-4-08-task-5",
+      "type": "number",
+      "topicId": "math-4-08",
+      "order": 5,
+      "file": "content/tasks/math-4.json",
+      "index": 39,
+      "sha256": "ebdc570e6bd2116c8bb1c8e0ef17232dad944446dd3db8d071ebe6b77aecc581"
+    },
+    {
+      "taskId": "math-4-09-task-1",
+      "type": "number",
+      "topicId": "math-4-09",
+      "order": 1,
+      "file": "content/tasks/math-4.json",
+      "index": 40,
+      "sha256": "a555e168f70f522af149441e7c35e81a578b1640b3cd07bfc1477556fa1ed8ca"
+    },
+    {
+      "taskId": "math-4-09-task-2",
+      "type": "number",
+      "topicId": "math-4-09",
+      "order": 2,
+      "file": "content/tasks/math-4.json",
+      "index": 41,
+      "sha256": "d0b99c6a56af03271bdf21545cc96b4b3185b3666359fe3781677441559fda4d"
+    },
+    {
+      "taskId": "math-4-09-task-3",
+      "type": "number",
+      "topicId": "math-4-09",
+      "order": 3,
+      "file": "content/tasks/math-4.json",
+      "index": 42,
+      "sha256": "84a8e11c9255e9f29a2cd2a10cdd4d576bb822b142c8a2a1cfdf85557feb35e0"
+    },
+    {
+      "taskId": "math-4-09-task-4",
+      "type": "number",
+      "topicId": "math-4-09",
+      "order": 4,
+      "file": "content/tasks/math-4.json",
+      "index": 43,
+      "sha256": "a6a632a83eea1ee3207d1457bcb95b46b2bdfd93a46945362754edcec276298e"
+    },
+    {
+      "taskId": "math-4-09-task-5",
+      "type": "number",
+      "topicId": "math-4-09",
+      "order": 5,
+      "file": "content/tasks/math-4.json",
+      "index": 44,
+      "sha256": "cc02dc3ec46ac2db14678bc43a688d09c5f07efa732318039902cf25720aff4c"
+    },
+    {
+      "taskId": "math-4-10-task-1",
+      "type": "number",
+      "topicId": "math-4-10",
+      "order": 1,
+      "file": "content/tasks/math-4.json",
+      "index": 45,
+      "sha256": "64234612e676c5089b5dd8336b7dfed1022ce59420aa5f9bbff21660e30da1d8"
+    },
+    {
+      "taskId": "math-4-10-task-2",
+      "type": "number",
+      "topicId": "math-4-10",
+      "order": 2,
+      "file": "content/tasks/math-4.json",
+      "index": 46,
+      "sha256": "fabd726d3307d8f52c342413d59a9c57cf2c0cdf6553a776780c348e9bdddb9c"
+    },
+    {
+      "taskId": "math-4-10-task-3",
+      "type": "number",
+      "topicId": "math-4-10",
+      "order": 3,
+      "file": "content/tasks/math-4.json",
+      "index": 47,
+      "sha256": "3180e17236786b996893f5a09e2ee1fa6942ff17a9b98304493e593fc677e57e"
+    },
+    {
+      "taskId": "math-4-10-task-4",
+      "type": "number",
+      "topicId": "math-4-10",
+      "order": 4,
+      "file": "content/tasks/math-4.json",
+      "index": 48,
+      "sha256": "9ca499f8a31e74647e9ddb8687d01d5ec39346b95be25f2b03bd46ef276bbbb0"
+    },
+    {
+      "taskId": "math-4-10-task-5",
+      "type": "number",
+      "topicId": "math-4-10",
+      "order": 5,
+      "file": "content/tasks/math-4.json",
+      "index": 49,
+      "sha256": "a7a3542f579577ea72501111d47275af5e033226dd1d1580b8af5232de6de9d1"
+    },
+    {
+      "taskId": "math-4-11-task-1",
+      "type": "number",
+      "topicId": "math-4-11",
+      "order": 1,
+      "file": "content/tasks/math-4.json",
+      "index": 50,
+      "sha256": "8600610b0a8b4a1fdd32b1843c47d4e92f509ab97aa1efe2536aa41118210865"
+    },
+    {
+      "taskId": "math-4-11-task-2",
+      "type": "number",
+      "topicId": "math-4-11",
+      "order": 2,
+      "file": "content/tasks/math-4.json",
+      "index": 51,
+      "sha256": "bb72507d3e6e3fb2c405a0cb9e8cbebeecb3b8e5fb39fae15629fce19fbd61ac"
+    },
+    {
+      "taskId": "math-4-11-task-3",
+      "type": "number",
+      "topicId": "math-4-11",
+      "order": 3,
+      "file": "content/tasks/math-4.json",
+      "index": 52,
+      "sha256": "b6b59cd6822453d3a0fae15ac82e3bc886e60440cfd910cf202371bfd70e125a"
+    },
+    {
+      "taskId": "math-4-11-task-4",
+      "type": "number",
+      "topicId": "math-4-11",
+      "order": 4,
+      "file": "content/tasks/math-4.json",
+      "index": 53,
+      "sha256": "40c8d72e575409e5e02113ece31972eab1da9db32e31d20fdf74afebafbaaf7e"
+    },
+    {
+      "taskId": "math-4-11-task-5",
+      "type": "number",
+      "topicId": "math-4-11",
+      "order": 5,
+      "file": "content/tasks/math-4.json",
+      "index": 54,
+      "sha256": "edc25d91c5fd9eb24d2d007d7dee18007ad2adada9f2e1544d422a4660d22c5a"
+    },
+    {
+      "taskId": "math-4-12-task-1",
+      "type": "number",
+      "topicId": "math-4-12",
+      "order": 1,
+      "file": "content/tasks/math-4.json",
+      "index": 55,
+      "sha256": "20423eabe3c15363faed807d64dd488a24e8c638f32f1a545739c066185171ad"
+    },
+    {
+      "taskId": "math-4-12-task-2",
+      "type": "number",
+      "topicId": "math-4-12",
+      "order": 2,
+      "file": "content/tasks/math-4.json",
+      "index": 56,
+      "sha256": "707346d07f4b4b9e5bed087dd9a86b4fb75b034c5cdcddf6d110473b3b7ddfb7"
+    },
+    {
+      "taskId": "math-4-12-task-3",
+      "type": "number",
+      "topicId": "math-4-12",
+      "order": 3,
+      "file": "content/tasks/math-4.json",
+      "index": 57,
+      "sha256": "b7bf5bdf511c97ae3bb4fc1b74edc1849f03ca9b06be874239c100d39f062991"
+    },
+    {
+      "taskId": "math-4-12-task-4",
+      "type": "number",
+      "topicId": "math-4-12",
+      "order": 4,
+      "file": "content/tasks/math-4.json",
+      "index": 58,
+      "sha256": "75d5747e686f82f4ad1193b9dbf6e9caff5ca4fc2bff2e3b141fc33646401be3"
+    },
+    {
+      "taskId": "math-4-12-task-5",
+      "type": "number",
+      "topicId": "math-4-12",
+      "order": 5,
+      "file": "content/tasks/math-4.json",
+      "index": 59,
+      "sha256": "242ea07375f075adaf3715bad4a40abf4ce16fb20089ecea26a50e274b08a24c"
+    },
+    {
+      "taskId": "math-5-01-task-1",
+      "type": "number",
+      "topicId": "math-5-01",
+      "order": 1,
+      "file": "content/tasks/math-5.json",
+      "index": 0,
+      "sha256": "cf30094c4abf4c17da0e5d99d3cde993c54f8fed302ebe77697b8be71ad7e41f"
+    },
+    {
+      "taskId": "math-5-01-task-2",
+      "type": "number",
+      "topicId": "math-5-01",
+      "order": 2,
+      "file": "content/tasks/math-5.json",
+      "index": 1,
+      "sha256": "a958dcbf89714b9d86dacef730299ecd838211efe4d4e25a3e470bbe4b06775d"
+    },
+    {
+      "taskId": "math-5-01-task-3",
+      "type": "number",
+      "topicId": "math-5-01",
+      "order": 3,
+      "file": "content/tasks/math-5.json",
+      "index": 2,
+      "sha256": "8d1a7ea106364d32ac45ae6844659a3b3e74d5d4ef976c30ded9c16f678dd254"
+    },
+    {
+      "taskId": "math-5-01-task-4",
+      "type": "number",
+      "topicId": "math-5-01",
+      "order": 4,
+      "file": "content/tasks/math-5.json",
+      "index": 3,
+      "sha256": "017668bf9582298ecbe4aae03c15c3ef4ecccecc6da6df5244b8e922f59b0da2"
+    },
+    {
+      "taskId": "math-5-01-task-5",
+      "type": "number",
+      "topicId": "math-5-01",
+      "order": 5,
+      "file": "content/tasks/math-5.json",
+      "index": 4,
+      "sha256": "d3aa96021e2830e05c3e3ae6ba2964c2532ae50e9c4693be47e827b39ceed8dd"
+    },
+    {
+      "taskId": "math-5-02-task-1",
+      "type": "number",
+      "topicId": "math-5-02",
+      "order": 1,
+      "file": "content/tasks/math-5.json",
+      "index": 5,
+      "sha256": "be38dc160cd96ed2f576e1b597671a3e75ec0459536802952535ce919a567704"
+    },
+    {
+      "taskId": "math-5-02-task-2",
+      "type": "number",
+      "topicId": "math-5-02",
+      "order": 2,
+      "file": "content/tasks/math-5.json",
+      "index": 6,
+      "sha256": "01c35111be2f139f7140c4ca8881ed278947ab0b25bbce7e5fefc7454415f4b2"
+    },
+    {
+      "taskId": "math-5-02-task-3",
+      "type": "number",
+      "topicId": "math-5-02",
+      "order": 3,
+      "file": "content/tasks/math-5.json",
+      "index": 7,
+      "sha256": "13ff64b10726046dd5d5a2e7030576c42e9f1ba1bf30d10e79a7e5851b2380cc"
+    },
+    {
+      "taskId": "math-5-02-task-4",
+      "type": "number",
+      "topicId": "math-5-02",
+      "order": 4,
+      "file": "content/tasks/math-5.json",
+      "index": 8,
+      "sha256": "24ea7dd64bb1ca5eef793e323e715ab95aada0d831c7795a471e5f0cd5ff19da"
+    },
+    {
+      "taskId": "math-5-02-task-5",
+      "type": "number",
+      "topicId": "math-5-02",
+      "order": 5,
+      "file": "content/tasks/math-5.json",
+      "index": 9,
+      "sha256": "0708c40bfb4789e47199955c21166c76b8ebc339c74dc3dfabc076580a54065c"
+    },
+    {
+      "taskId": "math-5-03-task-1",
+      "type": "number",
+      "topicId": "math-5-03",
+      "order": 1,
+      "file": "content/tasks/math-5.json",
+      "index": 10,
+      "sha256": "af9684fd050150985e66ecabba8a2619fc500797d340fdc6a02f9bd079dff107"
+    },
+    {
+      "taskId": "math-5-03-task-2",
+      "type": "number",
+      "topicId": "math-5-03",
+      "order": 2,
+      "file": "content/tasks/math-5.json",
+      "index": 11,
+      "sha256": "98efb99c970b3ca88715f617a348b379ae31ba35a8b3d0e088a5e13507950fba"
+    },
+    {
+      "taskId": "math-5-03-task-3",
+      "type": "number",
+      "topicId": "math-5-03",
+      "order": 3,
+      "file": "content/tasks/math-5.json",
+      "index": 12,
+      "sha256": "4e6982064455f4f0a351b66cd21db64e585debc74f09cc527ad3e16ee9aba50a"
+    },
+    {
+      "taskId": "math-5-03-task-4",
+      "type": "number",
+      "topicId": "math-5-03",
+      "order": 4,
+      "file": "content/tasks/math-5.json",
+      "index": 13,
+      "sha256": "9d12a711abd930bf3c304e5836dbec71e266cafe4bd87581664477c67d1faa69"
+    },
+    {
+      "taskId": "math-5-03-task-5",
+      "type": "number",
+      "topicId": "math-5-03",
+      "order": 5,
+      "file": "content/tasks/math-5.json",
+      "index": 14,
+      "sha256": "7720b5481cf6a1b9a3ce90e6a9f6fe56efab200d890a24691dcb4475232a4c4d"
+    },
+    {
+      "taskId": "math-5-04-task-1",
+      "type": "number",
+      "topicId": "math-5-04",
+      "order": 1,
+      "file": "content/tasks/math-5.json",
+      "index": 15,
+      "sha256": "fc372ec3e61102896cb2abab0eade8bc1dcf8033e61bf7faaf7cb0b06d930ecb"
+    },
+    {
+      "taskId": "math-5-04-task-2",
+      "type": "number",
+      "topicId": "math-5-04",
+      "order": 2,
+      "file": "content/tasks/math-5.json",
+      "index": 16,
+      "sha256": "d793452ebce1c67b9d10da3e3addef22057c22bc92714b292086f4d8306b6df9"
+    },
+    {
+      "taskId": "math-5-04-task-3",
+      "type": "number",
+      "topicId": "math-5-04",
+      "order": 3,
+      "file": "content/tasks/math-5.json",
+      "index": 17,
+      "sha256": "1dd75adc292d39693b1247f364852f56be0f3055cc1bc736e6b676a096f682a1"
+    },
+    {
+      "taskId": "math-5-04-task-4",
+      "type": "number",
+      "topicId": "math-5-04",
+      "order": 4,
+      "file": "content/tasks/math-5.json",
+      "index": 18,
+      "sha256": "7f3651236d832f47f9efe87ac704b0476e1902875e038f803b93c1b9120c2ed4"
+    },
+    {
+      "taskId": "math-5-04-task-5",
+      "type": "number",
+      "topicId": "math-5-04",
+      "order": 5,
+      "file": "content/tasks/math-5.json",
+      "index": 19,
+      "sha256": "637096a622ca38741d83e264ded9471c38cf969c5bbbc462095a1b1263b29fdd"
+    },
+    {
+      "taskId": "math-5-05-task-1",
+      "type": "number",
+      "topicId": "math-5-05",
+      "order": 1,
+      "file": "content/tasks/math-5.json",
+      "index": 20,
+      "sha256": "c7fd8ff32bb1bf2606f50c3a9de030a471e46c82fd510b1dc4cd02ecf8650fb5"
+    },
+    {
+      "taskId": "math-5-05-task-2",
+      "type": "number",
+      "topicId": "math-5-05",
+      "order": 2,
+      "file": "content/tasks/math-5.json",
+      "index": 21,
+      "sha256": "0a83b051eaaf381f92773ce8e71371176c13f5ce858a2c4d0a9c994edd4606c1"
+    },
+    {
+      "taskId": "math-5-05-task-3",
+      "type": "number",
+      "topicId": "math-5-05",
+      "order": 3,
+      "file": "content/tasks/math-5.json",
+      "index": 22,
+      "sha256": "0ca76220dfa5cce94b93d0a583adf8a430b5c24babacf79363a81ca81926eaf2"
+    },
+    {
+      "taskId": "math-5-05-task-4",
+      "type": "number",
+      "topicId": "math-5-05",
+      "order": 4,
+      "file": "content/tasks/math-5.json",
+      "index": 23,
+      "sha256": "5fc50bbf59e6a8af8bbd053cb146219be0a147a17ccd60781cdcadfadad78eec"
+    },
+    {
+      "taskId": "math-5-05-task-5",
+      "type": "number",
+      "topicId": "math-5-05",
+      "order": 5,
+      "file": "content/tasks/math-5.json",
+      "index": 24,
+      "sha256": "acb44b5dea818b44c47ac2c6bbe2217f277bf5f04693780e89842b02f88cc3ea"
+    },
+    {
+      "taskId": "math-5-06-task-1",
+      "type": "number",
+      "topicId": "math-5-06",
+      "order": 1,
+      "file": "content/tasks/math-5.json",
+      "index": 25,
+      "sha256": "76eee61b68f5a3710762c9f3929de57e4bf6a70068c9dd662a5b42772be58612"
+    },
+    {
+      "taskId": "math-5-06-task-2",
+      "type": "number",
+      "topicId": "math-5-06",
+      "order": 2,
+      "file": "content/tasks/math-5.json",
+      "index": 26,
+      "sha256": "ba68ceb7a6a12e8dac1a7d12ae2128c223b19ea8bf7fe3f2cc2524495e8e8fc0"
+    },
+    {
+      "taskId": "math-5-06-task-3",
+      "type": "number",
+      "topicId": "math-5-06",
+      "order": 3,
+      "file": "content/tasks/math-5.json",
+      "index": 27,
+      "sha256": "4e49c9cdc746410c0ec3e7497aad014ceff81e3f0a57707fe894b0d0c498795d"
+    },
+    {
+      "taskId": "math-5-06-task-4",
+      "type": "number",
+      "topicId": "math-5-06",
+      "order": 4,
+      "file": "content/tasks/math-5.json",
+      "index": 28,
+      "sha256": "e03d2f2fb531d3f6663ea47e3736e53e7768101d3be52cc21bffa5e360d5dc26"
+    },
+    {
+      "taskId": "math-5-06-task-5",
+      "type": "number",
+      "topicId": "math-5-06",
+      "order": 5,
+      "file": "content/tasks/math-5.json",
+      "index": 29,
+      "sha256": "4269171303373504e6a5360b3466684ee30c20a91d9a27adb30d1d6ff6073b31"
+    },
+    {
+      "taskId": "math-5-07-task-1",
+      "type": "number",
+      "topicId": "math-5-07",
+      "order": 1,
+      "file": "content/tasks/math-5.json",
+      "index": 30,
+      "sha256": "093c31a63b449f411435331d069e526e5760e6b6edf3893fc25b50ba7e050f36"
+    },
+    {
+      "taskId": "math-5-07-task-2",
+      "type": "number",
+      "topicId": "math-5-07",
+      "order": 2,
+      "file": "content/tasks/math-5.json",
+      "index": 31,
+      "sha256": "bc5dc7efc382c8dfc181785bd5cff8bee6c59dd62bb35b251301687b89546da1"
+    },
+    {
+      "taskId": "math-5-07-task-3",
+      "type": "number",
+      "topicId": "math-5-07",
+      "order": 3,
+      "file": "content/tasks/math-5.json",
+      "index": 32,
+      "sha256": "9616593644adf087c4f9a1b008a7353d784066d4f5a7d7d316081e36f3a7a355"
+    },
+    {
+      "taskId": "math-5-07-task-4",
+      "type": "number",
+      "topicId": "math-5-07",
+      "order": 4,
+      "file": "content/tasks/math-5.json",
+      "index": 33,
+      "sha256": "b697237adf4470c54dce52511bc6c9c8b941adf8b4b09f730d5a652b7f51a1d7"
+    },
+    {
+      "taskId": "math-5-07-task-5",
+      "type": "number",
+      "topicId": "math-5-07",
+      "order": 5,
+      "file": "content/tasks/math-5.json",
+      "index": 34,
+      "sha256": "e38d75eef00d363a468209b492422015cc9c5a0b66aa243108384f6925736ec1"
+    },
+    {
+      "taskId": "math-5-08-task-1",
+      "type": "number",
+      "topicId": "math-5-08",
+      "order": 1,
+      "file": "content/tasks/math-5.json",
+      "index": 35,
+      "sha256": "16221d308d53a0187ce10dd3f0be4326191ac1b5a571a4c9e5af6c94c8198d5c"
+    },
+    {
+      "taskId": "math-5-08-task-2",
+      "type": "number",
+      "topicId": "math-5-08",
+      "order": 2,
+      "file": "content/tasks/math-5.json",
+      "index": 36,
+      "sha256": "7ca99d2ecb598c580a51d8b344a071527282943dd5c6de3778e05b1874e72433"
+    },
+    {
+      "taskId": "math-5-08-task-3",
+      "type": "number",
+      "topicId": "math-5-08",
+      "order": 3,
+      "file": "content/tasks/math-5.json",
+      "index": 37,
+      "sha256": "a565d25671f9adeaed6f2a062215a1dd08d971fb603f485c9aa1cefcf0489673"
+    },
+    {
+      "taskId": "math-5-08-task-4",
+      "type": "number",
+      "topicId": "math-5-08",
+      "order": 4,
+      "file": "content/tasks/math-5.json",
+      "index": 38,
+      "sha256": "3545ff2eef5bea33f8041f69a6e855c2acf95ff775b7b16e09faaa8d0279b67a"
+    },
+    {
+      "taskId": "math-5-08-task-5",
+      "type": "number",
+      "topicId": "math-5-08",
+      "order": 5,
+      "file": "content/tasks/math-5.json",
+      "index": 39,
+      "sha256": "904f61c6dd618b9932d2620ba0f15135cf4b87a80e0acf2516f63f677e4fd479"
+    },
+    {
+      "taskId": "math-5-09-task-1",
+      "type": "number",
+      "topicId": "math-5-09",
+      "order": 1,
+      "file": "content/tasks/math-5.json",
+      "index": 40,
+      "sha256": "d67b291f2b3bd7e828ea72fa8d302e46142184392a65377c85c402ca53e6012b"
+    },
+    {
+      "taskId": "math-5-09-task-2",
+      "type": "number",
+      "topicId": "math-5-09",
+      "order": 2,
+      "file": "content/tasks/math-5.json",
+      "index": 41,
+      "sha256": "2fa7eaf2874cd319a52bbdf4c1de0a798596b1521771697c236b17a67f3b1849"
+    },
+    {
+      "taskId": "math-5-09-task-3",
+      "type": "number",
+      "topicId": "math-5-09",
+      "order": 3,
+      "file": "content/tasks/math-5.json",
+      "index": 42,
+      "sha256": "a95d46597a23e67bcf3892c8ac833e3b9d5ec28d797616090313a1ca3130fab8"
+    },
+    {
+      "taskId": "math-5-09-task-4",
+      "type": "number",
+      "topicId": "math-5-09",
+      "order": 4,
+      "file": "content/tasks/math-5.json",
+      "index": 43,
+      "sha256": "374dcad4146ba5814986cda1322bdb5f53e42e4e5523da4998a12c1371256d6e"
+    },
+    {
+      "taskId": "math-5-09-task-5",
+      "type": "number",
+      "topicId": "math-5-09",
+      "order": 5,
+      "file": "content/tasks/math-5.json",
+      "index": 44,
+      "sha256": "417c0ff6a0ad55eec26982aec9c657879f2eb84dbaada2169a27b71377af40a5"
+    },
+    {
+      "taskId": "math-5-10-task-1",
+      "type": "number",
+      "topicId": "math-5-10",
+      "order": 1,
+      "file": "content/tasks/math-5.json",
+      "index": 45,
+      "sha256": "46fa0e434d93f791be692ea460b0bb448eb1c9e772e6fb79092b1f5f8f1d4da1"
+    },
+    {
+      "taskId": "math-5-10-task-2",
+      "type": "number",
+      "topicId": "math-5-10",
+      "order": 2,
+      "file": "content/tasks/math-5.json",
+      "index": 46,
+      "sha256": "cf474da716518d552d3958de7fa1d623b4dfcfecd2c718cb1f5c4bac39b97e04"
+    },
+    {
+      "taskId": "math-5-10-task-3",
+      "type": "number",
+      "topicId": "math-5-10",
+      "order": 3,
+      "file": "content/tasks/math-5.json",
+      "index": 47,
+      "sha256": "95905e647368a403c94212772a54a625deada357dd2d0690b10e950f948cacb5"
+    },
+    {
+      "taskId": "math-5-10-task-4",
+      "type": "number",
+      "topicId": "math-5-10",
+      "order": 4,
+      "file": "content/tasks/math-5.json",
+      "index": 48,
+      "sha256": "e32f3304dd886aec6b8d8b3551f27b2d2afdd8024fdfbbd92b76823220ee21b4"
+    },
+    {
+      "taskId": "math-5-10-task-5",
+      "type": "number",
+      "topicId": "math-5-10",
+      "order": 5,
+      "file": "content/tasks/math-5.json",
+      "index": 49,
+      "sha256": "324e2d7d21d7b7b7eed28dc4d2d30dc8415b2bba67b94f977614647107143ba9"
+    },
+    {
+      "taskId": "math-5-11-task-1",
+      "type": "number",
+      "topicId": "math-5-11",
+      "order": 1,
+      "file": "content/tasks/math-5.json",
+      "index": 50,
+      "sha256": "75de2d9c2b0ce306f98297a31ddde4443955467db9a3d2c4895a6719fa274047"
+    },
+    {
+      "taskId": "math-5-11-task-2",
+      "type": "number",
+      "topicId": "math-5-11",
+      "order": 2,
+      "file": "content/tasks/math-5.json",
+      "index": 51,
+      "sha256": "b90ba5582903a6446d61dbcb50a6499f3014a0a5b4a97e00624c0b643ec6b23f"
+    },
+    {
+      "taskId": "math-5-11-task-3",
+      "type": "number",
+      "topicId": "math-5-11",
+      "order": 3,
+      "file": "content/tasks/math-5.json",
+      "index": 52,
+      "sha256": "ec70293ecb07e273a613923d2d2b03efbb9b4020b069a45e0c2b341abb5c9834"
+    },
+    {
+      "taskId": "math-5-11-task-4",
+      "type": "number",
+      "topicId": "math-5-11",
+      "order": 4,
+      "file": "content/tasks/math-5.json",
+      "index": 53,
+      "sha256": "f2de00c69ff122007f000b5a6a1d2dd821d65c9cd3a048f656f586b22dd3e9d0"
+    },
+    {
+      "taskId": "math-5-11-task-5",
+      "type": "number",
+      "topicId": "math-5-11",
+      "order": 5,
+      "file": "content/tasks/math-5.json",
+      "index": 54,
+      "sha256": "22b27066faf6bdb9873d15e093cbb9f7e18979e5ef86af5b28fc7c14b9219f9c"
+    },
+    {
+      "taskId": "math-5-12-task-1",
+      "type": "number",
+      "topicId": "math-5-12",
+      "order": 1,
+      "file": "content/tasks/math-5.json",
+      "index": 55,
+      "sha256": "b782b5489b31ab1c5886058e1157c04b29d8022a779823420f0bd2f19b0afb4b"
+    },
+    {
+      "taskId": "math-5-12-task-2",
+      "type": "number",
+      "topicId": "math-5-12",
+      "order": 2,
+      "file": "content/tasks/math-5.json",
+      "index": 56,
+      "sha256": "1493cab24e8f8ebfa1eebacd9e73a94801b4ca8e2f622c6eb3893f23954d45d5"
+    },
+    {
+      "taskId": "math-5-12-task-3",
+      "type": "number",
+      "topicId": "math-5-12",
+      "order": 3,
+      "file": "content/tasks/math-5.json",
+      "index": 57,
+      "sha256": "2b45e39f32f28ccbc5d3bb9036bb1867bc839d81e4eb325a302763bd5454ce0d"
+    },
+    {
+      "taskId": "math-5-12-task-4",
+      "type": "number",
+      "topicId": "math-5-12",
+      "order": 4,
+      "file": "content/tasks/math-5.json",
+      "index": 58,
+      "sha256": "350f4f63b71cdc72114b6ff2c3c01a0b98ecea6457518a978ce7c278ed9f4ca0"
+    },
+    {
+      "taskId": "math-5-12-task-5",
+      "type": "number",
+      "topicId": "math-5-12",
+      "order": 5,
+      "file": "content/tasks/math-5.json",
+      "index": 59,
+      "sha256": "3128f24fda1a585d52a4860a9c80f2164e39ae66ecc23e54792f35fe8580b3e1"
+    },
+    {
+      "taskId": "math-6-01-task-1",
+      "type": "number",
+      "topicId": "math-6-01",
+      "order": 1,
+      "file": "content/tasks/math-6.json",
+      "index": 0,
+      "sha256": "e63a285e516252bfae584d991ea06ed4f03bb8469121aa2cc4031aba92bd6c03"
+    },
+    {
+      "taskId": "math-6-01-task-2",
+      "type": "number",
+      "topicId": "math-6-01",
+      "order": 2,
+      "file": "content/tasks/math-6.json",
+      "index": 1,
+      "sha256": "80dfab731a75eeeaae756203f888abee9dec4cac05920ddb3ce101dacb4bd212"
+    },
+    {
+      "taskId": "math-6-01-task-3",
+      "type": "number",
+      "topicId": "math-6-01",
+      "order": 3,
+      "file": "content/tasks/math-6.json",
+      "index": 2,
+      "sha256": "6b74c8926d29603e1cc4231a8b93b739faa07ea607f0a13068c037da8b7c6267"
+    },
+    {
+      "taskId": "math-6-01-task-4",
+      "type": "number",
+      "topicId": "math-6-01",
+      "order": 4,
+      "file": "content/tasks/math-6.json",
+      "index": 3,
+      "sha256": "7eaf208f8f4d80a371e94a72b41f8264e3d1a9eacf96175ab5eba29ee8d618db"
+    },
+    {
+      "taskId": "math-6-01-task-5",
+      "type": "number",
+      "topicId": "math-6-01",
+      "order": 5,
+      "file": "content/tasks/math-6.json",
+      "index": 4,
+      "sha256": "616796ca6bd5bbbf2a36b1f39d33bbd79be183d0451edb7d08952b8489c57e20"
+    },
+    {
+      "taskId": "math-6-02-task-1",
+      "type": "number",
+      "topicId": "math-6-02",
+      "order": 1,
+      "file": "content/tasks/math-6.json",
+      "index": 5,
+      "sha256": "a223dd7756f2eb955f9f5e49472f69b9876573e39e6f4b0d12c2d46c6cd59bd1"
+    },
+    {
+      "taskId": "math-6-02-task-2",
+      "type": "number",
+      "topicId": "math-6-02",
+      "order": 2,
+      "file": "content/tasks/math-6.json",
+      "index": 6,
+      "sha256": "e71deba2920bdfad910c631aee30fb73989559f96cf1b1ea7bbbfdde240c0ca1"
+    },
+    {
+      "taskId": "math-6-02-task-3",
+      "type": "number",
+      "topicId": "math-6-02",
+      "order": 3,
+      "file": "content/tasks/math-6.json",
+      "index": 7,
+      "sha256": "4099cc9d669b2592ad2e32a2ada0b6697bac80fa787ccb9211e5fad3c4768db6"
+    },
+    {
+      "taskId": "math-6-02-task-4",
+      "type": "number",
+      "topicId": "math-6-02",
+      "order": 4,
+      "file": "content/tasks/math-6.json",
+      "index": 8,
+      "sha256": "21c1de98c6f4be2533cb0f7e0bb6ee2fa69241bc6fafd6d09878f9d7216f4b7b"
+    },
+    {
+      "taskId": "math-6-02-task-5",
+      "type": "number",
+      "topicId": "math-6-02",
+      "order": 5,
+      "file": "content/tasks/math-6.json",
+      "index": 9,
+      "sha256": "d1b382aae491c6e6afb06ccec77ff8f012c7342ec5d31ae854967b89c759a014"
+    },
+    {
+      "taskId": "math-6-03-task-1",
+      "type": "number",
+      "topicId": "math-6-03",
+      "order": 1,
+      "file": "content/tasks/math-6.json",
+      "index": 10,
+      "sha256": "b0804ef558b2b45150b6b25c4d7fc64269628195e6243f67636f3628c61a33fc"
+    },
+    {
+      "taskId": "math-6-03-task-2",
+      "type": "number",
+      "topicId": "math-6-03",
+      "order": 2,
+      "file": "content/tasks/math-6.json",
+      "index": 11,
+      "sha256": "84f44bbab9a2802c72dad29e0e3ace3f956a0f2024b381ceac9c63f57a56ed6f"
+    },
+    {
+      "taskId": "math-6-03-task-3",
+      "type": "number",
+      "topicId": "math-6-03",
+      "order": 3,
+      "file": "content/tasks/math-6.json",
+      "index": 12,
+      "sha256": "8c94091b5371501b69da2f3643ce66b9a391e7dc3f4eb1a4b6cc0b4be8c2693b"
+    },
+    {
+      "taskId": "math-6-03-task-4",
+      "type": "number",
+      "topicId": "math-6-03",
+      "order": 4,
+      "file": "content/tasks/math-6.json",
+      "index": 13,
+      "sha256": "36bbb38e41eb78ad7aea6fadeb96234b0787d4a4e2d9bb73295db94d965d9230"
+    },
+    {
+      "taskId": "math-6-03-task-5",
+      "type": "number",
+      "topicId": "math-6-03",
+      "order": 5,
+      "file": "content/tasks/math-6.json",
+      "index": 14,
+      "sha256": "6b562b7b34c259a943755f80da182e83a573d1f34b38cea45ee54ab8efb0adff"
+    },
+    {
+      "taskId": "math-6-04-task-1",
+      "type": "number",
+      "topicId": "math-6-04",
+      "order": 1,
+      "file": "content/tasks/math-6.json",
+      "index": 15,
+      "sha256": "c26d513e06b8c8fe0257ccfc67e51b99a8557f7af950d959493fff35d4763b35"
+    },
+    {
+      "taskId": "math-6-04-task-2",
+      "type": "number",
+      "topicId": "math-6-04",
+      "order": 2,
+      "file": "content/tasks/math-6.json",
+      "index": 16,
+      "sha256": "93bd9d548ae8a17203cedcf8106efa846a3e0d0db00df27fd3f53b71619eb158"
+    },
+    {
+      "taskId": "math-6-04-task-3",
+      "type": "number",
+      "topicId": "math-6-04",
+      "order": 3,
+      "file": "content/tasks/math-6.json",
+      "index": 17,
+      "sha256": "8beafe4e30c69df350977a2a9ecdadf26b00ef906a1c39b07d8686e9839b4ed3"
+    },
+    {
+      "taskId": "math-6-04-task-4",
+      "type": "number",
+      "topicId": "math-6-04",
+      "order": 4,
+      "file": "content/tasks/math-6.json",
+      "index": 18,
+      "sha256": "2854f38f3c46e6d46cd0df9b4da8721fb03078d8395b34eb8f6fdd6d00889833"
+    },
+    {
+      "taskId": "math-6-04-task-5",
+      "type": "number",
+      "topicId": "math-6-04",
+      "order": 5,
+      "file": "content/tasks/math-6.json",
+      "index": 19,
+      "sha256": "354cf1442f0dfab64adf53fee52484ed1c5562b82b051cc4d60779f1595893be"
+    },
+    {
+      "taskId": "math-6-05-task-1",
+      "type": "number",
+      "topicId": "math-6-05",
+      "order": 1,
+      "file": "content/tasks/math-6.json",
+      "index": 20,
+      "sha256": "c15820ba8b97bf47212e32403f0b7fb2dd59c820b12492f90e1b7d671928d75a"
+    },
+    {
+      "taskId": "math-6-05-task-2",
+      "type": "number",
+      "topicId": "math-6-05",
+      "order": 2,
+      "file": "content/tasks/math-6.json",
+      "index": 21,
+      "sha256": "918cbad395652f7ff4f7570b74156209fced25a1337920c1a39c877210422d31"
+    },
+    {
+      "taskId": "math-6-05-task-3",
+      "type": "number",
+      "topicId": "math-6-05",
+      "order": 3,
+      "file": "content/tasks/math-6.json",
+      "index": 22,
+      "sha256": "83f8657a11854e68de87854d99840183d0e10744a7cff39adc09bca2d66167a7"
+    },
+    {
+      "taskId": "math-6-05-task-4",
+      "type": "number",
+      "topicId": "math-6-05",
+      "order": 4,
+      "file": "content/tasks/math-6.json",
+      "index": 23,
+      "sha256": "f8a6854932b531c9d0c59786d49363bf40d57a10d5dc2e758a77cc718f190734"
+    },
+    {
+      "taskId": "math-6-05-task-5",
+      "type": "number",
+      "topicId": "math-6-05",
+      "order": 5,
+      "file": "content/tasks/math-6.json",
+      "index": 24,
+      "sha256": "ef3e1aa3572da3630212bfe7d8835f34612b1c5ddb7801f7a167ff7504c11972"
+    },
+    {
+      "taskId": "math-6-06-task-1",
+      "type": "number",
+      "topicId": "math-6-06",
+      "order": 1,
+      "file": "content/tasks/math-6.json",
+      "index": 25,
+      "sha256": "947197175f608859708fbd48d60d667f88d41e612f80e28660aef08326472a22"
+    },
+    {
+      "taskId": "math-6-06-task-2",
+      "type": "number",
+      "topicId": "math-6-06",
+      "order": 2,
+      "file": "content/tasks/math-6.json",
+      "index": 26,
+      "sha256": "0838bafa027269ceaa08c58a3263d4780dd6c6906ef00666e1d414f8bb48bd64"
+    },
+    {
+      "taskId": "math-6-06-task-3",
+      "type": "number",
+      "topicId": "math-6-06",
+      "order": 3,
+      "file": "content/tasks/math-6.json",
+      "index": 27,
+      "sha256": "a5193904e32c52ba699502bf0502000cb7e246f3ab47d833886b9457b19d9693"
+    },
+    {
+      "taskId": "math-6-06-task-4",
+      "type": "number",
+      "topicId": "math-6-06",
+      "order": 4,
+      "file": "content/tasks/math-6.json",
+      "index": 28,
+      "sha256": "aa44414a2d5c39741dff2c4e9eba780da0c5d6ccfd5472d52b51913c74712fae"
+    },
+    {
+      "taskId": "math-6-06-task-5",
+      "type": "number",
+      "topicId": "math-6-06",
+      "order": 5,
+      "file": "content/tasks/math-6.json",
+      "index": 29,
+      "sha256": "b8e987e6cf41764ceaaf20f864feffd90474bc35bbd12c04fb695973d2337fe8"
+    },
+    {
+      "taskId": "math-6-07-task-1",
+      "type": "number",
+      "topicId": "math-6-07",
+      "order": 1,
+      "file": "content/tasks/math-6.json",
+      "index": 30,
+      "sha256": "321a6faba2705d6bc18abe5dd3781b52bc3280168d389f0d965cab9f0652725d"
+    },
+    {
+      "taskId": "math-6-07-task-2",
+      "type": "number",
+      "topicId": "math-6-07",
+      "order": 2,
+      "file": "content/tasks/math-6.json",
+      "index": 31,
+      "sha256": "9c78687d04d70552014e98362c48189c35626ca8290dfe3aa7720b67c1c7c3c5"
+    },
+    {
+      "taskId": "math-6-07-task-3",
+      "type": "number",
+      "topicId": "math-6-07",
+      "order": 3,
+      "file": "content/tasks/math-6.json",
+      "index": 32,
+      "sha256": "7e1172848e60f78ebde787ee86bf66c4edca636b54a9826d55f8ad929ff5a851"
+    },
+    {
+      "taskId": "math-6-07-task-4",
+      "type": "number",
+      "topicId": "math-6-07",
+      "order": 4,
+      "file": "content/tasks/math-6.json",
+      "index": 33,
+      "sha256": "10f1902f62fea12a05fc14e857072612459059d7d2dd44eb41e860ca8465d7e8"
+    },
+    {
+      "taskId": "math-6-07-task-5",
+      "type": "number",
+      "topicId": "math-6-07",
+      "order": 5,
+      "file": "content/tasks/math-6.json",
+      "index": 34,
+      "sha256": "92275ba20671c094c08a22dd44d4d768f85dceed45fde351bdb1a7a02bec807a"
+    },
+    {
+      "taskId": "math-6-08-task-1",
+      "type": "number",
+      "topicId": "math-6-08",
+      "order": 1,
+      "file": "content/tasks/math-6.json",
+      "index": 35,
+      "sha256": "ec58df9d88bb2714449eac6986e149450287d6e32fac9a20947d7cb41eb61494"
+    },
+    {
+      "taskId": "math-6-08-task-2",
+      "type": "number",
+      "topicId": "math-6-08",
+      "order": 2,
+      "file": "content/tasks/math-6.json",
+      "index": 36,
+      "sha256": "b50c5105a8c184d290dd981e7a9162ad14ca6eb6254baa786b18cf5a8257a56e"
+    },
+    {
+      "taskId": "math-6-08-task-3",
+      "type": "number",
+      "topicId": "math-6-08",
+      "order": 3,
+      "file": "content/tasks/math-6.json",
+      "index": 37,
+      "sha256": "7f67de5f6c25e05156b80443fcd96d04afca6ea2fe4de987b67f7f4ca5e6bd30"
+    },
+    {
+      "taskId": "math-6-08-task-4",
+      "type": "number",
+      "topicId": "math-6-08",
+      "order": 4,
+      "file": "content/tasks/math-6.json",
+      "index": 38,
+      "sha256": "6e6c95be16dac506a1406db81e82dbbbeebb9de635e2dc05ffef2d8d7687b29a"
+    },
+    {
+      "taskId": "math-6-08-task-5",
+      "type": "number",
+      "topicId": "math-6-08",
+      "order": 5,
+      "file": "content/tasks/math-6.json",
+      "index": 39,
+      "sha256": "8745b9f271d9884de31a06b153757c6139ca2f8c52ecfe38f72f78d73bf4d5d3"
+    },
+    {
+      "taskId": "math-6-09-task-1",
+      "type": "number",
+      "topicId": "math-6-09",
+      "order": 1,
+      "file": "content/tasks/math-6.json",
+      "index": 40,
+      "sha256": "385ae86293b6eb11299332e92f4532ce03177ebcdcbc34b04741dbe5260f49a9"
+    },
+    {
+      "taskId": "math-6-09-task-2",
+      "type": "number",
+      "topicId": "math-6-09",
+      "order": 2,
+      "file": "content/tasks/math-6.json",
+      "index": 41,
+      "sha256": "f2ffdacfe40408e06ff274928e5d0535927f687fb53d31be4518393d8084ac76"
+    },
+    {
+      "taskId": "math-6-09-task-3",
+      "type": "number",
+      "topicId": "math-6-09",
+      "order": 3,
+      "file": "content/tasks/math-6.json",
+      "index": 42,
+      "sha256": "48b2b4f96b72fdce021038832ff40b8843d3d12a34c468d7c685446459f81736"
+    },
+    {
+      "taskId": "math-6-09-task-4",
+      "type": "number",
+      "topicId": "math-6-09",
+      "order": 4,
+      "file": "content/tasks/math-6.json",
+      "index": 43,
+      "sha256": "e63fdd006ba8294c426aaf82f51ed70d179e95fce0bd043ccdeb9402f243d321"
+    },
+    {
+      "taskId": "math-6-09-task-5",
+      "type": "number",
+      "topicId": "math-6-09",
+      "order": 5,
+      "file": "content/tasks/math-6.json",
+      "index": 44,
+      "sha256": "2f7f892449c5be8e1c18b9939baeb987f706f19f5adc334c9fc4cd6c80081b8b"
+    },
+    {
+      "taskId": "math-6-10-task-1",
+      "type": "number",
+      "topicId": "math-6-10",
+      "order": 1,
+      "file": "content/tasks/math-6.json",
+      "index": 45,
+      "sha256": "58243d1c36d741971076e286172abb2d4bfe8a583812c303d75c2003c6534bd3"
+    },
+    {
+      "taskId": "math-6-10-task-2",
+      "type": "number",
+      "topicId": "math-6-10",
+      "order": 2,
+      "file": "content/tasks/math-6.json",
+      "index": 46,
+      "sha256": "64396bc74cf0b1ebf25e65e6501faba59fbc207fdce85a11876ecd2787bb76ab"
+    },
+    {
+      "taskId": "math-6-10-task-3",
+      "type": "number",
+      "topicId": "math-6-10",
+      "order": 3,
+      "file": "content/tasks/math-6.json",
+      "index": 47,
+      "sha256": "78d5d9b6d9ef0e0b4c0ce39d24c292f8cd2e5de2fcb7e1fd9163bdb8a98d4ed3"
+    },
+    {
+      "taskId": "math-6-10-task-4",
+      "type": "number",
+      "topicId": "math-6-10",
+      "order": 4,
+      "file": "content/tasks/math-6.json",
+      "index": 48,
+      "sha256": "0e94315975376943477b6a3ccaadfc65d30358b2322b8e62b748f76bd01843d0"
+    },
+    {
+      "taskId": "math-6-10-task-5",
+      "type": "number",
+      "topicId": "math-6-10",
+      "order": 5,
+      "file": "content/tasks/math-6.json",
+      "index": 49,
+      "sha256": "ec2249fcc727b54a8177e38db9dee9364a90adaf20cd16dc1c71b997e9affbde"
+    },
+    {
+      "taskId": "math-6-11-task-1",
+      "type": "number",
+      "topicId": "math-6-11",
+      "order": 1,
+      "file": "content/tasks/math-6.json",
+      "index": 50,
+      "sha256": "b19b31e23706ffea00022d15d96bb04e83d15ec06da75a2226aba54040445bf8"
+    },
+    {
+      "taskId": "math-6-11-task-2",
+      "type": "number",
+      "topicId": "math-6-11",
+      "order": 2,
+      "file": "content/tasks/math-6.json",
+      "index": 51,
+      "sha256": "d25f150894d131fb61481e72d0e8954a97e0f3e87d9d0eaad4cbd27e87d30537"
+    },
+    {
+      "taskId": "math-6-11-task-3",
+      "type": "number",
+      "topicId": "math-6-11",
+      "order": 3,
+      "file": "content/tasks/math-6.json",
+      "index": 52,
+      "sha256": "8309a7ed0f26ba0271d96dbaaa229242eea222984579f03bf4af3dcd58db2c2e"
+    },
+    {
+      "taskId": "math-6-11-task-4",
+      "type": "number",
+      "topicId": "math-6-11",
+      "order": 4,
+      "file": "content/tasks/math-6.json",
+      "index": 53,
+      "sha256": "d10dde654730692ba8903d0d4e8a9e244dc87aefcb2877dce71f4383f2789c2b"
+    },
+    {
+      "taskId": "math-6-11-task-5",
+      "type": "number",
+      "topicId": "math-6-11",
+      "order": 5,
+      "file": "content/tasks/math-6.json",
+      "index": 54,
+      "sha256": "abd0f678d85e34e9617cd0d2d5c039cee75a6d4ba3ef15ce1ab7cf01f232186b"
+    },
+    {
+      "taskId": "math-6-12-task-1",
+      "type": "number",
+      "topicId": "math-6-12",
+      "order": 1,
+      "file": "content/tasks/math-6.json",
+      "index": 55,
+      "sha256": "839d98da9784b33033a76771084544d676987aaa7d32a420ccb8246a8837c935"
+    },
+    {
+      "taskId": "math-6-12-task-2",
+      "type": "number",
+      "topicId": "math-6-12",
+      "order": 2,
+      "file": "content/tasks/math-6.json",
+      "index": 56,
+      "sha256": "fa037eb81030436e0a4c7b7c9c5fae864e31f52d8de627149b996a3c78cb4758"
+    },
+    {
+      "taskId": "math-6-12-task-3",
+      "type": "number",
+      "topicId": "math-6-12",
+      "order": 3,
+      "file": "content/tasks/math-6.json",
+      "index": 57,
+      "sha256": "9a9a179fc34b4e69ce7287603db4633e8b779987a7ab4d735edb356f3ec2b3de"
+    },
+    {
+      "taskId": "math-6-12-task-4",
+      "type": "number",
+      "topicId": "math-6-12",
+      "order": 4,
+      "file": "content/tasks/math-6.json",
+      "index": 58,
+      "sha256": "ceefad2afea0023a7deeb5372be1a90f1c19ae7723ab78574aeca497e1be00c5"
+    },
+    {
+      "taskId": "math-6-12-task-5",
+      "type": "number",
+      "topicId": "math-6-12",
+      "order": 5,
+      "file": "content/tasks/math-6.json",
+      "index": 59,
+      "sha256": "294976a589178bb49b75b13e34ebd6542cea13f580cfe8407386772544b210b9"
+    }
+  ]
+}

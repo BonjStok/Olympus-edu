@@ -3,6 +3,7 @@ coverage
 node_modules
 .wrangler
 .vinext
+.next
 .pnpm-store
 playwright-report
 test-results
@@ -16,3 +17,5 @@ pnpm-lock.yaml
 *.yaml
 *.yml
 tests/fixtures
+work
+outputs

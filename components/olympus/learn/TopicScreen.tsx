@@ -2,6 +2,7 @@
 /** One topic: «Теория» (lessons) → «Практика» (tasks) → two stars. */
 import { Button } from "@maxhub/max-ui";
 import { useEffect } from "react";
+import { errorMessage } from "@/lib/client/api";
 import type { TopicPart } from "@/lib/ui/navigation";
 import { plural, WORDS } from "@/lib/ui/plural";
 import { SUBJECT_LABEL } from "@/lib/ui/format";
@@ -11,6 +12,7 @@ import { PageHeader } from "../shared/layout";
 import { useResource } from "../hooks/useResource";
 import { useCatalog, useData } from "../state/data";
 import { useNav } from "../state/navigation";
+import { useToast } from "../state/toast";
 import { Stars } from "./LearnHome";
 import { LessonReader } from "./LessonReader";
 import { PracticeView } from "../training/PracticeView";
@@ -20,11 +22,23 @@ export function TopicScreen({ id, part, step }: { id: string; part: TopicPart; s
   const catalog = useCatalog();
   const data = useData();
   const nav = useNav();
+  const toast = useToast();
   const statusOf = useTopicStatuses();
   const topic = catalog.topics.find((t) => t.id === id);
   const cached = data.state.topics[id] ?? null;
   const resource = useResource(() => data.loadTopic(id), { initial: cached, skip: !!cached });
   const content = cached ?? resource.data;
+  const { updateSettings } = data;
+  const { grade, subject } = data.state.settings;
+
+  // A URL or MAX link can open a topic outside the saved learning path.
+  // Keep the header and the list reached by «Все темы» on that topic's path.
+  useEffect(() => {
+    if (!topic || (grade === topic.grade && subject === topic.subject)) return;
+    void updateSettings({ grade: topic.grade, subject: topic.subject }).catch((error) =>
+      toast.info(errorMessage(error)),
+    );
+  }, [topic, grade, subject, updateSettings, toast]);
 
   useEffect(() => {
     data.rememberTopic({ id, part, step });

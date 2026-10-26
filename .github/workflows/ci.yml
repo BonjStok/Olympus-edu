@@ -125,7 +125,7 @@ jobs:
       # The hackathon budget (5 minutes) excludes the first download of base images.
       - name: Pre-pull base images
         run: |
-          docker pull node:22-bookworm-slim
+          docker pull node:26-bookworm-slim
           docker pull postgres:17-alpine
 
       - name: Build all images from scratch within 5 minutes

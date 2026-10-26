@@ -9,6 +9,8 @@ import { useId, useState } from "react";
 import type { Grade, Subject } from "@/lib/domain/types";
 import { errorMessage } from "@/lib/client/api";
 import { useLearner, contextLabel } from "../state/learner";
+import { useCatalog } from "../state/data";
+import { useNav } from "../state/navigation";
 import { useToast } from "../state/toast";
 import { Segmented } from "./controls";
 import { Dialog } from "./Dialog";
@@ -31,9 +33,23 @@ export const SUBJECT_OPTIONS: { value: SubjectChoice; label: string }[] = [
 export function ContextForm({ autoFocusRegion }: { autoFocusRegion?: boolean }) {
   const learner = useLearner();
   const toast = useToast();
+  const nav = useNav();
+  const catalog = useCatalog();
   const regionLabel = useId();
-  const save = (patch: Parameters<typeof learner.update>[0]) =>
-    learner.update(patch).catch((e) => toast.error(errorMessage(e)));
+  const save = (patch: Parameters<typeof learner.update>[0]) => {
+    const topicId = nav.screen?.name === "topic" ? nav.screen.id : null;
+    const topic = catalog.topics.find((item) => item.id === topicId);
+    if (
+      topic &&
+      ((patch.grade !== undefined && patch.grade !== topic.grade) ||
+        (patch.subject !== undefined && patch.subject !== topic.subject))
+    ) {
+      // Apply an explicit change to the topic list, instead of leaving the old
+      // topic visible under the new class/subject in the header.
+      nav.go("learn");
+    }
+    return learner.update(patch).catch((e) => toast.error(errorMessage(e)));
+  };
   const subjectValue: SubjectChoice = learner.bothSubjects ? "both" : learner.subject;
   return (
     <div className="ol-context-form">
