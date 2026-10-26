@@ -15,10 +15,10 @@ packageImportMethod: clone-or-copy
 verifyDepsBeforeRun: false
 optimisticRepeatInstall: false
 overrides:
-  miniflare>sharp: 0.35.4
+  miniflare>sharp: 0.35.5
   # Security: wrangler/miniflare pin vulnerable undici 7.24.8 and ws 8.18.0
   # (GHSA advisories fixed in undici 7.29, ws 8.21). Same major versions.
-  miniflare>undici: 7.29.1
-  wrangler>undici: 7.29.1
+  miniflare>undici: 7.30.1
+  wrangler>undici: 7.30.1
   miniflare>ws: 8.21.3
   wrangler>ws: 8.21.3

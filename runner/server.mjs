@@ -21,6 +21,7 @@ import { pathToFileURL } from "node:url";
  * @property {string} judge0Url Base URL of Judge0 without a trailing slash ("" = not configured).
  * @property {string} runnerToken Bearer token expected from the web app ("" = no auth, local only).
  * @property {string} judge0Token Optional `X-Auth-Token` for Judge0.
+ * @property {number | null} pythonLanguageId Explicit Judge0 Python 3 id, or null for automatic selection.
  * @property {number} maxConcurrent Parallel /execute requests before answering 429.
  * @property {number} requestLimit Maximum request body size in bytes.
  * @property {number} pollIntervalMs Delay between result polls.
@@ -127,12 +128,16 @@ function intInRange(value, fallback, min, max) {
  * @param {Record<string, string | undefined>} [env]
  */
 export function configFromEnv(env = process.env) {
+  const pythonId = String(env.JUDGE0_PYTHON_LANGUAGE_ID || "").trim();
+  if (pythonId && (!/^[1-9]\d*$/.test(pythonId) || !Number.isSafeInteger(Number(pythonId))))
+    throw new Error("JUDGE0_PYTHON_LANGUAGE_ID must be a positive integer");
   return {
     judge0Url: String(env.JUDGE0_URL || "")
       .trim()
       .replace(/\/+$/, ""),
     runnerToken: String(env.RUNNER_TOKEN || ""),
     judge0Token: String(env.JUDGE0_AUTH_TOKEN || ""),
+    pythonLanguageId: pythonId ? Number(pythonId) : null,
     port: intInRange(env.RUNNER_PORT, 8080, 1, 65_535),
     maxConcurrent: intInRange(env.RUNNER_MAX_CONCURRENT, 4, 1, 16),
     requestLimit: intInRange(env.RUNNER_REQUEST_LIMIT, 1_000_000, 64_000, 10_000_000),
@@ -187,17 +192,19 @@ export function validateExecution(body) {
 }
 
 /**
- * Judge0 id of the newest installed version of a language, or null.
+ * Judge0 id of the requested installed version, or the newest when no id is pinned.
  * @param {unknown} languages response of Judge0 `GET /languages`
  * @param {string} language
+ * @param {number | null} [preferredId] Never fall back to another version when this id is unavailable.
  */
-export function pickLanguageId(languages, language) {
+export function pickLanguageId(languages, language, preferredId = null) {
   if (!Array.isArray(languages) || !Object.hasOwn(LANGUAGE_PATTERNS, language)) return null;
   const pattern = LANGUAGE_PATTERNS[/** @type {Language} */ (language)];
   let best = null;
   for (const item of /** @type {Judge0Language[]} */ (languages)) {
     const id = Number(item?.id);
     if (!Number.isInteger(id) || !pattern.test(String(item?.name ?? ""))) continue;
+    if (preferredId !== null && id !== preferredId) continue;
     if (best === null || id > best) best = id;
   }
   return best;
@@ -244,6 +251,7 @@ const DEFAULTS = {
   judge0Url: "",
   runnerToken: "",
   judge0Token: "",
+  pythonLanguageId: null,
   maxConcurrent: 4,
   requestLimit: 1_000_000,
   pollIntervalMs: 300,
@@ -312,9 +320,10 @@ export function createRunner(options = {}) {
 
   /** @param {Language} language */
   async function languageIdFor(language) {
-    let id = languagesCache ? pickLanguageId(languagesCache, language) : null;
+    const preferredId = language === "python" ? config.pythonLanguageId : null;
+    let id = languagesCache ? pickLanguageId(languagesCache, language, preferredId) : null;
     // The language may have been installed after the cache was filled: refresh once.
-    if (id === null) id = pickLanguageId(await loadLanguages(), language);
+    if (id === null) id = pickLanguageId(await loadLanguages(), language, preferredId);
     if (id === null)
       throw new RunnerError(
         503,
